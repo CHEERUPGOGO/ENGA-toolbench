@@ -1,0 +1,7112 @@
+{
+  "signature": {
+    "eval_mode": "judge",
+    "model": "deepseek-v4-flash",
+    "P": 8,
+    "G": 5,
+    "train_limit": 30,
+    "test_limit": 10,
+    "seed": 42,
+    "simplex": true,
+    "relative_sigma": true,
+    "b": 5,
+    "eta": 0.7,
+    "sigma0": 0.4,
+    "sigma_decay": 0.85,
+    "judge_prompt": "judge2"
+  },
+  "trained_catalogs": {
+    "4": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "2": [
+      0.36747591699819915,
+      0.0,
+      0.6325240830018011
+    ],
+    "5": [
+      0.4269443125700062,
+      0.14394784712857067,
+      0.42910784030142324
+    ],
+    "3": [
+      0.7171549884141853,
+      0.0,
+      0.28284501158581465
+    ],
+    "1": [
+      0.9083801180056037,
+      0.09161988199439652,
+      0.0
+    ]
+  },
+  "initial_alphas": {
+    "1": [
+      0.29879306158554847,
+      0.316648817194729,
+      0.38455812121972255
+    ],
+    "3": [
+      0.4495876301956048,
+      0.3319881636433433,
+      0.2184242061610518
+    ],
+    "2": [
+      0.3469894975170315,
+      0.32283368105325716,
+      0.33017682142971133
+    ],
+    "5": [
+      0.5554990520689891,
+      0.2829862806860197,
+      0.16151466724499117
+    ],
+    "4": [
+      0.44680003301393273,
+      0.32375837950406944,
+      0.2294415874819978
+    ]
+  },
+  "trajectories": {
+    "4": [
+      [
+        0.44680003301393273,
+        0.32375837950406944,
+        0.2294415874819978
+      ],
+      [
+        0.3686408901233659,
+        0.17270088570383535,
+        0.4586582241727988
+      ],
+      [
+        0.13019267021226116,
+        0.24114394752337653,
+        0.6286633822643624
+      ],
+      [
+        0.03213965874243652,
+        0.9678603412575635,
+        0.0
+      ],
+      [
+        0.6320292888783846,
+        0.16519885142542892,
+        0.2027718596961865
+      ],
+      [
+        0.39955268700049895,
+        0.49796811478175196,
+        0.10247919821774903
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.6096167775839776,
+        0.3903832224160223,
+        0.0
+      ],
+      [
+        0.2569869687847487,
+        0.0,
+        0.7430130312152513
+      ],
+      [
+        0.0,
+        0.46436679112953166,
+        0.5356332088704684
+      ],
+      [
+        0.08616967584893542,
+        0.9138303241510646,
+        0.0
+      ],
+      [
+        0.4494969092444365,
+        0.5505030907555637,
+        0.0
+      ],
+      [
+        0.8571965007240685,
+        0.14280349927593147,
+        0.0
+      ],
+      [
+        0.0,
+        0.19652925686759837,
+        0.8034707431324016
+      ],
+      [
+        0.11401713958673187,
+        0.8859828604132682,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.8077772135945847,
+        0.19222278640541526,
+        0.0
+      ],
+      [
+        0.8976386018880962,
+        0.0,
+        0.10236139811190381
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.7341764202922167,
+        0.2658235797077832,
+        0.0
+      ],
+      [
+        0.6165197175288019,
+        0.0,
+        0.38348028247119814
+      ],
+      [
+        0.832034392811748,
+        0.0,
+        0.167965607188252
+      ],
+      [
+        0.8138494767143976,
+        0.0,
+        0.18615052328560247
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.995926349060912,
+        0.0,
+        0.0040736509390879305
+      ],
+      [
+        0.9158373835524898,
+        0.0,
+        0.08416261644751014
+      ],
+      [
+        0.9071468932195181,
+        0.0,
+        0.09285310678048186
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "2": [
+      [
+        0.3469894975170315,
+        0.32283368105325716,
+        0.33017682142971133
+      ],
+      [
+        0.484517844518461,
+        0.0,
+        0.5154821554815392
+      ],
+      [
+        0.8233510151934864,
+        0.0,
+        0.1766489848065136
+      ],
+      [
+        0.6645391845008102,
+        0.0,
+        0.33546081549919005
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.956836978392379,
+        0.04316302160762092,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.494621714021067,
+        0.5052997370633056,
+        7.854891562741884e-05
+      ],
+      [
+        0.9152111487024339,
+        0.0,
+        0.084788851297566
+      ],
+      [
+        0.6421135027230483,
+        0.0,
+        0.35788649727695165
+      ],
+      [
+        0.44453013190317264,
+        0.0730710565204667,
+        0.48239881157636055
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.8091453385020229,
+        0.1908546614979772,
+        0.0
+      ],
+      [
+        0.4799231847816944,
+        0.0,
+        0.5200768152183056
+      ],
+      [
+        0.025851443411154446,
+        0.5290771662351885,
+        0.44507139035365706
+      ],
+      [
+        0.0,
+        0.3286831470397915,
+        0.6713168529602085
+      ],
+      [
+        0.0,
+        0.5605817498122565,
+        0.4394182501877434
+      ],
+      [
+        0.8694754336587744,
+        0.0,
+        0.13052456634122578
+      ],
+      [
+        0.8496763175095402,
+        0.0,
+        0.15032368249045974
+      ],
+      [
+        0.052357508865251756,
+        0.0,
+        0.9476424911347482
+      ],
+      [
+        0.9262323162128313,
+        0.0,
+        0.07376768378716875
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.5736443746157525,
+        0.0,
+        0.4263556253842476
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.5521852837123163,
+        0.24378991493849445,
+        0.20402480134918932
+      ],
+      [
+        0.45434061024740846,
+        0.300465321539404,
+        0.24519406821318754
+      ],
+      [
+        0.0,
+        0.7486309924989947,
+        0.2513690075010054
+      ],
+      [
+        0.9780368772264254,
+        0.0,
+        0.021963122773574595
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.36747591699819915,
+        0.0,
+        0.6325240830018011
+      ]
+    ],
+    "5": [
+      [
+        0.5554990520689891,
+        0.2829862806860197,
+        0.16151466724499117
+      ],
+      [
+        0.4298017195228663,
+        0.5701982804771335,
+        0.0
+      ],
+      [
+        0.7506912608683695,
+        0.2493087391316306,
+        0.0
+      ],
+      [
+        0.27974035516820606,
+        0.5748971679492416,
+        0.1453624768825523
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.559321417138137,
+        0.3082852274673168,
+        0.13239335539454639
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.9405268469798393,
+        0.05947315302016075,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.4050071320607867,
+        0.13304057750955095,
+        0.4619522904296623
+      ],
+      [
+        0.6910406578923876,
+        0.0,
+        0.30895934210761244
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.796781607026301,
+        0.1359232412710829,
+        0.06729515170261623
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.4309018638521288,
+        0.5690981361478713,
+        0.0
+      ],
+      [
+        0.9030185554100754,
+        0.09584473951862477,
+        0.0011367050712997595
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.8103900239925086,
+        0.18960997600749144,
+        0.0
+      ],
+      [
+        0.5235741920058666,
+        0.39226888458038045,
+        0.08415692341375303
+      ],
+      [
+        0.6464239649243848,
+        0.35357603507561497,
+        0.0
+      ],
+      [
+        0.22492993602437805,
+        0.775070063975622,
+        0.0
+      ],
+      [
+        0.24052584955214396,
+        0.7594741504478559,
+        0.0
+      ],
+      [
+        0.6528277272753792,
+        0.34717227272462076,
+        0.0
+      ],
+      [
+        0.2753323559267229,
+        0.7246676440732771,
+        0.0
+      ],
+      [
+        0.644743496757443,
+        0.35525650324255703,
+        0.0
+      ],
+      [
+        0.6147293440711138,
+        0.3852706559288862,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.3803665670730526,
+        0.6196334329269475,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.4269443125700062,
+        0.14394784712857067,
+        0.42910784030142324
+      ]
+    ],
+    "3": [
+      [
+        0.4495876301956048,
+        0.3319881636433433,
+        0.2184242061610518
+      ],
+      [
+        0.799196750958471,
+        0.20080324904152902,
+        0.0
+      ],
+      [
+        0.6812457091136125,
+        0.30014114769344047,
+        0.0186131431929471
+      ],
+      [
+        0.587307290017197,
+        0.29866242562558815,
+        0.1140302843572149
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.3609665571189055,
+        0.3283444750810313,
+        0.3106889678000632
+      ],
+      [
+        0.35393421508025924,
+        0.6460657849197409,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.4659716024985704,
+        0.5104448381328385,
+        0.023583559368591158
+      ],
+      [
+        0.5832684957823301,
+        0.26397542106246735,
+        0.15275608315520262
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.32810172294459294,
+        0.0,
+        0.671898277055407
+      ],
+      [
+        0.9728912207297502,
+        0.0,
+        0.02710877927024985
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.9003383681086541,
+        0.0,
+        0.09966163189134603
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.47351098689962545,
+        0.0,
+        0.5264890131003747
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.4051435573737978,
+        0.5948564426262022,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.26042848635840676,
+        0.5123715532582542,
+        0.22719996038333898
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.8037465309535543,
+        0.19625346904644558,
+        0.0
+      ],
+      [
+        0.24695218949640252,
+        0.0,
+        0.7530478105035975
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.42475165212899074,
+        0.5752483478710093,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.6448165167314351,
+        0.14625916094635635,
+        0.20892432232220848
+      ],
+      [
+        0.39916206296579493,
+        0.6008379370342051,
+        0.0
+      ],
+      [
+        0.7171549884141853,
+        0.0,
+        0.28284501158581465
+      ]
+    ],
+    "1": [
+      [
+        0.29879306158554847,
+        0.316648817194729,
+        0.38455812121972255
+      ],
+      [
+        0.06490687655302074,
+        0.0,
+        0.9350931234469793
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.18255300468307653,
+        0.1855891297844405,
+        0.6318578655324832
+      ],
+      [
+        0.16611215546123115,
+        0.17451135381220173,
+        0.6593764907265671
+      ],
+      [
+        0.21584700466633122,
+        0.784152995333669,
+        0.0
+      ],
+      [
+        0.4821027430406495,
+        0.5178972569593505,
+        0.0
+      ],
+      [
+        0.5010824721688986,
+        0.31670757662434124,
+        0.18220995120676028
+      ],
+      [
+        0.369693439515501,
+        0.2955342492130342,
+        0.33477231127146484
+      ],
+      [
+        0.9568631909270991,
+        0.0016100914072267533,
+        0.04152671766567397
+      ],
+      [
+        0.9230068145456845,
+        0.07699318545431559,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.07548643169463448,
+        0.9245135683053656,
+        0.0
+      ],
+      [
+        0.1784958752140876,
+        0.8215041247859123,
+        0.0
+      ],
+      [
+        0.43987730743667536,
+        0.4600778565875321,
+        0.10004483597579258
+      ],
+      [
+        0.0,
+        0.5982930382806737,
+        0.4017069617193263
+      ],
+      [
+        0.37414229517524106,
+        0.26012483814273896,
+        0.3657328666820198
+      ],
+      [
+        0.80775798504727,
+        0.09121280862250468,
+        0.10102920633022519
+      ],
+      [
+        0.7779867658656192,
+        0.0,
+        0.2220132341343808
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.5300289393313804,
+        0.4699710606686196,
+        0.0
+      ],
+      [
+        0.9629717746042439,
+        0.0,
+        0.037028225395756065
+      ],
+      [
+        0.5002156529539532,
+        0.3591574419419533,
+        0.14062690510409348
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.7972808827834277,
+        0.0,
+        0.2027191172165722
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.5219378672451979,
+        0.0,
+        0.47806213275480214
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.6485089374832973,
+        0.0,
+        0.3514910625167028
+      ],
+      [
+        0.9083801180056037,
+        0.09161988199439652,
+        0.0
+      ]
+    ]
+  },
+  "partial_catalogs": {},
+  "test_results": [
+    {
+      "qid": "toolbench_query_782",
+      "query": "I'm planning a surprise birthday party for my best friend. Can you generate a QR code with the party details? Also, I need to remove any profanity from the party invitation text. Additionally, please check if the invitation text contains any profanity.",
+      "gold_size": 3,
+      "true_catalog": "1",
+      "matched_catalog": "1",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.3,
+        "tools": [
+          "toolACE_tool_192",
+          "toolbench_tool_10074",
+          "toolbench_tool_9421",
+          "toolbench_tool_11503",
+          "toolbench_tool_9447"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.28,
+        "tools": [
+          "toolbench_tool_9421",
+          "toolbench_tool_8736",
+          "toolbench_tool_9490",
+          "toolbench_tool_11493",
+          "toolbench_tool_9434"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_192",
+          "toolbench_tool_11503",
+          "toolbench_tool_9541",
+          "toolbench_tool_9447",
+          "toolbench_tool_10074"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolbench_tool_9421",
+          "toolACE_tool_192",
+          "toolbench_tool_9505",
+          "toolbench_tool_10074",
+          "toolbench_tool_9434"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_2867",
+          "toolACE_tool_1908",
+          "toolbench_tool_9447",
+          "toolbench_tool_8789",
+          "toolbench_tool_13292"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.3,
+        "tools": [
+          "toolACE_tool_192",
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolACE_tool_3740",
+          "toolbench_tool_9421"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_192",
+          "toolbench_tool_10074",
+          "toolbench_tool_11503",
+          "toolbench_tool_9541",
+          "toolbench_tool_9447"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_8736",
+          "toolbench_tool_11493",
+          "toolbench_tool_9434",
+          "toolbench_tool_2915"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_9421",
+          "toolbench_tool_9505",
+          "toolbench_tool_8736",
+          "toolbench_tool_6516",
+          "toolACE_tool_192"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_468",
+      "query": "I'm hosting a conference and I want to provide attendees with a digital program. Can you generate a QR code with the event schedule and speaker information? Additionally, fetch the pending messages from my TrumpetBox Cloud account to check for any last-minute changes requested by speakers. Lastly, gather the details of the specific device '24680' in my TrumpetBox Cloud account.",
+      "gold_size": 3,
+      "true_catalog": "1",
+      "matched_catalog": "1",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9541",
+          "toolbench_tool_9447",
+          "toolbench_tool_8738",
+          "toolbench_tool_2916"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.55,
+        "tools": [
+          "toolbench_tool_5309",
+          "toolbench_tool_2914",
+          "toolbench_tool_2915",
+          "toolbench_tool_2916",
+          "toolbench_tool_8736"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9541",
+          "toolbench_tool_9447",
+          "toolbench_tool_9498",
+          "toolbench_tool_8738"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolbench_tool_8736",
+          "toolbench_tool_11503",
+          "toolbench_tool_11493",
+          "toolbench_tool_9523",
+          "toolbench_tool_9447"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_5310",
+          "toolbench_tool_8738",
+          "toolbench_tool_11503",
+          "toolbench_tool_9523",
+          "toolACE_tool_4179"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9541",
+          "toolbench_tool_9447",
+          "toolbench_tool_9498",
+          "toolbench_tool_8738"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.18154179253735267,
+        "reward": 0.65,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_8736",
+          "toolbench_tool_9541",
+          "toolbench_tool_9447",
+          "toolbench_tool_5309"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.55,
+        "tools": [
+          "toolbench_tool_5309",
+          "toolbench_tool_2914",
+          "toolbench_tool_2915",
+          "toolbench_tool_2916",
+          "toolbench_tool_8736"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.2960819109658652,
+        "reward": 0.59,
+        "tools": [
+          "toolbench_tool_8736",
+          "toolbench_tool_5309",
+          "toolbench_tool_9421",
+          "toolACE_tool_192",
+          "toolbench_tool_6510"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_653",
+      "query": "I want to surprise my family with a unique gift. Generate a QR code with a personalized message for them. Also, check the page speed of a website related to the gift to ensure it loads quickly.",
+      "gold_size": 2,
+      "true_catalog": "1",
+      "matched_catalog": "1",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.3065735963827292,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9523",
+          "toolbench_tool_9541",
+          "toolbench_tool_9447",
+          "toolbench_tool_10074"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_8736",
+          "toolbench_tool_11493",
+          "toolbench_tool_9421",
+          "toolbench_tool_2915"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9523",
+          "toolbench_tool_10074",
+          "toolbench_tool_9541",
+          "toolbench_tool_9447"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_10074",
+          "toolbench_tool_11503",
+          "toolbench_tool_9523",
+          "toolbench_tool_9434",
+          "toolbench_tool_2915"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_9523",
+          "toolbench_tool_11503",
+          "toolbench_tool_9498",
+          "toolbench_tool_8736",
+          "toolbench_tool_9453"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolbench_tool_9523",
+          "toolbench_tool_9541",
+          "toolbench_tool_9447"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9523",
+          "toolbench_tool_10074",
+          "toolbench_tool_9434",
+          "toolbench_tool_9447"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_8736",
+          "toolbench_tool_11493",
+          "toolbench_tool_9421",
+          "toolbench_tool_2915"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_9421",
+          "toolbench_tool_6510",
+          "toolbench_tool_6516",
+          "toolACE_tool_584",
+          "toolbench_tool_10074"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_742",
+      "query": "I want to surprise my friends with personalized QR code gifts. Can you generate QR codes with variable sizes and include each friend's name in the code? Furthermore, I need to convert some memorable videos to mp4 format for a special occasion. Can you convert HLS videos to mp4?",
+      "gold_size": 2,
+      "true_catalog": "1",
+      "matched_catalog": "1",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9498",
+          "toolbench_tool_9541",
+          "toolbench_tool_9434",
+          "toolACE_tool_584"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolbench_tool_9421",
+          "toolbench_tool_8736",
+          "toolbench_tool_9490",
+          "toolbench_tool_11493",
+          "toolbench_tool_2915"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9498",
+          "toolbench_tool_9541",
+          "toolbench_tool_10074",
+          "toolbench_tool_9447"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_10074",
+          "toolbench_tool_9421",
+          "toolbench_tool_2915",
+          "toolbench_tool_2916",
+          "toolbench_tool_9523"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolbench_tool_10074",
+          "toolbench_tool_9523",
+          "toolbench_tool_8738",
+          "toolbench_tool_9498",
+          "toolbench_tool_11503"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.08,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolbench_tool_9498",
+          "toolbench_tool_9447",
+          "toolACE_tool_7826"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_8736",
+          "toolbench_tool_9490",
+          "toolbench_tool_9421",
+          "toolbench_tool_6516",
+          "toolbench_tool_9505"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9421",
+          "toolbench_tool_8736",
+          "toolbench_tool_9490",
+          "toolbench_tool_6516",
+          "toolbench_tool_6510"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_10074",
+          "toolbench_tool_9421",
+          "toolbench_tool_2915",
+          "toolbench_tool_11503",
+          "toolbench_tool_2916"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_748",
+      "query": "I am planning a treasure hunt game for my family reunion and I want to use QR codes to provide clues. Generate QR codes with riddles as the data parameter for each clue. Additionally, include a random string of characters as a unique identifier for each QR code. Finally, generate a UUID for the treasure hunt game to ensure the uniqueness of the game session.",
+      "gold_size": 4,
+      "true_catalog": "1",
+      "matched_catalog": "1",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9541",
+          "toolbench_tool_8738",
+          "toolbench_tool_2915",
+          "toolbench_tool_2916"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.22222222222222224,
+        "recall": 0.25,
+        "ndcg": 0.19519002499605084,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_8736",
+          "toolbench_tool_9490",
+          "toolbench_tool_11493",
+          "toolbench_tool_9421",
+          "toolbench_tool_2915"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.3,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9541",
+          "toolbench_tool_8738",
+          "toolACE_tool_3740",
+          "toolACE_tool_7826"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_9421",
+          "toolbench_tool_8736",
+          "toolbench_tool_8738",
+          "toolbench_tool_2915",
+          "toolbench_tool_2916"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9523",
+          "toolbench_tool_9541",
+          "toolbench_tool_10074",
+          "toolbench_tool_9540"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9541",
+          "toolACE_tool_3740",
+          "toolbench_tool_8738",
+          "toolACE_tool_192"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9541",
+          "toolbench_tool_8738",
+          "toolbench_tool_2915",
+          "toolbench_tool_2916"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.22222222222222224,
+        "recall": 0.25,
+        "ndcg": 0.19519002499605084,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_8736",
+          "toolbench_tool_9490",
+          "toolbench_tool_11493",
+          "toolbench_tool_9421",
+          "toolbench_tool_2915"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9541",
+          "toolbench_tool_8738",
+          "toolbench_tool_2915",
+          "toolbench_tool_2916"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_520",
+      "query": "I'm organizing a surprise birthday party for my best friend and I need to generate red QR codes for the event invitations. The QR codes should contain the party details, such as the date, time, and venue. Additionally, I'm looking for a reliable money transfer portal for collecting party contributions. Can you provide information about the portal's transaction fees and withdrawal options?",
+      "gold_size": 2,
+      "true_catalog": "1",
+      "matched_catalog": "1",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolbench_tool_9523",
+          "toolbench_tool_9447",
+          "toolbench_tool_9498"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_8736",
+          "toolbench_tool_11493",
+          "toolbench_tool_6516",
+          "toolbench_tool_6510"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.3,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolbench_tool_9523",
+          "toolbench_tool_9541",
+          "toolbench_tool_9447"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_10074",
+          "toolACE_tool_5006",
+          "toolbench_tool_11503",
+          "toolbench_tool_9523",
+          "toolbench_tool_8736"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.5437713091520254,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_13292",
+          "toolbench_tool_11503",
+          "toolbench_tool_10075",
+          "apigen_tool_364",
+          "toolbench_tool_10074"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolACE_tool_5006",
+          "toolACE_tool_438",
+          "toolbench_tool_9523"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolACE_tool_5006",
+          "toolACE_tool_438",
+          "toolbench_tool_9523"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_8736",
+          "toolbench_tool_11493",
+          "toolbench_tool_2914",
+          "toolbench_tool_9434"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolACE_tool_5006",
+          "toolACE_tool_438",
+          "toolbench_tool_9523"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_684",
+      "query": "I want to surprise my best friend with a unique gift. Could you generate a QR code for a personalized message? The text content should be 'You are amazing!'. Additionally, can you check if the number 37 is a prime number? Your assistance is greatly appreciated!",
+      "gold_size": 2,
+      "true_catalog": "1",
+      "matched_catalog": "1",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9447",
+          "toolbench_tool_9523",
+          "toolACE_tool_192",
+          "toolACE_tool_5006"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_9421",
+          "toolbench_tool_6510",
+          "toolbench_tool_6516",
+          "toolbench_tool_8736",
+          "toolbench_tool_9490"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9447",
+          "toolbench_tool_10074",
+          "toolACE_tool_192",
+          "toolACE_tool_5006"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolACE_tool_192",
+          "toolbench_tool_10074",
+          "toolbench_tool_9421",
+          "toolbench_tool_9447"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.75,
+        "tools": [
+          "toolbench_tool_2905",
+          "toolbench_tool_8738",
+          "toolbench_tool_10074",
+          "toolbench_tool_3486",
+          "toolbench_tool_11503"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_9447",
+          "toolbench_tool_10074",
+          "toolACE_tool_192",
+          "toolACE_tool_5006"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolACE_tool_192",
+          "toolACE_tool_5006",
+          "toolbench_tool_9447",
+          "toolbench_tool_10074"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9421",
+          "toolbench_tool_6510",
+          "toolbench_tool_6516",
+          "toolbench_tool_6512",
+          "toolbench_tool_8736"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolACE_tool_192",
+          "toolbench_tool_10074",
+          "toolbench_tool_9421",
+          "toolbench_tool_9447"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_780",
+      "query": "My company is organizing a conference and we want to check the availability of multiple domains for our event website. Please check the availability of the domains 'conference.com', 'event.org', and 'company.io'. Furthermore, generate a QR code with the text 'Conference Website' and customize it with a blue foreground color and a yellow background color.",
+      "gold_size": 2,
+      "true_catalog": "1",
+      "matched_catalog": "1",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_9488",
+          "apigen_tool_2415",
+          "toolACE_tool_6017",
+          "toolbench_tool_9494"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_8736",
+          "toolbench_tool_11493",
+          "toolbench_tool_6516",
+          "toolbench_tool_9434"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_9488",
+          "toolbench_tool_9490",
+          "apigen_tool_2415",
+          "toolACE_tool_6017",
+          "toolACE_tool_15410"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.3065735963827292,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_6516",
+          "toolbench_tool_9488",
+          "toolbench_tool_9434",
+          "toolbench_tool_9494"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_2916",
+          "toolbench_tool_6516",
+          "toolbench_tool_2914",
+          "toolbench_tool_11503"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_9488",
+          "toolbench_tool_9490",
+          "apigen_tool_2415",
+          "toolACE_tool_6017",
+          "toolACE_tool_15410"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.65,
+        "tools": [
+          "toolbench_tool_9488",
+          "toolbench_tool_9490",
+          "toolbench_tool_9498",
+          "toolbench_tool_9541",
+          "toolbench_tool_9494"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_9488",
+          "toolbench_tool_9498",
+          "toolbench_tool_9434",
+          "toolbench_tool_9541"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.65,
+        "tools": [
+          "toolbench_tool_9488",
+          "toolbench_tool_9490",
+          "toolbench_tool_9498",
+          "toolbench_tool_9541",
+          "toolbench_tool_9494"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_678",
+      "query": "My company is launching a new product and we need to check if the domain names we have in mind are available. Can you please check the availability of domains like innovativesolutions.com, futuretech.org, and globalmarket.io? Additionally, we want to generate a QR code for the product's name, 'TechXcel'. Can you generate the QR code for us?",
+      "gold_size": 2,
+      "true_catalog": "1",
+      "matched_catalog": "1",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_9541",
+          "toolbench_tool_9434",
+          "toolbench_tool_9505",
+          "toolbench_tool_9498"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_8736",
+          "toolbench_tool_11493",
+          "toolbench_tool_6516",
+          "toolbench_tool_6510"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_9541",
+          "toolbench_tool_9490",
+          "toolbench_tool_9434",
+          "toolbench_tool_9498",
+          "toolbench_tool_9505"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_9434",
+          "toolbench_tool_9505",
+          "toolbench_tool_11493",
+          "toolbench_tool_6516"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.3,
+        "tools": [
+          "toolbench_tool_10074",
+          "toolbench_tool_8738",
+          "toolbench_tool_9523",
+          "toolbench_tool_11503",
+          "toolbench_tool_9066"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.3,
+        "tools": [
+          "toolbench_tool_9541",
+          "toolbench_tool_9490",
+          "toolbench_tool_9434",
+          "toolACE_tool_701",
+          "toolbench_tool_9505"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_9505",
+          "toolbench_tool_6516",
+          "toolACE_tool_584",
+          "toolbench_tool_8736"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_8736",
+          "toolbench_tool_11493",
+          "toolbench_tool_9434",
+          "toolbench_tool_8737"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_9434",
+          "toolbench_tool_9505",
+          "toolbench_tool_11493",
+          "toolbench_tool_6516"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_521",
+      "query": "I'm a small business owner and I'm interested in incorporating QR codes into my marketing materials. Generate red QR codes that link to my company's website and social media profiles. Additionally, I need information about a secure money transfer portal for processing online payments. Can you share details about the portal's account setup process and supported currencies?",
+      "gold_size": 2,
+      "true_catalog": "1",
+      "matched_catalog": "1",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6509209298071326,
+        "reward": 0.1,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolbench_tool_9523",
+          "toolbench_tool_10075",
+          "toolbench_tool_11493"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.18,
+        "tools": [
+          "toolbench_tool_9490",
+          "toolbench_tool_8736",
+          "toolbench_tool_11493",
+          "toolbench_tool_6516",
+          "toolbench_tool_6510"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6509209298071326,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolACE_tool_438",
+          "toolbench_tool_10075",
+          "toolbench_tool_9523"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.72,
+        "tools": [
+          "toolbench_tool_10074",
+          "toolbench_tool_10075",
+          "toolbench_tool_9490",
+          "toolbench_tool_11493",
+          "toolbench_tool_11503"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_10075",
+          "toolbench_tool_13292",
+          "toolbench_tool_11503",
+          "toolbench_tool_9523",
+          "toolbench_tool_8738"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6509209298071326,
+        "reward": 0.6,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolACE_tool_438",
+          "toolbench_tool_10075",
+          "toolbench_tool_4752"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.72,
+        "tools": [
+          "toolbench_tool_10074",
+          "toolbench_tool_10075",
+          "toolbench_tool_9490",
+          "toolbench_tool_11493",
+          "toolbench_tool_11503"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6509209298071326,
+        "reward": 0.6,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolACE_tool_438",
+          "toolbench_tool_10075",
+          "toolbench_tool_4752"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.72,
+        "tools": [
+          "toolbench_tool_10074",
+          "toolbench_tool_10075",
+          "toolbench_tool_9490",
+          "toolbench_tool_11493",
+          "toolbench_tool_11503"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_1080",
+      "query": "I'm planning a movie-themed birthday party for my niece and I need some suggestions for movies suitable for kids. Can you search for movies based on the genre 'animation' and language 'English'? Also, provide the streaming sources available in the US and Canada where we can watch these movies.",
+      "gold_size": 3,
+      "true_catalog": "3",
+      "matched_catalog": "3",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.12,
+        "tools": [
+          "toolACE_tool_12920",
+          "reversechain_tool_156",
+          "toolACE_tool_12866",
+          "toolbench_tool_8982",
+          "toolbench_tool_774"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.20210734650054757,
+        "reward": 0.1,
+        "tools": [
+          "toolbench_tool_774",
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_780",
+          "toolbench_tool_781"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolbench_tool_774",
+          "toolACE_tool_12920",
+          "toolACE_tool_12866",
+          "reversechain_tool_156",
+          "toolACE_tool_4026"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.12,
+        "tools": [
+          "toolACE_tool_12920",
+          "toolACE_tool_12866",
+          "reversechain_tool_156",
+          "toolbench_tool_774",
+          "toolbench_tool_8982"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.18154179253735267,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_861",
+          "toolLens_tool_111",
+          "toolACE_tool_4283",
+          "toolbench_tool_4522",
+          "toolbench_tool_780"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolACE_tool_12920",
+          "reversechain_tool_156",
+          "toolACE_tool_12866",
+          "toolbench_tool_8982",
+          "toolbench_tool_6626"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_774",
+          "toolACE_tool_12866",
+          "toolACE_tool_8517",
+          "toolACE_tool_9407",
+          "toolACE_tool_4026"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_774",
+          "toolACE_tool_5280",
+          "toolACE_tool_4979",
+          "toolbench_tool_765",
+          "toolLens_tool_149"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_774",
+          "toolACE_tool_4979",
+          "toolACE_tool_5280",
+          "toolbench_tool_765",
+          "toolLens_tool_149"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_1051",
+      "query": "I'm planning a movie night with my family and we want to watch some animated movies. Can you recommend some animated movies suitable for kids and adults that are available for streaming on Netflix and Prime Video? Please provide the IMDb ratings and streaming links for each movie.",
+      "gold_size": 3,
+      "true_catalog": "3",
+      "matched_catalog": "3",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolbench_tool_6626",
+          "toolACE_tool_12866",
+          "toolACE_tool_9407",
+          "toolACE_tool_5797",
+          "toolACE_tool_12920"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_774",
+          "toolbench_tool_768",
+          "toolbench_tool_771",
+          "toolbench_tool_785"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolACE_tool_12866",
+          "toolbench_tool_774",
+          "toolbench_tool_6626",
+          "reversechain_tool_156"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_6626",
+          "toolACE_tool_12866",
+          "reversechain_tool_156",
+          "toolACE_tool_12920"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.20210734650054757,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_4522",
+          "toolbench_tool_856",
+          "toolACE_tool_4283",
+          "toolbench_tool_11841",
+          "toolbench_tool_861"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolbench_tool_6626",
+          "toolACE_tool_5797",
+          "toolACE_tool_12866",
+          "toolACE_tool_12920",
+          "toolACE_tool_15264"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_774",
+          "toolACE_tool_9407",
+          "toolACE_tool_12356",
+          "toolbench_tool_9428",
+          "toolbench_tool_12882"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_774",
+          "toolACE_tool_12866",
+          "toolACE_tool_12356",
+          "toolACE_tool_5047"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_6626",
+          "toolbench_tool_8987",
+          "toolLens_tool_111",
+          "toolbench_tool_854",
+          "toolbench_tool_2539"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_804",
+      "query": "I want to find movies with high ratings. Can you provide me with a list of top-rated movies along with their IMDb ratings and summaries? Please sort the results by their IMDb ratings in descending order.",
+      "gold_size": 2,
+      "true_catalog": "3",
+      "matched_catalog": "3",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_10483",
+          "toolbench_tool_10073",
+          "toolbench_tool_8982",
+          "toolbench_tool_5709"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_12120",
+          "toolACE_tool_4283"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_10479",
+          "toolbench_tool_774",
+          "toolbench_tool_12676",
+          "toolbench_tool_10483"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_10483",
+          "toolbench_tool_10073",
+          "toolbench_tool_5709",
+          "toolbench_tool_8982"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_10073",
+          "toolbench_tool_10483",
+          "toolbench_tool_861",
+          "toolLens_tool_111"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.55,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_10483",
+          "toolbench_tool_10073",
+          "toolACE_tool_485",
+          "reversechain_tool_662"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.75,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_774",
+          "toolACE_tool_4979",
+          "toolACE_tool_5280",
+          "toolbench_tool_10479"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.65,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_774",
+          "toolbench_tool_1176",
+          "toolbench_tool_5774",
+          "toolbench_tool_8638"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.7,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_774",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_12676"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_1011",
+      "query": "I'm organizing a movie trivia night for my family. Can you give me the genre names and IDs for movies? Also, provide me with the basic information about a specific cast member, including their name, profession, birth and death years, and best titles.",
+      "gold_size": 2,
+      "true_catalog": "3",
+      "matched_catalog": "3",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.75,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolACE_tool_4026",
+          "toolbench_tool_781",
+          "toolACE_tool_4283"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.5,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_774",
+          "toolbench_tool_781",
+          "toolbench_tool_780"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.75,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_774",
+          "toolACE_tool_4026",
+          "toolbench_tool_778",
+          "toolACE_tool_9407"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.8,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_774",
+          "toolACE_tool_4026",
+          "toolbench_tool_781"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.3065735963827292,
+        "reward": 0.4,
+        "tools": [
+          "apigen_tool_12",
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_2539",
+          "toolbench_tool_5968"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.1,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolACE_tool_4026",
+          "webtools_tmdb_tool_41",
+          "reversechain_tool_156"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.9,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_774",
+          "toolbench_tool_8638",
+          "toolbench_tool_2539",
+          "toolACE_tool_4026"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.9,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_774",
+          "toolbench_tool_8638",
+          "toolACE_tool_4026",
+          "toolbench_tool_2539"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.9,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_774",
+          "toolACE_tool_4026",
+          "toolbench_tool_8638",
+          "toolbench_tool_2539"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_1075",
+      "query": "I'm a history buff and I'm interested in watching historical films. Can you recommend some acclaimed historical movies available on streaming platforms in the US? Also, provide the runtime and IMDb ratings for these movies.",
+      "gold_size": 3,
+      "true_catalog": "3",
+      "matched_catalog": "3",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolACE_tool_9407",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolACE_tool_4283"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolACE_tool_4283",
+          "toolbench_tool_12120"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolACE_tool_12866",
+          "toolbench_tool_10479",
+          "toolbench_tool_774",
+          "toolbench_tool_12882"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolACE_tool_9407",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolACE_tool_4283"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.20210734650054757,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_13292",
+          "toolACE_tool_10602",
+          "toolbench_tool_7502",
+          "toolbench_tool_781",
+          "toolbench_tool_861"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolACE_tool_9407",
+          "toolbench_tool_10479",
+          "toolbench_tool_6626",
+          "toolACE_tool_485"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolACE_tool_9407",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolACE_tool_4283"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_9407",
+          "toolACE_tool_12866",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolACE_tool_4283"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolACE_tool_9407",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolACE_tool_4283"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_151",
+      "query": "I'm organizing a movie-themed party and I need to gather all the available movies and their showtimes at Cinemas NOS. Can you provide me with the sessions for all the movies? Additionally, I would like to get more information about a specific movie with the IMDb id 'tt6105098' to create a movie trivia game.",
+      "gold_size": 2,
+      "true_catalog": "3",
+      "matched_catalog": "3",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_4726",
+          "toolbench_tool_4725",
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_777"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_4726",
+          "toolbench_tool_4725",
+          "toolbench_tool_7507",
+          "toolLens_tool_149",
+          "toolbench_tool_778"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.8772153153380493,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_4726",
+          "toolLens_tool_149",
+          "toolbench_tool_5774",
+          "toolbench_tool_4725",
+          "toolACE_tool_9407"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_4726",
+          "toolbench_tool_4725",
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_780"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.9197207891481876,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_4725",
+          "toolbench_tool_2539",
+          "toolbench_tool_4726",
+          "toolbench_tool_13292",
+          "toolbench_tool_3352"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_4725",
+          "toolbench_tool_4726",
+          "toolACE_tool_10184",
+          "toolLens_tool_149",
+          "reversechain_tool_319"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.75,
+        "tools": [
+          "toolbench_tool_4726",
+          "toolbench_tool_4725",
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_781"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_4726",
+          "toolbench_tool_4725",
+          "toolbench_tool_7507",
+          "toolLens_tool_149",
+          "toolbench_tool_778"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.75,
+        "tools": [
+          "toolbench_tool_4726",
+          "toolbench_tool_4725",
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_781"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_1025",
+      "query": "I'm planning a weekend getaway with my family and we want to watch some movies during our trip. Can you recommend some popular movies that are available for streaming in Australia? Also, provide us with the streaming sources where we can watch these movies.",
+      "gold_size": 3,
+      "true_catalog": "3",
+      "matched_catalog": "3",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_6626",
+          "toolbench_tool_7501",
+          "toolbench_tool_7502",
+          "toolbench_tool_7499"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.15,
+        "tools": [
+          "toolbench_tool_12882",
+          "toolbench_tool_4522",
+          "toolbench_tool_4726",
+          "toolbench_tool_768",
+          "toolbench_tool_764"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.2960819109658652,
+        "reward": 0.55,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_12882",
+          "toolbench_tool_7502",
+          "toolbench_tool_10479",
+          "toolbench_tool_6626"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.65,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_7502",
+          "toolbench_tool_10479",
+          "toolbench_tool_7501",
+          "toolbench_tool_6626"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.18154179253735267,
+        "reward": 0.65,
+        "tools": [
+          "toolbench_tool_4522",
+          "toolbench_tool_6626",
+          "toolbench_tool_9658",
+          "toolbench_tool_861",
+          "toolbench_tool_7505"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_6626",
+          "toolbench_tool_7501",
+          "toolbench_tool_7502",
+          "toolbench_tool_7499"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.85,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_7502",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_7504"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.65,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_6626",
+          "toolbench_tool_7502",
+          "toolbench_tool_7501",
+          "toolbench_tool_10479"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.2960819109658652,
+        "reward": 0.82,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_12882",
+          "toolbench_tool_7502",
+          "toolbench_tool_10479",
+          "toolACE_tool_9407"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_962",
+      "query": "I'm a filmmaker and I'm looking for inspiration for my next project. Can you give me a list of popular movies from the year 2020? I would also like to know the movie aliases and images for a specific movie with the ID tt1375666. Additionally, I'm interested in the TV series seasons and similar TV shows related to this movie.",
+      "gold_size": 5,
+      "true_catalog": "3",
+      "matched_catalog": "3",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.20000000000000004,
+        "recall": 0.2,
+        "ndcg": 0.13120507751234178,
+        "reward": 0.2,
+        "tools": [
+          "toolbench_tool_8982",
+          "toolbench_tool_10483",
+          "toolbench_tool_764",
+          "toolACE_tool_10184",
+          "toolbench_tool_791"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.0,
+        "tools": [
+          "toolbench_tool_8982",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_12120",
+          "toolACE_tool_4283"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.0,
+        "tools": [
+          "toolbench_tool_8982",
+          "toolACE_tool_12866",
+          "toolbench_tool_10479",
+          "toolACE_tool_9407",
+          "toolLens_tool_149"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolbench_tool_8982",
+          "toolbench_tool_10479",
+          "toolACE_tool_4283",
+          "toolACE_tool_12866",
+          "toolbench_tool_780"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.6,
+        "recall": 0.6,
+        "ndcg": 0.6548086577531307,
+        "reward": 0.6,
+        "tools": [
+          "toolbench_tool_792",
+          "toolbench_tool_13292",
+          "toolbench_tool_793",
+          "toolbench_tool_791",
+          "toolACE_tool_4283"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolbench_tool_8982",
+          "toolbench_tool_10483",
+          "toolACE_tool_12866",
+          "toolbench_tool_10479",
+          "toolACE_tool_4283"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_8982",
+          "toolbench_tool_10483",
+          "toolbench_tool_764",
+          "toolbench_tool_10073",
+          "toolACE_tool_10184"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_8982",
+          "toolbench_tool_10483",
+          "toolbench_tool_764",
+          "toolbench_tool_10073",
+          "toolACE_tool_10184"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_8982",
+          "toolbench_tool_10483",
+          "toolbench_tool_764",
+          "toolbench_tool_10073",
+          "toolACE_tool_10184"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_1019",
+      "query": "I'm hosting a company movie night and we want to watch a sci-fi movie. Can you suggest a popular sci-fi movie available for streaming in the US? Also, provide the streaming sources for the movie 'Inception'.",
+      "gold_size": 2,
+      "true_catalog": "3",
+      "matched_catalog": "3",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_4522",
+          "toolbench_tool_11841",
+          "toolbench_tool_12882",
+          "toolbench_tool_6626",
+          "toolACE_tool_12920"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_12882",
+          "toolbench_tool_4522",
+          "toolbench_tool_4726",
+          "toolbench_tool_4523",
+          "toolbench_tool_783"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_12882",
+          "toolACE_tool_9407",
+          "toolbench_tool_10479",
+          "toolbench_tool_4522",
+          "toolbench_tool_7502"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.87,
+        "tools": [
+          "toolbench_tool_4522",
+          "toolbench_tool_12882",
+          "toolbench_tool_11841",
+          "toolACE_tool_9407",
+          "toolbench_tool_783"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_11547",
+          "toolbench_tool_4522",
+          "reversechain_tool_319",
+          "reversechain_tool_25",
+          "toolbench_tool_3352"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_4522",
+          "toolbench_tool_6626",
+          "toolACE_tool_12920",
+          "toolACE_tool_12866",
+          "toolbench_tool_10479"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.85,
+        "tools": [
+          "toolbench_tool_4522",
+          "toolbench_tool_783",
+          "toolbench_tool_11841",
+          "toolbench_tool_780",
+          "toolbench_tool_10493"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.82,
+        "tools": [
+          "toolbench_tool_4522",
+          "toolbench_tool_6626",
+          "toolACE_tool_12920",
+          "toolbench_tool_11841",
+          "toolACE_tool_12866"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.87,
+        "tools": [
+          "toolbench_tool_4522",
+          "toolbench_tool_12882",
+          "toolbench_tool_11841",
+          "toolACE_tool_9407",
+          "toolbench_tool_783"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_761",
+      "query": "I'm organizing a movie night with my friends and we want to explore the world of cinema. Can you provide us with the monthly top 100 movies torrents? Also, recommend some popular TV shows that we can watch. Additionally, fetch the details of the cast members for the movies and TV shows.",
+      "gold_size": 3,
+      "true_catalog": "2",
+      "matched_catalog": "3",
+      "match_success": false,
+      "decode_default": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.6,
+        "tools": [
+          "toolbench_tool_7511",
+          "toolbench_tool_7510",
+          "toolbench_tool_7507",
+          "toolbench_tool_10479",
+          "toolbench_tool_10483"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.68,
+        "tools": [
+          "toolbench_tool_7511",
+          "toolbench_tool_7510",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_12120"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7039180890341347,
+        "reward": 0.55,
+        "tools": [
+          "toolbench_tool_7511",
+          "toolbench_tool_10479",
+          "toolbench_tool_7510",
+          "toolbench_tool_7507",
+          "toolACE_tool_9407"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_7511",
+          "toolbench_tool_7510",
+          "toolbench_tool_10479",
+          "toolbench_tool_7507",
+          "toolbench_tool_780"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_7510",
+          "toolbench_tool_7511",
+          "toolbench_tool_791",
+          "toolbench_tool_798",
+          "toolbench_tool_796"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.6,
+        "tools": [
+          "toolbench_tool_7511",
+          "toolbench_tool_7510",
+          "toolbench_tool_7507",
+          "toolbench_tool_10479",
+          "toolbench_tool_10483"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_7511",
+          "toolbench_tool_7510",
+          "toolbench_tool_7507",
+          "toolbench_tool_10479",
+          "toolbench_tool_780"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_7511",
+          "toolbench_tool_7510",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_7507"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_7511",
+          "toolbench_tool_7510",
+          "toolbench_tool_10479",
+          "toolbench_tool_7507",
+          "toolbench_tool_780"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_1012",
+      "query": "I want to explore different genres of movies. Fetch the genre names and IDs for me. Also, provide me with the basic information about a specific cast member, including their name, profession, birth and death years, and best titles.",
+      "gold_size": 2,
+      "true_catalog": "3",
+      "matched_catalog": "3",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.5,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_8982",
+          "toolACE_tool_4026",
+          "webtools_tmdb_tool_41"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.5,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_774",
+          "toolbench_tool_780",
+          "toolbench_tool_781"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.7,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_774",
+          "toolACE_tool_4026",
+          "toolACE_tool_9407",
+          "reversechain_tool_156"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.8,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_774",
+          "toolACE_tool_4026",
+          "toolbench_tool_8982"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.5706417189553201,
+        "reward": 0.75,
+        "tools": [
+          "apigen_tool_12",
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_13539",
+          "toolbench_tool_4527"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.23719771276929622,
+        "reward": 0.5,
+        "tools": [
+          "toolLens_tool_149",
+          "webtools_tmdb_tool_41",
+          "toolACE_tool_4026",
+          "toolbench_tool_8982",
+          "toolbench_tool_778"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.85,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_8982",
+          "webtools_tmdb_tool_41",
+          "toolbench_tool_781"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.85,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_774",
+          "toolbench_tool_8638",
+          "toolACE_tool_4026",
+          "toolbench_tool_4726"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.85,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_8982",
+          "webtools_tmdb_tool_41",
+          "toolbench_tool_781"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_787",
+      "query": "I'm planning a family movie night and I want to watch some classic films. Can you suggest some iconic movies available on YouTube? Also, find a YouTube playlist of movie soundtracks. Additionally, provide the latest versions of C++, Objective-C, and Scala programming languages for my cousin who is a software developer.",
+      "gold_size": 5,
+      "true_catalog": "2",
+      "matched_catalog": "3",
+      "match_success": false,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolbench_tool_8982",
+          "toolACE_tool_4026",
+          "reversechain_tool_156",
+          "toolACE_tool_5797",
+          "toolACE_tool_12920"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolACE_tool_4026",
+          "toolbench_tool_774",
+          "toolbench_tool_765",
+          "toolLens_tool_149",
+          "toolbench_tool_778"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolACE_tool_4026",
+          "toolbench_tool_774",
+          "toolACE_tool_9407",
+          "reversechain_tool_156",
+          "toolACE_tool_12866"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolACE_tool_4026",
+          "reversechain_tool_156",
+          "toolbench_tool_8982",
+          "toolbench_tool_774",
+          "toolbench_tool_781"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.4000000000000001,
+        "recall": 0.4,
+        "ndcg": 0.4703652827859579,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_9473",
+          "toolbench_tool_8988",
+          "toolbench_tool_9504",
+          "toolACE_tool_876",
+          "toolbench_tool_9550"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolACE_tool_5797",
+          "toolbench_tool_8982",
+          "toolACE_tool_12920",
+          "reversechain_tool_156",
+          "toolACE_tool_4026"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolACE_tool_5797",
+          "toolbench_tool_8982",
+          "toolbench_tool_781",
+          "toolbench_tool_780",
+          "toolACE_tool_4283"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_4026",
+          "toolbench_tool_8982",
+          "toolbench_tool_781",
+          "toolbench_tool_780",
+          "toolACE_tool_4283"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_8982",
+          "toolACE_tool_4026",
+          "toolbench_tool_781",
+          "toolbench_tool_780",
+          "toolACE_tool_4283"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_965",
+      "query": "I'm organizing a company event and I want to showcase some popular videos. Can you provide me with insights about trending videos and also search for videos relevant to our industry? It would be great if you could give me the titles, descriptions, and thumbnails of the trending videos as well as the videos related to our industry.",
+      "gold_size": 2,
+      "true_catalog": "2",
+      "matched_catalog": "2",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.9197207891481876,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_825",
+          "toolbench_tool_826",
+          "toolbench_tool_827",
+          "apigen_tool_3279",
+          "toolbench_tool_4094"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.65,
+        "tools": [
+          "toolbench_tool_1044",
+          "toolbench_tool_1042",
+          "toolbench_tool_5776",
+          "toolbench_tool_827",
+          "toolbench_tool_826"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_9428",
+          "toolbench_tool_1044",
+          "toolbench_tool_5776",
+          "toolbench_tool_2893",
+          "toolbench_tool_4527"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_4094",
+          "toolbench_tool_1044",
+          "toolbench_tool_5776",
+          "toolbench_tool_827",
+          "toolbench_tool_826"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.4,
+        "tools": [
+          "apigen_tool_1364",
+          "apigen_tool_3279",
+          "toolbench_tool_826",
+          "toolbench_tool_825",
+          "toolbench_tool_4094"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_825",
+          "apigen_tool_3279",
+          "toolbench_tool_826",
+          "toolACE_tool_14856",
+          "toolACE_tool_11378"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.9197207891481876,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_825",
+          "toolbench_tool_826",
+          "toolbench_tool_827",
+          "apigen_tool_3279",
+          "toolACE_tool_14856"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.8772153153380493,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_825",
+          "toolbench_tool_826",
+          "apigen_tool_3279",
+          "toolbench_tool_827",
+          "toolACE_tool_14856"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.8772153153380493,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_825",
+          "toolbench_tool_826",
+          "apigen_tool_3279",
+          "toolbench_tool_827",
+          "toolACE_tool_14856"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_1035",
+      "query": "I'm a filmmaker working on a documentary and I need some information. Get me the category info for 'documentaries', the channel info for 'National Geographic', and the comments for the video with ID '345678'. Also, find a website where I can stream or download a documentary with the ID 'UxxajLWwzqY'.",
+      "gold_size": 4,
+      "true_catalog": "2",
+      "matched_catalog": "2",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_781",
+          "toolbench_tool_780",
+          "reversechain_tool_156"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolACE_tool_14",
+          "toolbench_tool_781",
+          "toolbench_tool_780"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "apigen_tool_887",
+          "toolbench_tool_9428",
+          "toolACE_tool_12356",
+          "toolbench_tool_1044",
+          "toolbench_tool_1068"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolbench_tool_781",
+          "toolbench_tool_780",
+          "toolbench_tool_1068"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.22222222222222224,
+        "recall": 0.25,
+        "ndcg": 0.24630238874073,
+        "reward": 0.225,
+        "tools": [
+          "toolbench_tool_13292",
+          "toolbench_tool_9466",
+          "toolACE_tool_8279",
+          "rotbench_tool_322",
+          "toolbench_tool_7255"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolbench_tool_781",
+          "toolLens_tool_149",
+          "reversechain_tool_156",
+          "toolbench_tool_778",
+          "toolbench_tool_826"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_1068",
+          "toolbench_tool_656",
+          "toolACE_tool_10275",
+          "toolbench_tool_1042"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_1068",
+          "toolbench_tool_1042",
+          "toolbench_tool_1044",
+          "toolbench_tool_656"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_1068",
+          "toolbench_tool_656",
+          "toolACE_tool_10275",
+          "toolbench_tool_1042"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_319",
+      "query": "I am a filmmaker and I want to analyze the popularity of different movie trailers on YouTube. Can you provide a list of trailers for recent movies and their details and ratings? Additionally, I would like to search for trailers using the query 'sci-fi' and include the results in the analysis.",
+      "gold_size": 3,
+      "true_catalog": "2",
+      "matched_catalog": "2",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_8982",
+          "toolACE_tool_9407",
+          "toolbench_tool_780",
+          "toolbench_tool_777"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_12120",
+          "toolbench_tool_5026",
+          "toolbench_tool_7314"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_9428",
+          "toolbench_tool_2893",
+          "toolbench_tool_1044",
+          "toolbench_tool_774",
+          "toolbench_tool_4527"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolACE_tool_9407",
+          "toolACE_tool_11833",
+          "toolbench_tool_780",
+          "toolbench_tool_8982"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolbench_tool_13292",
+          "toolbench_tool_767",
+          "toolbench_tool_861",
+          "toolLens_tool_111",
+          "toolbench_tool_4139"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_8982",
+          "toolbench_tool_10073",
+          "toolACE_tool_9407",
+          "toolbench_tool_3352"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_9428",
+          "toolbench_tool_2893",
+          "toolbench_tool_4527",
+          "toolbench_tool_774",
+          "toolbench_tool_1044"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_9428",
+          "toolbench_tool_2893",
+          "toolbench_tool_1044",
+          "toolbench_tool_774",
+          "toolbench_tool_4527"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_9428",
+          "toolbench_tool_2893",
+          "toolbench_tool_1044",
+          "toolbench_tool_774",
+          "toolbench_tool_4527"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_477",
+      "query": "I'm a fan of documentaries and I want to learn about various topics. Can you suggest some popular documentary shows and provide the episodes' details? Also, find trending images related to documentaries.",
+      "gold_size": 2,
+      "true_catalog": "2",
+      "matched_catalog": "2",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolLens_tool_149",
+          "toolACE_tool_7636",
+          "toolbench_tool_10479",
+          "toolACE_tool_4283",
+          "toolbench_tool_781"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolbench_tool_10478",
+          "toolbench_tool_798",
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolACE_tool_14"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolbench_tool_10478",
+          "toolbench_tool_4527",
+          "ultraTool_tool_286",
+          "toolLens_tool_149",
+          "toolbench_tool_1044"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_10478",
+          "toolbench_tool_10479",
+          "toolbench_tool_798",
+          "toolACE_tool_7636"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.0,
+        "tools": [
+          "toolbench_tool_13292",
+          "toolACE_tool_16033",
+          "toolbench_tool_3352",
+          "toolbench_tool_7851",
+          "toolbench_tool_11006"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolACE_tool_7636",
+          "toolLens_tool_149",
+          "toolACE_tool_12920",
+          "toolbench_tool_781",
+          "toolACE_tool_12866"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_10478",
+          "toolbench_tool_798",
+          "toolbench_tool_797",
+          "toolbench_tool_791",
+          "toolbench_tool_10493"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.35,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolACE_tool_14",
+          "toolbench_tool_781",
+          "toolbench_tool_780"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.35,
+        "tools": [
+          "toolLens_tool_149",
+          "toolbench_tool_778",
+          "toolACE_tool_14",
+          "toolbench_tool_781",
+          "toolbench_tool_780"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_292",
+      "query": "I want to learn about the history of art through YouTube videos. Can you provide me with a curated playlist of videos that cover different art movements, famous artists, and their iconic works?",
+      "gold_size": 2,
+      "true_catalog": "2",
+      "matched_catalog": "2",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.6,
+        "tools": [
+          "toolACE_tool_11378",
+          "apigen_tool_1364",
+          "toolbench_tool_290",
+          "toolbench_tool_656",
+          "toolACE_tool_8840"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolbench_tool_9428",
+          "toolbench_tool_1044",
+          "toolbench_tool_1042",
+          "toolbench_tool_1043",
+          "toolbench_tool_1040"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolbench_tool_9428",
+          "toolbench_tool_1044",
+          "toolACE_tool_12356",
+          "toolACE_tool_7127",
+          "toolACE_tool_5609"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolbench_tool_9428",
+          "toolbench_tool_1044",
+          "toolACE_tool_12356",
+          "toolbench_tool_1042",
+          "toolbench_tool_1040"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolbench_tool_8994",
+          "apigen_tool_1364",
+          "toolACE_tool_10275",
+          "toolACE_tool_12456",
+          "toolbench_tool_8331"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_290",
+          "apigen_tool_1364",
+          "toolACE_tool_11378",
+          "toolACE_tool_8840",
+          "toolbench_tool_11930"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.68,
+        "tools": [
+          "toolbench_tool_290",
+          "apigen_tool_1364",
+          "toolACE_tool_11378",
+          "toolbench_tool_261",
+          "toolACE_tool_8840"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.68,
+        "tools": [
+          "toolbench_tool_290",
+          "apigen_tool_1364",
+          "toolACE_tool_11378",
+          "toolACE_tool_8840",
+          "toolbench_tool_261"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.68,
+        "tools": [
+          "toolbench_tool_290",
+          "apigen_tool_1364",
+          "toolACE_tool_11378",
+          "toolbench_tool_261",
+          "toolACE_tool_8840"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_1077",
+      "query": "I'm a film enthusiast and I want to explore movies from different regions. Can you recommend some movies from India and the United States? Additionally, I would like to search for movies and TV shows related to 'The Godfather' using the 'search' endpoint.",
+      "gold_size": 2,
+      "true_catalog": "2",
+      "matched_catalog": "3",
+      "match_success": false,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_8982",
+          "reversechain_tool_236",
+          "toolbench_tool_11841",
+          "toolACE_tool_4283"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "reversechain_tool_236",
+          "toolACE_tool_12866",
+          "toolbench_tool_774",
+          "toolbench_tool_8982",
+          "toolbench_tool_10479"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "reversechain_tool_236",
+          "toolbench_tool_774",
+          "toolbench_tool_8982",
+          "toolbench_tool_11841"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "reversechain_tool_236",
+          "toolbench_tool_8982",
+          "toolbench_tool_774",
+          "toolbench_tool_11841"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_861",
+          "toolACE_tool_4283",
+          "toolLens_tool_111",
+          "toolbench_tool_13292",
+          "toolbench_tool_4501"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_8982",
+          "toolACE_tool_10184",
+          "reversechain_tool_236",
+          "toolbench_tool_11841"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_8982",
+          "reversechain_tool_236",
+          "toolbench_tool_11841",
+          "toolACE_tool_4283"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.23719771276929622,
+        "reward": 0.65,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_8982",
+          "toolbench_tool_8987",
+          "toolbench_tool_10479",
+          "toolbench_tool_780"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.23719771276929622,
+        "reward": 0.65,
+        "tools": [
+          "toolACE_tool_12866",
+          "toolbench_tool_8982",
+          "toolbench_tool_8987",
+          "toolbench_tool_10479",
+          "toolbench_tool_780"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_829",
+      "query": "I'm a video enthusiast and I want to stay updated on the latest trends. Can you provide me with a list of currently trending videos? Additionally, it would be helpful if I could search for videos related to a specific query and get insights about a video, including related videos.",
+      "gold_size": 3,
+      "true_catalog": "2",
+      "matched_catalog": "2",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.85,
+        "tools": [
+          "toolbench_tool_825",
+          "toolbench_tool_826",
+          "toolbench_tool_827",
+          "toolbench_tool_10479",
+          "apigen_tool_3279"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.20210734650054757,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_2893",
+          "toolbench_tool_9428",
+          "toolbench_tool_5776",
+          "toolbench_tool_827",
+          "toolbench_tool_1044"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolbench_tool_5776",
+          "toolbench_tool_9428",
+          "toolbench_tool_2893",
+          "toolbench_tool_4527",
+          "toolbench_tool_1044"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.18154179253735267,
+        "reward": 0.42,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_4094",
+          "toolbench_tool_2893",
+          "toolbench_tool_5776",
+          "toolbench_tool_825"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7039180890341347,
+        "reward": 0.83,
+        "tools": [
+          "toolbench_tool_826",
+          "apigen_tool_1364",
+          "toolbench_tool_825",
+          "toolACE_tool_11378",
+          "toolbench_tool_13292"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.6713860725233041,
+        "reward": 0.85,
+        "tools": [
+          "toolbench_tool_825",
+          "toolbench_tool_10479",
+          "apigen_tool_3279",
+          "toolbench_tool_826",
+          "toolACE_tool_11378"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.85,
+        "tools": [
+          "toolbench_tool_825",
+          "toolbench_tool_826",
+          "toolbench_tool_827",
+          "toolbench_tool_10479",
+          "apigen_tool_3279"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.9674679834891693,
+        "reward": 0.87,
+        "tools": [
+          "toolbench_tool_825",
+          "toolbench_tool_826",
+          "toolbench_tool_5776",
+          "toolbench_tool_827",
+          "toolbench_tool_1044"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.85,
+        "tools": [
+          "toolbench_tool_825",
+          "toolbench_tool_826",
+          "toolbench_tool_827",
+          "toolbench_tool_5776",
+          "toolbench_tool_10479"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_610",
+      "query": "I want to create a movie recommendation website and I need to find movies similar to 'Titanic' for our users. Can you suggest some similar movies and provide the movie ID for 'Titanic'? Additionally, it would be great to include the latest anime releases on our website.",
+      "gold_size": 3,
+      "true_catalog": "2",
+      "matched_catalog": "3",
+      "match_success": false,
+      "decode_default": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.55,
+        "tools": [
+          "toolbench_tool_764",
+          "toolbench_tool_765",
+          "toolbench_tool_8982",
+          "reversechain_tool_319",
+          "reversechain_tool_156"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.65,
+        "tools": [
+          "toolbench_tool_764",
+          "toolbench_tool_765",
+          "toolbench_tool_774",
+          "toolbench_tool_768",
+          "toolbench_tool_771"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_764",
+          "toolbench_tool_765",
+          "toolbench_tool_774",
+          "toolbench_tool_2539",
+          "reversechain_tool_156"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.6,
+        "tools": [
+          "toolbench_tool_764",
+          "toolbench_tool_765",
+          "toolbench_tool_8982",
+          "reversechain_tool_156",
+          "toolbench_tool_774"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.55,
+        "tools": [
+          "toolbench_tool_764",
+          "toolbench_tool_765",
+          "toolbench_tool_780",
+          "toolbench_tool_3352",
+          "toolbench_tool_3350"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.6508205185601091,
+        "reward": 0.55,
+        "tools": [
+          "toolbench_tool_764",
+          "reversechain_tool_319",
+          "reversechain_tool_156",
+          "toolbench_tool_8982",
+          "toolbench_tool_765"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7039180890341347,
+        "reward": 0.75,
+        "tools": [
+          "toolbench_tool_765",
+          "toolbench_tool_774",
+          "toolbench_tool_764",
+          "toolbench_tool_2539",
+          "toolbench_tool_768"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7039180890341347,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_764",
+          "toolbench_tool_8982",
+          "toolbench_tool_765",
+          "toolbench_tool_777",
+          "toolbench_tool_780"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_764",
+          "toolbench_tool_765",
+          "reversechain_tool_156",
+          "toolbench_tool_774",
+          "toolbench_tool_2539"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_232",
+      "query": "I am a researcher studying the impact of climate change on different regions. Can you search for news articles about climate change using the keyword 'climate change' in English? Additionally, provide me with the latest news articles in Spanish and French.",
+      "gold_size": 2,
+      "true_catalog": "5",
+      "matched_catalog": "5",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "apigen_tool_1687",
+          "toolbench_tool_3242",
+          "toolbench_tool_3241",
+          "toolbench_tool_6592",
+          "toolbench_tool_6591"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_3241",
+          "toolbench_tool_3242",
+          "toolbench_tool_6591",
+          "toolbench_tool_6592",
+          "toolbench_tool_3293"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_3241",
+          "toolbench_tool_6591",
+          "toolbench_tool_3242",
+          "toolbench_tool_3293",
+          "toolACE_tool_7004"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "apigen_tool_1687",
+          "toolbench_tool_3241",
+          "toolbench_tool_3242",
+          "toolbench_tool_6592",
+          "toolbench_tool_6591"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_6592",
+          "apigen_tool_1687",
+          "toolbench_tool_3208",
+          "toolbench_tool_3241",
+          "toolbench_tool_3242"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.35,
+        "tools": [
+          "apigen_tool_1687",
+          "toolbench_tool_6592",
+          "toolbench_tool_3242",
+          "toolbench_tool_3241",
+          "toolbench_tool_3208"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.55,
+        "tools": [
+          "toolbench_tool_3241",
+          "toolbench_tool_3242",
+          "toolbench_tool_6591",
+          "toolbench_tool_3293",
+          "toolACE_tool_322"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_3241",
+          "toolbench_tool_3242",
+          "toolbench_tool_6591",
+          "toolbench_tool_6592",
+          "toolbench_tool_3293"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_3241",
+          "toolbench_tool_3242",
+          "toolbench_tool_6591",
+          "toolbench_tool_3293",
+          "toolACE_tool_322"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_419",
+      "query": "I'm a book blogger and I want to write a post about books by a specific author. Can you help me search for books by the author's name and also provide me with interesting space news to engage my readers?",
+      "gold_size": 2,
+      "true_catalog": "5",
+      "matched_catalog": "5",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.4,
+        "tools": [
+          "toolACE_tool_15224",
+          "reversechain_tool_79",
+          "reversechain_tool_705",
+          "toolbench_tool_6438",
+          "toolACE_tool_16006"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.23719771276929622,
+        "reward": 0.45,
+        "tools": [
+          "reversechain_tool_79",
+          "toolACE_tool_15224",
+          "toolACE_tool_9962",
+          "reversechain_tool_705",
+          "toolbench_tool_6438"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "reversechain_tool_79",
+          "reversechain_tool_705",
+          "toolbench_tool_3293",
+          "toolACE_tool_9962",
+          "ultraTool_tool_286"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.45,
+        "tools": [
+          "toolACE_tool_15224",
+          "reversechain_tool_79",
+          "reversechain_tool_705",
+          "toolbench_tool_6438",
+          "toolACE_tool_9962"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.3065735963827292,
+        "reward": 0.35,
+        "tools": [
+          "toolACE_tool_15224",
+          "reversechain_tool_79",
+          "toolbench_tool_6438",
+          "toolbench_tool_13292",
+          "toolbench_tool_8350"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.3065735963827292,
+        "reward": 0.4,
+        "tools": [
+          "toolACE_tool_15224",
+          "reversechain_tool_79",
+          "toolbench_tool_6438",
+          "reversechain_tool_705",
+          "toolACE_tool_16006"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.45,
+        "tools": [
+          "toolACE_tool_15224",
+          "reversechain_tool_79",
+          "reversechain_tool_705",
+          "toolbench_tool_6438",
+          "toolACE_tool_9962"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "reversechain_tool_79",
+          "reversechain_tool_705",
+          "toolbench_tool_3293",
+          "toolACE_tool_9962",
+          "toolACE_tool_15224"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.45,
+        "tools": [
+          "toolACE_tool_15224",
+          "reversechain_tool_79",
+          "reversechain_tool_705",
+          "toolbench_tool_6438",
+          "toolACE_tool_9962"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_159",
+      "query": "I'm a sports journalist working on an article about baseball leagues. Can you provide me with information on all the baseball leagues, including their names, abbreviations, season dates, and number of teams? It would be great to have the team affiliates and venues for each league as well.",
+      "gold_size": 3,
+      "true_catalog": "5",
+      "matched_catalog": "5",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.9674679834891693,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_5862",
+          "toolbench_tool_5863",
+          "toolbench_tool_1290",
+          "toolbench_tool_5860",
+          "toolACE_tool_6454"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.7328286204777911,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_1290",
+          "toolbench_tool_5862",
+          "toolbench_tool_5860",
+          "toolbench_tool_5863",
+          "toolbench_tool_1287"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.0,
+        "tools": [
+          "toolbench_tool_1290",
+          "toolACE_tool_7842",
+          "toolbench_tool_1388",
+          "toolbench_tool_10719",
+          "toolbench_tool_13206"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_5862",
+          "toolbench_tool_5863",
+          "toolbench_tool_5860",
+          "toolbench_tool_1290",
+          "toolbench_tool_1287"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_5862",
+          "toolbench_tool_5860",
+          "toolbench_tool_5863",
+          "toolbench_tool_1641",
+          "apigen_tool_3544"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7039180890341347,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_5862",
+          "toolACE_tool_6454",
+          "toolbench_tool_5863",
+          "toolbench_tool_1290",
+          "toolACE_tool_8047"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.9674679834891693,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_5862",
+          "toolbench_tool_5863",
+          "toolbench_tool_1290",
+          "toolbench_tool_5860",
+          "toolACE_tool_6454"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.9469024295259745,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_5862",
+          "toolbench_tool_5863",
+          "toolbench_tool_1290",
+          "toolACE_tool_6454",
+          "toolbench_tool_5860"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.9469024295259745,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_5862",
+          "toolbench_tool_5863",
+          "toolbench_tool_1290",
+          "toolACE_tool_6454",
+          "toolbench_tool_5860"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_710",
+      "query": "I want to create a movie-themed website and I need some content. Can you fetch the titles, directors, ratings, and release years of the top 100 movies according to IMDb? Additionally, provide me with the most recent movies news from top sources to keep the website up to date.",
+      "gold_size": 2,
+      "true_catalog": "5",
+      "matched_catalog": "3",
+      "match_success": false,
+      "decode_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.8503449055347546,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolACE_tool_4283",
+          "toolbench_tool_780",
+          "toolACE_tool_9407",
+          "toolbench_tool_10483"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_12120",
+          "toolACE_tool_4283",
+          "toolbench_tool_9658"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.55,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolACE_tool_9407",
+          "toolbench_tool_774",
+          "toolLens_tool_149",
+          "toolbench_tool_791"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolACE_tool_9407",
+          "toolACE_tool_4283",
+          "toolbench_tool_12120"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.9197207891481876,
+        "reward": 0.83,
+        "tools": [
+          "toolbench_tool_10483",
+          "toolbench_tool_3352",
+          "toolbench_tool_10479",
+          "toolbench_tool_7511",
+          "toolbench_tool_10073"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.9197207891481876,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolACE_tool_9407",
+          "toolbench_tool_10483",
+          "toolbench_tool_8982",
+          "reversechain_tool_662"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.9197207891481876,
+        "reward": 0.85,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolACE_tool_9407",
+          "toolbench_tool_10483",
+          "toolbench_tool_8982",
+          "toolbench_tool_10073"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolACE_tool_9407",
+          "toolbench_tool_774",
+          "toolLens_tool_149",
+          "toolbench_tool_2539"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.85,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_10483",
+          "toolbench_tool_10073",
+          "toolbench_tool_8982",
+          "toolACE_tool_9407"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_980",
+      "query": "Please give me the latest news articles from NTV.com.tr. I'm also interested in the current exchange rates for USD, EUR, and GBP. Additionally, could you provide me with the current fuel prices for gasoline, diesel, and LPG?",
+      "gold_size": 3,
+      "true_catalog": "5",
+      "matched_catalog": "5",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolbench_tool_2093",
+          "toolACE_tool_1025",
+          "toolACE_tool_15384",
+          "toolACE_tool_10602",
+          "toolbench_tool_2104"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolACE_tool_15384",
+          "toolbench_tool_2093",
+          "toolbench_tool_1857",
+          "toolACE_tool_1025",
+          "toolACE_tool_10602"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "ultraTool_tool_146",
+          "apigen_tool_1977",
+          "toolbench_tool_2893",
+          "toolbench_tool_3293",
+          "toolbench_tool_9428"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_2093",
+          "toolACE_tool_1025",
+          "toolACE_tool_15384",
+          "toolbench_tool_2104",
+          "toolbench_tool_2094"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "webtools_spotify_tool_25",
+          "toolbench_tool_13292",
+          "toolbench_tool_11483",
+          "toolACE_tool_7400",
+          "toolbench_tool_3352"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolbench_tool_2093",
+          "toolACE_tool_1025",
+          "toolACE_tool_15384",
+          "toolACE_tool_10602",
+          "toolbench_tool_2784"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.35,
+        "tools": [
+          "ultraTool_tool_146",
+          "apigen_tool_1977",
+          "apigen_tool_1859",
+          "rotbench_tool_388",
+          "toolbench_tool_2893"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "ultraTool_tool_146",
+          "toolACE_tool_15384",
+          "toolACE_tool_919",
+          "toolACE_tool_10602",
+          "apigen_tool_1977"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_2093",
+          "toolbench_tool_2094",
+          "toolbench_tool_1857",
+          "toolbench_tool_1860",
+          "toolbench_tool_2104"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_608",
+      "query": "I'm a huge fan of anime and I'm looking for the latest anime releases. Can you fetch me the information, including the anime ID, name, and image URL, for the latest anime? Additionally, I would like to read the most recent news about movies to broaden my entertainment knowledge.",
+      "gold_size": 2,
+      "true_catalog": "5",
+      "matched_catalog": "5",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_10484",
+          "toolbench_tool_10479",
+          "apigen_tool_1352",
+          "toolbench_tool_4583",
+          "toolbench_tool_4582"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_10484",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_4583",
+          "toolbench_tool_4582"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.2,
+        "tools": [
+          "apigen_tool_1352",
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_4527",
+          "toolbench_tool_10478"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_10484",
+          "toolbench_tool_10479",
+          "toolbench_tool_4583",
+          "toolbench_tool_4582",
+          "toolbench_tool_780"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_10484",
+          "toolACE_tool_1431",
+          "toolbench_tool_4583",
+          "apigen_tool_3268",
+          "toolbench_tool_13292"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.9197207891481876,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_10484",
+          "apigen_tool_1352",
+          "toolbench_tool_10479",
+          "toolbench_tool_781",
+          "toolACE_tool_1431"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6934264036172708,
+        "reward": 0.85,
+        "tools": [
+          "apigen_tool_1352",
+          "toolbench_tool_10479",
+          "toolbench_tool_10484",
+          "toolACE_tool_15601",
+          "toolACE_tool_1431"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6934264036172708,
+        "reward": 0.85,
+        "tools": [
+          "apigen_tool_1352",
+          "toolbench_tool_10479",
+          "toolbench_tool_10484",
+          "toolACE_tool_15601",
+          "toolbench_tool_4527"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_10484",
+          "toolbench_tool_10479",
+          "apigen_tool_1352",
+          "toolbench_tool_4583",
+          "toolbench_tool_4582"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_121",
+      "query": "I'm a fan of a specific baseball team and would like to see the media related to the team. Can you fetch the media content for the team with ID 3633? I'm particularly interested in images, videos, and highlights.",
+      "gold_size": 2,
+      "true_catalog": "5",
+      "matched_catalog": "5",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.8772153153380493,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_1287",
+          "toolACE_tool_5711",
+          "toolACE_tool_10523",
+          "toolbench_tool_1290",
+          "toolbench_tool_12285"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_1287",
+          "toolbench_tool_1290",
+          "toolbench_tool_1068",
+          "toolACE_tool_7585",
+          "toolACE_tool_7842"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_1290",
+          "toolbench_tool_1287",
+          "toolACE_tool_7842",
+          "toolbench_tool_1344",
+          "toolbench_tool_1068"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_1287",
+          "toolbench_tool_1290",
+          "toolACE_tool_5711",
+          "toolbench_tool_12285",
+          "toolACE_tool_10523"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_1287",
+          "toolbench_tool_1290",
+          "toolbench_tool_12285",
+          "toolACE_tool_3484",
+          "apigen_tool_328"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_1287",
+          "toolACE_tool_5711",
+          "toolACE_tool_10523",
+          "toolACE_tool_7585",
+          "toolbench_tool_12285"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_1287",
+          "toolbench_tool_1290",
+          "toolACE_tool_5711",
+          "toolACE_tool_7585",
+          "toolbench_tool_12285"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_1287",
+          "toolbench_tool_1290",
+          "toolbench_tool_1344",
+          "toolbench_tool_10860",
+          "toolbench_tool_1348"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_1287",
+          "toolbench_tool_1290",
+          "toolbench_tool_1344",
+          "toolbench_tool_10860",
+          "toolbench_tool_1348"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_441",
+      "query": "I'm a movie blogger and I'm looking for interesting movie trivia to share with my audience. Can you fetch some interesting facts about movies using the Movies details API? Additionally, could you provide me with sentiment analysis of an article about a classic movie using the News Sentiment API?",
+      "gold_size": 2,
+      "true_catalog": "5",
+      "matched_catalog": "3",
+      "match_success": false,
+      "decode_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_9658",
+          "toolbench_tool_780",
+          "toolACE_tool_4283",
+          "reversechain_tool_156"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.23719771276929622,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_12120",
+          "toolACE_tool_4283",
+          "toolbench_tool_9658"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.23719771276929622,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_10479",
+          "reversechain_tool_156",
+          "toolACE_tool_9407",
+          "toolbench_tool_2539",
+          "toolbench_tool_9658"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.3065735963827292,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_9658",
+          "toolACE_tool_4283",
+          "reversechain_tool_156"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_2539",
+          "toolbench_tool_3350",
+          "toolACE_tool_3550",
+          "apigen_tool_407",
+          "toolbench_tool_3352"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.23719771276929622,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_10479",
+          "reversechain_tool_156",
+          "toolbench_tool_3350",
+          "reversechain_tool_319",
+          "toolbench_tool_9658"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_10479",
+          "reversechain_tool_156",
+          "toolbench_tool_3350",
+          "toolbench_tool_9658",
+          "reversechain_tool_319"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_10479",
+          "toolbench_tool_780",
+          "toolbench_tool_12120",
+          "toolbench_tool_774",
+          "toolbench_tool_765"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.3065735963827292,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_10479",
+          "reversechain_tool_156",
+          "toolbench_tool_9658",
+          "toolACE_tool_9407",
+          "toolbench_tool_780"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_17",
+      "query": "My friend is writing a research paper on energy prices in Europe. Can you suggest some news sources that focus on this region? Additionally, it would be helpful to have access to all the articles related to energy prices from these sources.",
+      "gold_size": 3,
+      "true_catalog": "5",
+      "matched_catalog": "5",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.9674679834891693,
+        "reward": 0.75,
+        "tools": [
+          "toolbench_tool_3303",
+          "toolbench_tool_3302",
+          "toolACE_tool_7400",
+          "toolbench_tool_3305",
+          "toolACE_tool_15384"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_3303",
+          "toolbench_tool_3302",
+          "toolbench_tool_3305",
+          "toolbench_tool_3293",
+          "toolbench_tool_3292"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.20210734650054757,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_3293",
+          "toolbench_tool_3241",
+          "toolbench_tool_6591",
+          "toolbench_tool_3302",
+          "toolbench_tool_3292"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.7,
+        "tools": [
+          "toolbench_tool_3303",
+          "toolbench_tool_3302",
+          "toolbench_tool_3305",
+          "toolACE_tool_7400",
+          "toolbench_tool_3293"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.85,
+        "tools": [
+          "toolbench_tool_3305",
+          "toolbench_tool_3303",
+          "toolbench_tool_3302",
+          "toolbench_tool_8738",
+          "toolACE_tool_322"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.9674679834891693,
+        "reward": 0.75,
+        "tools": [
+          "toolbench_tool_3303",
+          "toolbench_tool_3302",
+          "toolACE_tool_7400",
+          "toolbench_tool_3305",
+          "toolACE_tool_15384"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.85,
+        "tools": [
+          "toolbench_tool_3303",
+          "toolbench_tool_3302",
+          "toolbench_tool_3305",
+          "toolACE_tool_7400",
+          "toolbench_tool_3242"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.9674679834891693,
+        "reward": 0.75,
+        "tools": [
+          "toolbench_tool_3303",
+          "toolbench_tool_3302",
+          "toolACE_tool_7400",
+          "toolbench_tool_3305",
+          "toolACE_tool_15384"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.75,
+        "tools": [
+          "toolbench_tool_3303",
+          "toolbench_tool_3302",
+          "toolbench_tool_3305",
+          "toolbench_tool_3293",
+          "toolbench_tool_9663"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_148",
+      "query": "I'm interested in social media news in Dutch. Can you give me the latest updates? Additionally, I would like to know what's happening on social media in Japanese. Please keep me informed.",
+      "gold_size": 2,
+      "true_catalog": "5",
+      "matched_catalog": "5",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_3260",
+          "toolbench_tool_3261",
+          "toolbench_tool_3259",
+          "toolACE_tool_8687",
+          "toolbench_tool_3258"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.9197207891481876,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_3260",
+          "toolbench_tool_3259",
+          "toolbench_tool_3261",
+          "toolbench_tool_3258",
+          "toolACE_tool_8687"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_3259",
+          "apigen_tool_195",
+          "toolbench_tool_3316",
+          "toolbench_tool_3260",
+          "toolbench_tool_3293"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_3260",
+          "toolbench_tool_3261",
+          "toolbench_tool_3259",
+          "toolbench_tool_3258",
+          "toolACE_tool_8687"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.8,
+        "tools": [
+          "toolbench_tool_3260",
+          "toolbench_tool_3261",
+          "toolbench_tool_3259",
+          "toolbench_tool_3262",
+          "toolbench_tool_3258"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.87,
+        "tools": [
+          "toolbench_tool_3260",
+          "toolbench_tool_3261",
+          "toolACE_tool_8687",
+          "toolbench_tool_3259",
+          "apigen_tool_195"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.8772153153380493,
+        "reward": 0.87,
+        "tools": [
+          "toolbench_tool_3260",
+          "toolbench_tool_3259",
+          "toolACE_tool_8687",
+          "toolbench_tool_3261",
+          "apigen_tool_195"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.87,
+        "tools": [
+          "toolbench_tool_3260",
+          "toolbench_tool_3261",
+          "toolbench_tool_3259",
+          "toolACE_tool_8687",
+          "apigen_tool_195"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.9197207891481876,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_3260",
+          "toolbench_tool_3259",
+          "toolbench_tool_3261",
+          "toolbench_tool_3316",
+          "apigen_tool_195"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_585",
+      "query": "I'm organizing a family gathering and we need some fun activities. Can you suggest some random words that can inspire our party games? Additionally, I'm interested in reading news articles about successful family gatherings for inspiration. Thank you for your assistance.",
+      "gold_size": 2,
+      "true_catalog": "4",
+      "matched_catalog": "4",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.0,
+        "tools": [
+          "toolbench_tool_7211",
+          "toolACE_tool_9397",
+          "toolACE_tool_10678",
+          "toolACE_tool_6324",
+          "toolACE_tool_12920"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolACE_tool_10678",
+          "toolACE_tool_9397",
+          "toolACE_tool_8544",
+          "toolbench_tool_10061",
+          "toolbench_tool_7211"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.0,
+        "tools": [
+          "toolbench_tool_7211",
+          "toolACE_tool_12920",
+          "toolACE_tool_6324",
+          "toolACE_tool_9397",
+          "toolACE_tool_10678"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolACE_tool_10678",
+          "toolACE_tool_9397",
+          "toolbench_tool_7211",
+          "toolACE_tool_6324",
+          "toolbench_tool_10061"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolbench_tool_3288",
+          "toolbench_tool_13292",
+          "rotbench_tool_175",
+          "rotbench_tool_92",
+          "rotbench_tool_31"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.0,
+        "tools": [
+          "toolbench_tool_7211",
+          "toolACE_tool_12920",
+          "toolACE_tool_6324",
+          "toolACE_tool_9397",
+          "toolACE_tool_10678"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolACE_tool_10678",
+          "toolACE_tool_8544",
+          "toolACE_tool_9397",
+          "toolbench_tool_10061",
+          "toolbench_tool_7211"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolACE_tool_10678",
+          "toolACE_tool_9397",
+          "toolACE_tool_8544",
+          "toolbench_tool_10061",
+          "toolbench_tool_7211"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.1,
+        "tools": [
+          "toolACE_tool_10678",
+          "toolACE_tool_8544",
+          "toolACE_tool_9397",
+          "toolbench_tool_10061",
+          "toolbench_tool_7211"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_900",
+      "query": "My family is planning a surprise birthday party for my sister and we need a temporary email address to communicate without her knowing. Can you give us a list of available domains for email creation? Additionally, we would like to fetch a specific message from the temporary email inbox using its message ID.",
+      "gold_size": 2,
+      "true_catalog": "4",
+      "matched_catalog": "4",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6934264036172708,
+        "reward": 0.8,
+        "tools": [
+          "toolACE_tool_4846",
+          "toolbench_tool_2912",
+          "toolbench_tool_2913",
+          "toolACE_tool_3667",
+          "toolbench_tool_9127"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.05,
+        "tools": [
+          "toolLens_tool_61",
+          "toolbench_tool_9131",
+          "toolACE_tool_4846",
+          "toolbench_tool_9126",
+          "toolbench_tool_9476"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.4,
+        "tools": [
+          "toolACE_tool_4846",
+          "toolbench_tool_2912",
+          "toolACE_tool_3667",
+          "toolbench_tool_9127",
+          "toolLens_tool_61"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6934264036172708,
+        "reward": 0.8,
+        "tools": [
+          "toolACE_tool_4846",
+          "toolbench_tool_2912",
+          "toolbench_tool_2913",
+          "toolLens_tool_61",
+          "toolbench_tool_9131"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.35,
+        "tools": [
+          "toolACE_tool_4846",
+          "toolbench_tool_2913",
+          "toolbench_tool_11036",
+          "apigen_tool_2706",
+          "reversechain_tool_751"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.4,
+        "tools": [
+          "toolACE_tool_4846",
+          "toolbench_tool_2912",
+          "toolACE_tool_3667",
+          "toolbench_tool_9127",
+          "toolLens_tool_61"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6934264036172708,
+        "reward": 0.85,
+        "tools": [
+          "toolACE_tool_4846",
+          "toolbench_tool_2912",
+          "toolbench_tool_2913",
+          "toolbench_tool_9435",
+          "toolbench_tool_1699"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6934264036172708,
+        "reward": 0.85,
+        "tools": [
+          "toolACE_tool_4846",
+          "toolbench_tool_2912",
+          "toolbench_tool_2913",
+          "toolbench_tool_9435",
+          "toolbench_tool_1699"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.6934264036172708,
+        "reward": 0.85,
+        "tools": [
+          "toolACE_tool_4846",
+          "toolbench_tool_2912",
+          "toolbench_tool_2913",
+          "toolbench_tool_9435",
+          "toolbench_tool_1699"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_1006",
+      "query": "I'm a small business owner and I want to enhance my online presence. Can you provide me with a list of available domains from the URL Link Shortener tool? I also need help creating short, catchy URLs for my website using the bitly tool.",
+      "gold_size": 2,
+      "true_catalog": "4",
+      "matched_catalog": "4",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_6549",
+          "toolbench_tool_9479",
+          "toolbench_tool_9492",
+          "toolbench_tool_6548",
+          "toolbench_tool_7825"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.8772153153380493,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_6549",
+          "toolbench_tool_6548",
+          "toolbench_tool_7825",
+          "toolbench_tool_9479",
+          "toolbench_tool_9492"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_6549",
+          "toolbench_tool_9479",
+          "toolbench_tool_9492",
+          "apigen_tool_3216",
+          "toolbench_tool_9456"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_6549",
+          "toolbench_tool_9479",
+          "toolbench_tool_9492",
+          "toolbench_tool_6548",
+          "toolbench_tool_7825"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.3065735963827292,
+        "reward": 0.3,
+        "tools": [
+          "toolbench_tool_13292",
+          "toolbench_tool_7825",
+          "toolbench_tool_6549",
+          "toolACE_tool_5953",
+          "rotbench_tool_197"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_6549",
+          "toolbench_tool_9479",
+          "toolbench_tool_9492",
+          "apigen_tool_3216",
+          "toolbench_tool_9456"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_6549",
+          "toolbench_tool_9479",
+          "toolbench_tool_9492",
+          "toolbench_tool_6548",
+          "toolbench_tool_7825"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 0.8772153153380493,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_6549",
+          "toolbench_tool_6548",
+          "toolbench_tool_7825",
+          "toolbench_tool_9479",
+          "toolbench_tool_9492"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5714285714285715,
+        "recall": 1.0,
+        "ndcg": 1.0,
+        "reward": 0.9,
+        "tools": [
+          "toolbench_tool_6549",
+          "toolbench_tool_9479",
+          "toolbench_tool_9492",
+          "toolbench_tool_6548",
+          "toolbench_tool_7825"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_753",
+      "query": "I'm planning a surprise birthday party for my best friend and I need some inspiration. Can you fetch trending news articles to keep me updated with the latest trends? Also, generate a QR code with the party details, including the date, time, and location. Lastly, search for public repositories of my friend on Github to find a unique gift idea.",
+      "gold_size": 3,
+      "true_catalog": "4",
+      "matched_catalog": "4",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_2893",
+          "toolACE_tool_3948",
+          "toolACE_tool_2746",
+          "toolbench_tool_3352",
+          "toolbench_tool_10479"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.52,
+        "tools": [
+          "toolbench_tool_2893",
+          "toolACE_tool_3948",
+          "toolACE_tool_2746",
+          "toolbench_tool_5766",
+          "toolbench_tool_2915"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_2893",
+          "toolACE_tool_3948",
+          "toolbench_tool_3352",
+          "toolACE_tool_2746",
+          "toolACE_tool_6324"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_2893",
+          "toolACE_tool_3948",
+          "toolACE_tool_2746",
+          "toolbench_tool_3352",
+          "toolbench_tool_10479"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.23463936301137822,
+        "reward": 0.6,
+        "tools": [
+          "toolbench_tool_3352",
+          "toolemu_tool_15",
+          "toolbench_tool_9513",
+          "toolbench_tool_3288",
+          "toolbench_tool_8738"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_2893",
+          "toolACE_tool_3948",
+          "toolbench_tool_3352",
+          "toolACE_tool_2746",
+          "toolACE_tool_6324"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_2893",
+          "toolACE_tool_3948",
+          "toolbench_tool_3352",
+          "toolACE_tool_2746",
+          "toolACE_tool_6324"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.55,
+        "tools": [
+          "toolbench_tool_2893",
+          "toolbench_tool_9490",
+          "toolbench_tool_8736",
+          "toolbench_tool_11493",
+          "toolbench_tool_6591"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.46927872602275644,
+        "reward": 0.6,
+        "tools": [
+          "toolbench_tool_2893",
+          "toolbench_tool_5766",
+          "toolbench_tool_2915",
+          "toolbench_tool_2914",
+          "toolbench_tool_2916"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_686",
+      "query": "I'm planning a surprise party for my best friend's birthday. Can you recommend a color scheme for the decorations? I want a random set of colors that will create a festive atmosphere. Additionally, I need a QR code that leads to the event's location. Generate a QR code with the value 'location=123 Main St, Cityville'.",
+      "gold_size": 2,
+      "true_catalog": "4",
+      "matched_catalog": "1",
+      "match_success": false,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_10074",
+          "toolbench_tool_11503",
+          "toolbench_tool_2916",
+          "toolbench_tool_2914"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolACE_tool_4905",
+          "toolbench_tool_6516",
+          "toolbench_tool_6510",
+          "toolbench_tool_9490"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolbench_tool_2916",
+          "toolbench_tool_9540"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_10074",
+          "toolbench_tool_6516",
+          "toolbench_tool_6510",
+          "toolbench_tool_2914"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.2640681225725909,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_11503",
+          "toolbench_tool_13292",
+          "toolbench_tool_10074",
+          "toolbench_tool_9498",
+          "toolACE_tool_5006"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_11503",
+          "toolbench_tool_10074",
+          "toolbench_tool_2916",
+          "toolbench_tool_9540"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_10074",
+          "toolbench_tool_11503",
+          "toolbench_tool_2916",
+          "toolbench_tool_2914"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolACE_tool_4905",
+          "toolbench_tool_6516",
+          "toolbench_tool_6510",
+          "toolbench_tool_9490"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_10074",
+          "toolbench_tool_6516",
+          "toolbench_tool_6510",
+          "toolbench_tool_2914"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_474",
+      "query": "I need to organize a virtual event and I want to send personalized invitations to my friends. Could you help me generate random names for the invitations? Also, provide me with random dates within the next two weeks for scheduling the event. Furthermore, I would like to retrieve the historical data of previous events from the France 2D API.",
+      "gold_size": 3,
+      "true_catalog": "4",
+      "matched_catalog": "4",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_466",
+          "toolbench_tool_467",
+          "apigen_tool_2007",
+          "toolACE_tool_15375",
+          "toolbench_tool_394"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.3,
+        "tools": [
+          "toolbench_tool_466",
+          "toolbench_tool_467",
+          "toolbench_tool_462",
+          "toolbench_tool_394",
+          "toolbench_tool_11782"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.6713860725233041,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_466",
+          "apigen_tool_2007",
+          "toolACE_tool_15375",
+          "toolbench_tool_467",
+          "toolbench_tool_394"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7653606369886217,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_466",
+          "toolbench_tool_467",
+          "toolbench_tool_462",
+          "toolbench_tool_394",
+          "toolACE_tool_15375"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.0,
+        "tools": [
+          "toolbench_tool_13292",
+          "toolACE_tool_12029",
+          "toolbench_tool_5469",
+          "toolbench_tool_2876",
+          "toolACE_tool_7726"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.6713860725233041,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_466",
+          "apigen_tool_2007",
+          "toolACE_tool_15375",
+          "toolbench_tool_467",
+          "toolbench_tool_394"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.6713860725233041,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_466",
+          "apigen_tool_2007",
+          "toolACE_tool_15375",
+          "toolbench_tool_467",
+          "toolACE_tool_2238"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.5307212739772434,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_462",
+          "toolbench_tool_466",
+          "toolbench_tool_467",
+          "toolbench_tool_5700",
+          "toolbench_tool_13036"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.7039180890341347,
+        "reward": 0.4,
+        "tools": [
+          "toolbench_tool_466",
+          "toolACE_tool_15375",
+          "toolbench_tool_467",
+          "apigen_tool_2007",
+          "toolACE_tool_2238"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_135",
+      "query": "I am planning a surprise party for my sister's graduation. Can you help me with the guest list? I would like to retrieve a list of users from the Reqres tool and get their names and email addresses. Additionally, I need to check if there are any unknown resources available that I can use for party decorations.",
+      "gold_size": 2,
+      "true_catalog": "4",
+      "matched_catalog": "4",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.2,
+        "tools": [
+          "toolACE_tool_6241",
+          "toolbench_tool_11790",
+          "apigen_tool_895",
+          "toolACE_tool_4215",
+          "toolbench_tool_5201"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "toolACE_tool_4215",
+          "apigen_tool_895",
+          "apigen_tool_441",
+          "toolbench_tool_1050",
+          "toolbench_tool_1051"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_6241",
+          "toolbench_tool_11790",
+          "apigen_tool_895",
+          "toolACE_tool_4215",
+          "toolbench_tool_10349"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.15,
+        "tools": [
+          "apigen_tool_895",
+          "toolACE_tool_4215",
+          "toolACE_tool_6241",
+          "toolbench_tool_11790",
+          "apigen_tool_441"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.3065735963827292,
+        "reward": 0.3,
+        "tools": [
+          "toolbench_tool_13292",
+          "toolbench_tool_3248",
+          "toolbench_tool_448",
+          "toolbench_tool_13554",
+          "rotbench_tool_175"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_6241",
+          "toolbench_tool_11790",
+          "apigen_tool_895",
+          "toolACE_tool_4215",
+          "toolbench_tool_10349"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.23719771276929622,
+        "reward": 0.6,
+        "tools": [
+          "toolACE_tool_4215",
+          "apigen_tool_895",
+          "apigen_tool_441",
+          "toolbench_tool_1050",
+          "toolbench_tool_448"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.3065735963827292,
+        "reward": 0.7,
+        "tools": [
+          "toolACE_tool_4215",
+          "toolbench_tool_1050",
+          "toolbench_tool_448",
+          "toolACE_tool_4979",
+          "toolACE_tool_5280"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.23719771276929622,
+        "reward": 0.6,
+        "tools": [
+          "toolACE_tool_4215",
+          "apigen_tool_895",
+          "apigen_tool_441",
+          "toolbench_tool_1050",
+          "toolbench_tool_448"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_730",
+      "query": "I'm planning a family movie night and I want to create a GIF invitation. Can you generate a GIF from a video URL, starting from the 5th second and ending at the 15th second? Also, provide me with the language codes supported by the HackerRank code checker API.",
+      "gold_size": 2,
+      "true_catalog": "4",
+      "matched_catalog": "4",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.3,
+        "tools": [
+          "toolbench_tool_9507",
+          "toolACE_tool_15264",
+          "toolbench_tool_2678",
+          "reversechain_tool_25",
+          "toolACE_tool_584"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.38685280723454163,
+        "reward": 0.35,
+        "tools": [
+          "toolbench_tool_9428",
+          "toolbench_tool_9507",
+          "toolbench_tool_8989",
+          "toolbench_tool_10504",
+          "toolACE_tool_584"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.3,
+        "tools": [
+          "toolbench_tool_9507",
+          "toolACE_tool_15264",
+          "toolbench_tool_2678",
+          "reversechain_tool_25",
+          "toolACE_tool_584"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_9507",
+          "toolACE_tool_15264",
+          "toolbench_tool_9428",
+          "toolbench_tool_2678",
+          "toolACE_tool_584"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.25,
+        "tools": [
+          "toolbench_tool_9518",
+          "apigen_tool_1729",
+          "toolbench_tool_11503",
+          "toolbench_tool_9523",
+          "toolbench_tool_13292"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.3,
+        "tools": [
+          "toolbench_tool_9507",
+          "toolACE_tool_15264",
+          "toolbench_tool_2678",
+          "reversechain_tool_25",
+          "toolACE_tool_584"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9507",
+          "toolACE_tool_15264",
+          "toolbench_tool_2678",
+          "toolbench_tool_9428",
+          "toolbench_tool_9524"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9507",
+          "toolACE_tool_15264",
+          "toolbench_tool_9428",
+          "toolbench_tool_2678",
+          "toolbench_tool_9524"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.28571428571428575,
+        "recall": 0.5,
+        "ndcg": 0.6131471927654584,
+        "reward": 0.5,
+        "tools": [
+          "toolbench_tool_9507",
+          "toolACE_tool_15264",
+          "toolbench_tool_9428",
+          "toolbench_tool_8007",
+          "toolbench_tool_4583"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_405",
+      "query": "I'm planning a surprise anniversary party for my parents and want to send out digital invitations. Before sending, I want to validate the email addresses of all the guests to ensure they are correct. Additionally, I need to find a caterer for the event and check their availability. Finally, I would like a random quote about love to include in the party decorations.",
+      "gold_size": 3,
+      "true_catalog": "4",
+      "matched_catalog": "4",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.18154179253735267,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12029",
+          "toolLens_tool_61",
+          "toolACE_tool_4846",
+          "toolbench_tool_9138",
+          "toolbench_tool_9131"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.49818925746641285,
+        "reward": 0.2,
+        "tools": [
+          "toolLens_tool_61",
+          "toolbench_tool_9131",
+          "toolbench_tool_9138",
+          "toolbench_tool_9126",
+          "toolbench_tool_9476"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.3,
+        "tools": [
+          "toolACE_tool_12029",
+          "apigen_tool_3042",
+          "toolACE_tool_4846",
+          "toolLens_tool_61",
+          "toolbench_tool_4601"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.4776237035032179,
+        "reward": 0.25,
+        "tools": [
+          "toolLens_tool_61",
+          "toolbench_tool_9131",
+          "toolbench_tool_9138",
+          "toolACE_tool_4846",
+          "toolbench_tool_9126"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.33,
+        "tools": [
+          "toolbench_tool_13292",
+          "toolACE_tool_12456",
+          "toolbench_tool_9119",
+          "toolbench_tool_3248",
+          "toolbench_tool_7255"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.0,
+        "recall": 0.0,
+        "ndcg": 0.0,
+        "reward": 0.3,
+        "tools": [
+          "toolACE_tool_12029",
+          "apigen_tool_3042",
+          "toolACE_tool_4846",
+          "toolLens_tool_61",
+          "toolbench_tool_4601"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.18154179253735267,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_12029",
+          "toolLens_tool_61",
+          "toolACE_tool_4846",
+          "toolbench_tool_9138",
+          "toolbench_tool_9131"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.2960819109658652,
+        "reward": 0.5,
+        "tools": [
+          "toolLens_tool_61",
+          "toolbench_tool_9131",
+          "toolACE_tool_4846",
+          "toolACE_tool_12029",
+          "toolbench_tool_9138"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.2960819109658652,
+        "reward": 0.5,
+        "tools": [
+          "toolLens_tool_61",
+          "toolbench_tool_9131",
+          "toolLens_tool_181",
+          "toolbench_tool_11031",
+          "ultraTool_tool_852"
+        ]
+      }
+    },
+    {
+      "qid": "toolbench_query_506",
+      "query": "I'm planning a surprise party for my best friend's birthday and I need some inspiration for the decorations. Can you suggest some unique logo designs from Fiverr Pro services for the party theme? Additionally, I would like to search for personalized suggestions for the party venue and cake ideas using Bing Autosuggest.",
+      "gold_size": 3,
+      "true_catalog": "4",
+      "matched_catalog": "4",
+      "match_success": true,
+      "decode_default": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.2960819109658652,
+        "reward": 0.3,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_4142",
+          "toolACE_tool_15799",
+          "toolLens_tool_103",
+          "toolbench_tool_7211"
+        ]
+      },
+      "decode_cold": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.2960819109658652,
+        "reward": 0.25,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_4142",
+          "toolACE_tool_5795",
+          "toolbench_tool_6868",
+          "toolLens_tool_103"
+        ]
+      },
+      "decode_tail": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.23463936301137822,
+        "reward": 0.2,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolACE_tool_15799",
+          "toolbench_tool_4142",
+          "toolLens_tool_103",
+          "t_eval_step_tool_10"
+        ]
+      },
+      "decode_warm": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.2960819109658652,
+        "reward": 0.15,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_4142",
+          "toolLens_tool_103",
+          "toolbench_tool_7211",
+          "toolACE_tool_1975"
+        ]
+      },
+      "decode_bm25": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.6713860725233041,
+        "reward": 0.45,
+        "tools": [
+          "toolbench_tool_4141",
+          "toolbench_tool_13292",
+          "toolbench_tool_9250",
+          "toolbench_tool_4142",
+          "toolbench_tool_3288"
+        ]
+      },
+      "decode_dense": {
+        "f1": 0.25,
+        "recall": 0.3333333333333333,
+        "ndcg": 0.23463936301137822,
+        "reward": 0.2,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolACE_tool_15799",
+          "toolbench_tool_4142",
+          "toolLens_tool_103",
+          "t_eval_step_tool_10"
+        ]
+      },
+      "evo_default": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.7122630665145961,
+        "reward": 0.8,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_4142",
+          "toolbench_tool_4141",
+          "toolACE_tool_6237",
+          "toolbench_tool_11755"
+        ]
+      },
+      "evo_cold": {
+        "f1": 0.7499999999999999,
+        "recall": 1.0,
+        "ndcg": 0.7122630665145961,
+        "reward": 0.8,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_4142",
+          "toolbench_tool_4141",
+          "toolACE_tool_6237",
+          "toolbench_tool_11755"
+        ]
+      },
+      "evo_warm": {
+        "f1": 0.5,
+        "recall": 0.6666666666666666,
+        "ndcg": 0.4776237035032179,
+        "reward": 0.5,
+        "tools": [
+          "toolACE_tool_5006",
+          "toolbench_tool_4142",
+          "toolLens_tool_103",
+          "toolbench_tool_7211",
+          "toolbench_tool_4141"
+        ]
+      }
+    }
+  ]
+}
