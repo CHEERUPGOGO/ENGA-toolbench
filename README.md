@@ -16,6 +16,7 @@
 ├── split_catalogs.py           # 从 top_catalogs.json 生成训练/测试划分（数据已附带，可不跑）
 ├── tune_hybrid_beta.py         # 在训练查询上扫描 hybrid β（复现 β=0.6 的选择）
 ├── probe_judge.py              # 用一次真实调用检查 judge 端点是否可用
+├── EXPERIMENT_SETUP.md         # 实验设置全量说明（数据/解码器/ES/judge/开销，事无巨细）
 ├── enga/                       # 核心包：数据、解码器、ES、评估器、基线
 ├── data/
 │   ├── toolret/                # ToolRet 工具库与查询（ToolBench web 子集）
@@ -70,6 +71,8 @@ python tune_hybrid_beta.py
 实验结束后在 `results/` 生成 `EXPERIMENT_REPORT.md`（对比表 + 配对检验）、`comparison_results.json`（逐查询明细）、`catalog_learned_alphas.json`（每域学到的 α）。
 
 ## 结果摘要（附带的正式运行：hybrid β=0.6 + grounded 成本，50 条测试查询）
+
+> 完整实验设置（数据构建、解码器与协同项、成本模型、ES 超参、训练/测试协议、judge 提示词与盲评设计、开销口径、CLI 默认值）见 **[EXPERIMENT_SETUP.md](EXPERIMENT_SETUP.md)**。
 
 | 类别 | 方法 | F1@5 | Recall@5 | NDCG@5 | Judge Reward | 测试开销 |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: |
