@@ -127,19 +127,34 @@ class ToolIndex:
         self._rel_cache[q.qid] = rel
         return rel
 
-    def rel_norm(self, q: Query) -> np.ndarray:
-        """I_rel rescaled to [0,1] via per-query min-max.
+    @staticmethod
+    def _minmax(s: np.ndarray) -> np.ndarray:
+        lo, hi = float(s.min()), float(s.max())
+        return ((s - lo) / max(1e-6, hi - lo)).astype(np.float32)
 
-        Order-preserving (identical ranking to raw cosine), so the three
-        channels of Eq. 7 live on comparable scales: TF-IDF cosines occupy
-        ~[0, 0.35] while S_sem occupies [0, 1]; without rescaling alpha would
-        weigh the ranges, not the trade-off.
+    def hybrid_norm(self, q: Query, beta: float | None = None) -> np.ndarray:
+        """beta * BM25_norm + (1 - beta) * dense_norm, each channel per-query
+        min-max scaled. Single source of truth for hybrid fusion — used both by
+        rel_norm (decoder relevance channel, when cfg.use_hybrid) and by the
+        method_hybrid retrieval baseline (independent of that flag)."""
+        if beta is None:
+            beta = float(getattr(self.cfg, "hybrid_beta", 0.6))
+        return (beta * self._minmax(self.bm25_scores(q.text))
+                + (1.0 - beta) * self._minmax(self.rel(q))).astype(np.float32)
+
+    def rel_norm(self, q: Query) -> np.ndarray:
+        """Decoder relevance channel I_rel on [0,1].
+
+        Hybrid (BM25 lexical + SBERT dense) when cfg.use_hybrid is True, else
+        pure dense min-max. Hybrid beta is tuned on train queries only, see
+        tune_hybrid_beta.py (beta=0.6 selected on a broad 0.4-0.6 plateau).
         """
-        r = self.rel(q)
         if q.qid in self._reln_cache:
             return self._reln_cache[q.qid]
-        lo, hi = float(r.min()), float(r.max())
-        rn = ((r - lo) / max(1e-6, hi - lo)).astype(np.float32)
+        if getattr(self.cfg, "use_hybrid", True):
+            rn = self.hybrid_norm(q)
+        else:
+            rn = self._minmax(self.rel(q))
         self._reln_cache[q.qid] = rn
         return rn
 
@@ -213,17 +228,55 @@ class ToolIndex:
     def _cost_vector(self, docs: list[ToolDoc]) -> np.ndarray:
         """C_run(v) (Eq. 9), min-max normalized to [0, 1]."""
         cfg = self.cfg
-        L = np.array([len(t) for t in (tokens(x) for x in self.doc_texts)], dtype=np.float32)
-        L = L / max(1e-6, float(L.max()))
-        if cfg.cost_mode == "synthetic":
+        if cfg.cost_mode == "grounded":
+            # Grounded ToolBench execution cost model:
+            # 1. Prompt Schema Footprint: documentation tokens + schema parameters
+            L = np.array([
+                len(tokens(d.doc_text())) + 8 * len(d.required_params) + 4 * len(d.optional_params)
+                for d in docs
+            ], dtype=np.float32)
+            L = L / max(1e-6, float(L.max()))
+
+            # 2. Invocation Payload Complexity: parameter volume weighted by HTTP method
+            method_mult = np.array([
+                1.5 if d.method.upper() in ('POST', 'PUT', 'DELETE') else 1.0
+                for d in docs
+            ], dtype=np.float32)
+            param_counts = np.array([
+                len(d.required_params) + 0.5 * len(d.optional_params)
+                for d in docs
+            ], dtype=np.float32)
+            T = param_counts * method_mult
+            T = T / max(1e-6, float(T.max()))
+
+            # 3. Empirical Failure Risk based on ToolBench RapidAPI characteristics
+            high_risk_cats = {'Social', 'Finance', 'News_Media', 'Media', 'SMS', 'Communication'}
+            mod_risk_cats = {'Entertainment', 'Sports', 'Movies'}
+            risk = []
+            for d in docs:
+                base = 0.35 if d.category in high_risk_cats else (0.20 if d.category in mod_risk_cats else 0.08)
+                if len(d.description.strip()) < 20:
+                    base += 0.20
+                if len(d.required_params) > 3:
+                    base += 0.15
+                risk.append(min(1.0, base))
+            R = np.array(risk, dtype=np.float32)
+            R = R / max(1e-6, float(R.max()))
+
+            C = cfg.lambda_t * L + cfg.lambda_tau * T + cfg.lambda_f * R
+        elif cfg.cost_mode == "synthetic":
+            L = np.array([len(t) for t in (tokens(x) for x in self.doc_texts)], dtype=np.float32)
+            L = L / max(1e-6, float(L.max()))
             T = np.array([(stable_hash(t.id + "lat") % 1000) / 1000.0 for t in docs], dtype=np.float32)
             R = np.array([(stable_hash(t.id + "fail") % 1000) / 1000.0 for t in docs], dtype=np.float32)
+            C = cfg.lambda_t * L + cfg.lambda_tau * T + cfg.lambda_f * R
         else:
-            T = np.zeros_like(L)
-            R = np.zeros_like(L)
-        C = cfg.lambda_t * L + cfg.lambda_tau * T + cfg.lambda_f * R
+            L = np.array([len(t) for t in (tokens(x) for x in self.doc_texts)], dtype=np.float32)
+            L = L / max(1e-6, float(L.max()))
+            C = L
+
         lo, hi = float(C.min()), float(C.max())
-        return (C - lo) / max(1e-6, hi - lo)
+        return ((C - lo) / max(1e-6, hi - lo)).astype(np.float32)
 
     # --------------------------------------------------------------------- BM25
     def bm25_scores(self, qtext: str) -> np.ndarray:

@@ -46,7 +46,7 @@ sys.path.insert(0, str(ENGA_ROOT))
 
 from enga.config import Config
 from enga.data import Query, build_experiment_set, load_toolret
-from enga.baselines import method_bm25, method_dense
+from enga.baselines import method_bm25, method_dense, method_hybrid
 from enga.evaluator import EvalBudget, LLMJudgeUtility, UnsupervisedUtility, set_f1, set_recall, set_ndcg
 from enga.features import ToolIndex
 from enga.nga import decode
@@ -55,7 +55,7 @@ from enga.utils import seed_everything, stable_hash
 
 DECODE_ARMS = ["default", "cold", "tail", "warm"]   # warm = amortized Polyak mean (ours)
 EVO_ARMS = ["default", "cold", "warm"]              # warm = amortized Polyak mean (ours)
-RETRIEVAL_ARMS = ["bm25", "dense"]                  # classic retrieval baselines, no alpha
+RETRIEVAL_ARMS = ["bm25", "dense", "hybrid"]        # classic & hybrid retrieval baselines, no alpha
 
 
 def project_simplex(v: np.ndarray) -> np.ndarray:
@@ -158,6 +158,12 @@ def main():
     parser.add_argument("--query-parallel", type=int, default=5, help="Test queries evaluated concurrently")
     parser.add_argument("--tag", type=str, default="",
                         help="Suffix for checkpoint/result files (e.g. 'smoke'); keeps runs isolated")
+    parser.add_argument("--hybrid-beta", type=float, default=0.6,
+                        help="Weight for BM25 in hybrid relevance (default 0.6)")
+    parser.add_argument("--cost-mode", choices=["grounded", "synthetic", "schema"], default="grounded",
+                        help="Cost calculation mode (grounded: ToolBench prompt/payload/risk; synthetic: hash)")
+    parser.add_argument("--no-hybrid", action="store_true",
+                        help="Disable hybrid retrieval (fallback to pure Dense embedding)")
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent
@@ -176,6 +182,9 @@ def main():
 
     cfg = Config()
     cfg.eval_mode = args.eval_mode
+    cfg.cost_mode = args.cost_mode
+    cfg.hybrid_beta = args.hybrid_beta
+    cfg.use_hybrid = not args.no_hybrid
     cfg.P, cfg.G, cfg.seed = args.P, args.G, args.seed
     seed_everything(args.seed)
 
@@ -185,6 +194,7 @@ def main():
         "train_limit": args.train_limit, "test_limit": args.test_limit, "seed": args.seed,
         "simplex": True, "relative_sigma": True, "b": cfg.b, "eta": cfg.eta,
         "sigma0": cfg.sigma0, "sigma_decay": cfg.sigma_decay, "judge_prompt": "judge2",
+        "cost_mode": args.cost_mode, "hybrid_beta": args.hybrid_beta, "use_hybrid": not args.no_hybrid,
     }
 
     print("=" * 100)
@@ -362,8 +372,8 @@ def main():
                                     "ndcg": set_ndcg(S, gold_ids), "reward": float(utility(q_obj, S)),
                                     "tools": S}
 
-        # --- Category A2: classic retrieval baselines (BM25 / dense cosine; 0 search) ---
-        for arm, fn in (("bm25", method_bm25), ("dense", method_dense)):
+        # --- Category A2: classic & hybrid retrieval baselines (BM25 / dense cosine / hybrid; 0 search) ---
+        for arm, fn in (("bm25", method_bm25), ("dense", method_dense), ("hybrid", method_hybrid)):
             S, _ = fn(index, q_obj, cfg, None, utility, budget)
             rec[f"decode_{arm}"] = {"f1": set_f1(S, gold_ids), "recall": set_recall(S, gold_ids),
                                     "ndcg": set_ndcg(S, gold_ids), "reward": float(utility(q_obj, S)),
@@ -406,8 +416,9 @@ def main():
     print("-" * 100)
 
     arm_labels = [
-        ("decode", "bm25",    "BM25 top-5 (retrieval baseline)", "0 LLM"),
-        ("decode", "dense",   "Dense cosine top-5 (retrieval baseline)", "0 LLM"),
+        ("decode", "bm25",    "BM25 top-5 (lexical baseline)", "0 LLM"),
+        ("decode", "dense",   "Dense cosine top-5 (dense baseline)", "0 LLM"),
+        ("decode", "hybrid",  "Hybrid BM25+Dense top-5 (retrieval)", "0 LLM"),
         ("decode", "default", "Global Default (norm. [0.80, 0.16, 0.04])", "0 LLM"),
         ("decode", "cold",    "Cold a0 (random init)", "0 LLM"),
         ("decode", "tail",    "Tail a30 (v1 prior, ablation)", "0 LLM"),
@@ -428,6 +439,8 @@ def main():
         "evo_warm_vs_default": paired(test_results, "evo_warm", "evo_default"),
         "decode_warm_vs_default": paired(test_results, "decode_warm", "decode_default"),
         "decode_warm_vs_tail": paired(test_results, "decode_warm", "decode_tail"),
+        "decode_warm_vs_bm25": paired(test_results, "decode_warm", "decode_bm25"),
+        "decode_warm_vs_hybrid": paired(test_results, "decode_warm", "decode_hybrid"),
         "evo_warm_vs_decode_warm": paired(test_results, "evo_warm", "decode_warm"),
     }
     rews = [r[f"evo_{a}"]["reward"] for r in test_results for a in EVO_ARMS]

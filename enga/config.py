@@ -33,10 +33,12 @@ class Config:
     # ---------- NGA decoder (Method 3.2) ----------
     b: int = 5                    # tool budget b
     lambda_s: float = 0.5         # semantic/schema synergy mix (Eq. 6)
-    cost_mode: str = "synthetic"  # "schema": token footprint only; "synthetic": + hashed latency/failure
+    cost_mode: str = "grounded"   # "grounded": empirical ToolBench prompt/payload/failure risk; "synthetic": hashed
     lambda_t: float = 0.34        # token footprint weight  (Eq. 9)
-    lambda_tau: float = 0.33      # latency weight
+    lambda_tau: float = 0.33      # latency/complexity weight
     lambda_f: float = 0.33        # failure-rate weight
+    use_hybrid: bool = True       # combine BM25 and Dense embeddings for robust relevance
+    hybrid_beta: float = 0.6      # weight for BM25: beta * BM25 + (1 - beta) * Dense
 
     # ---------- ES (Method 3.3) ----------
     P: int = 8                    # population size (policies per generation)
@@ -94,7 +96,7 @@ class Config:
             "P": "P", "G": "G", "K": "K", "eval_mode": "eval_mode", "embed": "embed",
             "embed_model": "embed_model", "utility": "utility", "cost_mode": "cost_mode",
             "candidate_cap": "candidate_cap", "data_dir": "data_dir", "out_dir": "out_dir",
-            "lambda_d": "lambda_d",
+            "lambda_d": "lambda_d", "hybrid_beta": "hybrid_beta", "use_hybrid": "use_hybrid",
         }
         for arg, attr in mapping.items():
             val = getattr(args, attr, None)

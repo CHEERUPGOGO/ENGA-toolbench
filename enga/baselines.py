@@ -43,6 +43,12 @@ def method_bm25(index: ToolIndex, q: Query, cfg: Config, rng, utility, budget):
     return _topk(index, index.bm25_scores(q.text), cfg.b), {"n_expensive": 0}
 
 
+def method_hybrid(index: ToolIndex, q: Query, cfg: Config, rng, utility, budget):
+    """Hybrid lexical (BM25) + semantic (Dense) baseline without synergy or cost.
+    Shares the fusion implementation with the decoder's relevance channel."""
+    return _topk(index, index.hybrid_norm(q), cfg.b), {"n_expensive": 0}
+
+
 def method_nga_fixed(index: ToolIndex, q: Query, cfg: Config, rng, utility, budget):
     S = decode(index, q, cfg.init_alpha, cfg.b)
     return S, {"n_expensive": 0}

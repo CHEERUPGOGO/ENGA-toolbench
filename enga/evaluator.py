@@ -388,8 +388,8 @@ class UnsupervisedUtility:
         if not valid_idxs:
             return 0.0
 
-        # 1. Semantic relevance to query (cosine similarity)
-        q_rels = self.index.rel(q)[valid_idxs]
+        # 1. Relevance to query (hybrid lexical + dense when enabled)
+        q_rels = self.index.rel_norm(q)[valid_idxs]
         mean_rel = float(np.mean(q_rels))
         max_rel = float(np.max(q_rels))
 
@@ -415,7 +415,10 @@ class UnsupervisedUtility:
             syn_scores.append(float(step_syn))
         mean_syn = float(np.mean(syn_scores)) if syn_scores else 0.0
 
+        # 4. Execution cost penalty
+        mean_cost = float(np.mean(self.index.cost[valid_idxs]))
+
         # Composite score
-        u = 0.4 * max_rel + 0.3 * mean_rel + 0.3 * mean_syn - 0.2 * dup_penalty
+        u = 0.4 * max_rel + 0.3 * mean_rel + 0.3 * mean_syn - 0.15 * dup_penalty - 0.15 * mean_cost
         return max(0.0, min(1.0, u))
 
