@@ -3,6 +3,7 @@ and the utility LLMJudgeUtility would parse from it. Run before any full experim
 Needs OPENAI_API_KEY (DeepSeek) in the environment."""
 from pathlib import Path
 import sys
+import threading
 
 ROOT = Path(__file__).resolve().parent
 ENGA_ROOT = ROOT if (ROOT / "enga").is_dir() else ROOT.parent / "experiments"
@@ -22,6 +23,7 @@ print(f"api_key  : {cfg.llm.api_key[:8]}...{cfg.llm.api_key[-4:]}")
 judge = LLMJudgeUtility.__new__(LLMJudgeUtility)  # bypass cache loading for the raw test
 judge.cfg, judge.tools, judge.budget = cfg, {}, EvalBudget()
 judge.cache, judge.cache_path, judge._client, judge._lock = {}, Path("results/_probe_cache.jsonl"), None, None
+judge._init_lock = threading.Lock()  # set by __init__ in normal use; probe bypasses it
 judge._tok_usage = {"prompt": 0, "completion": 0}
 
 prompt = judge._render(q, ["tvshows_search", "qrcode_generate", "weather_lookup"])
