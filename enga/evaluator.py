@@ -330,31 +330,40 @@ class LLMJudgeUtility:
         clean_text = self._strip_think(raw_text)
 
         utility = 0.0
+        parsed_ok = False
         m = re.search(r"\{.*?\}", clean_text, re.S)
         if m:
             try:
                 parsed = json.loads(m.group(0))
                 if "utility" in parsed:
                     utility = float(parsed["utility"])
+                    parsed_ok = True
                 else:
                     comp = float(parsed.get("completeness", 0.5))
                     rel = float(parsed.get("relevance", 0.5))
                     red = float(parsed.get("redundancy_penalty", 0.0))
                     utility = max(0.0, min(1.0, 0.7 * comp + 0.3 * rel - 0.2 * red))
+                    parsed_ok = True
             except Exception:
                 utility = 0.1
-        else:
+                parsed_ok = False
+        if not parsed_ok:
             m_num = re.search(r'"utility"\s*:\s*([0-9.]+)', clean_text)
             if m_num:
                 utility = float(m_num.group(1))
+                parsed_ok = True
             else:
                 utility = 0.1
+                parsed_ok = False
 
         utility = max(0.0, min(1.0, float(utility)))
 
-        with self._lock:
-            self.cache[key] = utility
-            self._append_cache(key, utility)
+        # Only persist to disk cache if LLM response was properly structured and not truncated
+        is_length_truncated = getattr(resp.choices[0], "finish_reason", None) == "length"
+        if parsed_ok and not is_length_truncated:
+            with self._lock:
+                self.cache[key] = utility
+                self._append_cache(key, utility)
         return utility
 
     def _append_cache(self, key: str, r: float) -> None:

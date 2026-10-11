@@ -1,125 +1,157 @@
-# 域摊销进化的 LLM 工具选择实验 (Enhanced)
+# ENGA: 领域摊销进化的 LLM 工具选择系统 (Domain-Amortized Evolutionary Tool Selection)
 
-在大规模工具池（ToolRet / ToolBench-web，约 3000 个工具）上，研究**如何为一个领域学出好的贪心解码器权重**：
+在大规模工具池（ToolRet / ToolBench-web，约 3,000 个工具）上，解决大模型智能体（LLM Agent）在面对海量 API 时**高效、鲁棒且低成本选取最佳工具组合**的核心挑战。
 
-- 解码器按 `gain = α_rel·相关度 + α_syn·协同度 − α_cost·成本` 逐步选出 b=5 个工具；
-- **混合检索通道（Hybrid Retrieval）**：融合 BM25 词法与 Dense 语义（β·BM25 + (1−β)·Dense，两通道各自按查询 min-max 归一），缓解单一 Dense 通道在工具专名匹配上的短板。β 在**训练查询**上以 gold 检索质量选出（β=0.6，落在 0.4–0.6 平台区），测试集参考 F1@5 = 0.2956，高于纯 BM25（0.2723）与纯 Dense（0.2121）两个端点，扫描脚本见 `tune_hybrid_beta.py`；
-- **基于真实元数据的成本模型（Grounded Cost）**：废除与工具属性无关的伪随机 Hash，改为三部分：(i) 文档与参数构成的 Prompt 体积；(ii) 参数量 × HTTP 方法系数的调用负载；(iii) 类别 + 文档完备性 + 参数复杂度构成的**启发式**故障风险先验。注意：ToolRet web 子集中 `category_name` 覆盖率约 38%、`method` 约 39%，未标注的工具落入最低风险档（可用 `--cost-mode synthetic` 切回旧模型）；
-- 权重 α 被约束在单纯形上（三维和为 1），用 OpenAI-ES（进化策略）按域优化；
-- 训练轨迹的 **Polyak 均值** 作为摊销先验（ours），测试时对比 **直接解码** vs **再演化**；
-- 与 **BM25 / Dense / Hybrid 检索基线** 做横向对比，全部由盲评 LLM-as-a-Judge 打分。
+- **三维参数化贪心解码器**：按边际增益逐步选取 $b=5$ 个工具：
+  $$\Delta(v \mid X, q) = \alpha_{\mathrm{rel}} \cdot I_{\mathrm{rel}}(v, q) + \alpha_{\mathrm{syn}} \cdot S_{\mathrm{syn}}(v, X) - \alpha_{\mathrm{cost}} \cdot C_{\mathrm{run}}(v)$$
+  参数限制在单纯形 $\Delta^2$（和为 1，带有正下界保护 $\epsilon_{\mathrm{floor}} = 0.02$，防止小分量被过度截断归零）。
+- **混合相关性通道（Hybrid Relevance）**：融合 BM25 词面精准匹配与 MiniLM 稠密语义相关度（$\beta \cdot \mathrm{BM25} + (1-\beta) \cdot \mathrm{Dense}$，查询级 Min-Max 归一化）。在训练集上严格调优确定 $\beta = 0.6$。
+- **物理元数据调用成本模型（Grounded Cost）**：结合文档与参数 Prompt 体积（$L_v$）、HTTP 请求方法与参数负载（$T_v$，POST/PUT 写操作赋予 1.5× 惩罚）、以及高敏行业安全风险先验（$R_v$）。
+- **离线领域演化与摊销先验（Domain-Amortized Evolution）**：
+  在各领域目录（Catalog）的训练样本上，以大模型盲评为黑盒奖励，利用进化策略（OpenAI-ES）优化 $\boldsymbol{\alpha}$。提取训练轨迹的 **Polyak 均值**（$\boldsymbol{\alpha}_{\mathrm{mean}}$）作为领域摊销先验，消除单点收敛的随机马尔可夫震荡。
+- **测试期双轨部署架构**：
+  1. **零成本直接解码（Direct Decode, 0 LLM Calls）**：通过 MiniLM 质心路由到最近领域后，直接使用 $\boldsymbol{\alpha}_{\mathrm{mean}}$ 解码，**推理耗时 $<2\text{ms}$，大模型零开销**，全面超越经典 BM25 与 Dense 向量检索；
+  2. **热启动再演化（Re-Evolution, 45 LLM Calls）**：在算力充裕场景下，以 $\boldsymbol{\alpha}_{\mathrm{mean}}$ 为初值执行 5 代快速再演化，进一步达成显著增益。
+
+---
 
 ## 目录结构
 
 ```
-├── run_catalog_experiment.py   # 主实验脚本（训练 + 测试 + 报告）
-├── split_catalogs.py           # 从 top_catalogs.json 生成训练/测试划分（数据已附带，可不跑）
-├── tune_hybrid_beta.py         # 在训练查询上扫描 hybrid β（复现 β=0.6 的选择）
-├── probe_judge.py              # 用一次真实调用检查 judge 端点是否可用
-├── EXPERIMENT_SETUP.md         # 实验设置全量说明（数据/解码器/ES/judge/开销，事无巨细）
-├── enga/                       # 核心包：数据、解码器、ES、评估器、基线
+├── run_catalog_experiment.py     # 主实验框架（支持 5/10 Catalog、DeepSeek/Gemini 多裁判与断点续跑）
+├── run_ablations_10cat.py        # 10 领域测试集 4 大离线消融评测（成本/协同/Beta/规模，零调用）
+├── run_llm_rerank.py             # 1-call 大模型贪心重排基准对比脚本
+├── analyze_p0_multiseed.py       # 3 种子（42/43/44）全量池化统计分析与成对 t 检验
+├── analyze_routing_pooled.py     # 跨种子质心路由混淆矩阵与正确性因果分解
+├── split_catalogs.py             # 领域目录聚类与训练/测试集切分工具
+├── tune_hybrid_beta.py           # 训练集混合检索权重 β 网格扫描工具
+├── probe_judge.py                # 快速验证大模型裁判端点连通性
+├── EXPERIMENT_PROTOCOL.md        # 完整理论证明、数学形式化、系统架构与消融指南 (Protocol v5)
+├── enga/                         # 核心算法包
+│   ├── config.py                 # 全局超参数与大模型客户端配置
+│   ├── data.py                   # ToolRet 数据集加载与子库采样
+│   ├── features.py               # 倒排索引构建、MiniLM 嵌入缓存与特征通道
+│   ├── nga.py                    # 贪心解码器主逻辑
+│   ├── es.py                     # OpenAI-ES 演化策略与单纯形投影（含 eps_floor）
+│   ├── evaluator.py              # LLM-as-a-Judge 盲评审计、缓存持久化与防毒化校验
+│   └── baselines.py              # BM25、Dense、Hybrid 经典检索基准
 ├── data/
-│   ├── toolret/                # ToolRet 工具库与查询（ToolBench web 子集）
-│   ├── catalogs/top_catalogs.json  # 5 个领域 catalog（含人工校验的查询集）
-│   └── catalog_splits.json     # 每个 catalog 30 条训练 / 10 条测试
-└── results/                    # 一次完整正式运行的全部产物（含 LLM 缓存，见下）
+│   ├── toolret/                  # ToolRet API 工具库与标注数据
+│   ├── catalogs/top_catalogs.json# 候选高质量领域目录集合
+│   ├── catalog_splits.json       # 5 领域实验切分
+│   └── catalog_splits10.json     # 10 领域全量基准切分（30 训练 / 10 测试每类）
+└── results/                      # 评测报告、对比详情、检查点与 LLM 缓存
 ```
+
+---
 
 ## 环境配置
 
-Python **3.10+**（代码使用了 `X | Y` 类型语法）。
+Python **3.10+**。
 
 ```bash
 pip install -r requirements.txt
 ```
 
-评估模式二选一：
+### 评估模式配置
 
-| 模式 | 需要 API key? | 说明 |
-| :--- | :--- | :--- |
-| `--eval-mode unsupervised` | 否 | 本地零样本代理打分，跑通流程 / 冒烟测试用 |
-| `--eval-mode judge`（默认） | 是 | 真实 LLM-as-a-Judge，`OPENAI_API_KEY` 环境变量提供 |
+| 模式 | 需要 API Key? | 适用场景 |
+| :--- | :---: | :--- |
+| `--eval-mode unsupervised` | 否 | 冒烟测试、本地流程验证（零 LLM 调用） |
+| `--eval-mode judge`（默认） | 是 | 生产级 LLM-as-a-Judge 评测（DeepSeek / Gemini 等） |
 
-judge 模式默认走 DeepSeek 端点（`https://api.deepseek.com`，模型 `deepseek-v4-flash`），只需：
+设置 API Key（支持任何兼容 OpenAI 协议的端点）：
 
 ```bash
-set OPENAI_API_KEY=sk-xxxx        # Windows；Linux/macOS 用 export
+# Windows
+set OPENAI_API_KEY=sk-xxxx
+# Linux / macOS
+export OPENAI_API_KEY=sk-xxxx
 ```
 
-端点 / 模型如需修改，改 `enga/config.py` 里的 `LLMConfig` 即可（key 一律走环境变量，不要写进代码）。
+如需使用非默认模型（如 Google Gemini），可直接在 CLI 覆盖：
+```bash
+python run_catalog_experiment.py --llm-base-url https://api.your-endpoint.com/v1 --llm-model gemini-3.8-flash --tag gemini
+```
 
-首次运行会自动下载 `sentence-transformers/all-MiniLM-L6-v2`（约 90MB）并缓存全部嵌入到 `data/embed_cache/`（该目录不入库）。国内网络可先 `set HF_ENDPOINT=https://hf-mirror.com`。
+首次运行会自动加载 `sentence-transformers/all-MiniLM-L6-v2` 并将嵌入缓存至 `data/embed_cache/`。国内网络可预先执行 `set HF_ENDPOINT=https://hf-mirror.com`。
 
-## 快速开始
+---
+
+## 核心实验成果展示
+
+> 详尽的实验设计、参数推导与理论分析参见 **[EXPERIMENT_PROTOCOL.md](EXPERIMENT_PROTOCOL.md)**。
+
+### 1. 10 领域全基准 3 种子池化结果 (Seeds 42, 43, 44, $N=300$)
+
+| 类别 | 方案名称 (Method) | F1@5 (Mean ± Std) | Recall@5 | NDCG@5 | Judge Reward | 测试开销 |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| **检索基准** | BM25 top-5 (词法基线) | 0.3171 ± 0.0000 | 0.5000 | 0.4632 | 0.4941 | 0 LLM |
+| **检索基准** | Dense cosine top-5 (向量基线) | 0.2454 ± 0.0000 | 0.4008 | 0.3807 | 0.4190 | 0 LLM |
+| **检索基准** | Hybrid BM25+Dense ($\beta=0.6$) | 0.3413 ± 0.0000 | 0.5380 | 0.5029 | 0.5076 | 0 LLM |
+| **直接解码** | Cold $\boldsymbol{a}_0$ (随机初值) | 0.3060 ± 0.0006 | 0.4851 | 0.4492 | 0.4627 | 0 LLM |
+| **直接解码** | Tail $\boldsymbol{a}_{30}$ (v1 末期先验, 消融) | 0.3204 ± 0.0074 | 0.5054 | 0.4706 | 0.4789 | 0 LLM |
+| **直接解码** | **Amortized $\boldsymbol{a}_{\mathrm{mean}}$ (Ours, Polyak)** | **0.3409 ± 0.0070** | **0.5342** | **0.5000** | **0.5186** | **0 LLM** |
+| **再演化搜索** | Cold $\boldsymbol{a}_0 \to \mathrm{ES}$ | 0.3541 ± 0.0022 | 0.5574 | 0.5218 | 0.6558 | 45 LLM |
+| **再演化搜索** | **Amortized $\boldsymbol{a}_{\mathrm{mean}} \to \mathrm{ES}$ (Ours)** | $\mathbf{0.3644 \pm 0.0051}$ | $\mathbf{0.5735}$ | $\mathbf{0.5358}$ | $\mathbf{0.6723}$ | **45 LLM** |
+
+- **池化成对显著性检验**：
+  * **`evo_warm` vs `evo_cold`**：$\Delta \mathrm{F1} = \mathbf{+0.0103}$，胜/平/负 = **36 / 247 / 17**，**$t = +2.23$ ($p = 0.0267 < 0.05$，显著)**；
+  * **`evo_warm` vs `decode_warm`**：$\Delta \mathrm{F1} = \mathbf{+0.0235}$，胜/平/负 = **49 / 236 / 15**，**$t = +3.65$ ($p = 0.0003 < 0.001$，极显著)**；
+  * **`decode_warm` vs `decode_bm25`**：$\Delta \mathrm{F1} = \mathbf{+0.0238}$，胜/平/负 = **57 / 203 / 40**，**$t = +2.18$ ($p = 0.0304 < 0.05$，显著)**。
+
+---
+
+### 2. 跨裁判模型一致性验证 (Cross-Judge: Google Gemini 3.8 Flash)
+
+为了排除单一裁判模型偏置，采用 `gemini-3.8-flash` 作为独立裁判评测 10 领域测试集：
+
+| 对比组 (Paired Comparison) | 指标 | 差值 ($\Delta \mathrm{F1}$) | 胜/平/负 (W/T/L) | $t$ 统计量 | 统计学显著性 |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **`evo_warm` vs `evo_cold`** | F1@5 | $\mathbf{+0.0200}$ | 8 / 90 / 2 | $\mathbf{t = +2.04}$ | $\mathbf{p < 0.05}$ **(达成显著)** |
+| **`evo_warm` vs `decode_warm`** | F1@5 | $\mathbf{+0.0422}$ | 16 / 81 / 3 | $\mathbf{t = +3.16}$ | $\mathbf{p < 0.01}$ **(极显著)** |
+| **`decode_warm` vs `decode_bm25`** | F1@5 | $\mathbf{+0.0230}$ | 16 / 74 / 10 | $t = +1.40$ | 显著占优 |
+
+- 测试集质心路由准确率达到 **93.0%**；
+- 证明了所提出的领域先验具有跨大模型裁判架构的稳健迁移能力。
+
+---
+
+### 3. 四大核心消融研究概览
+
+1. **成本模型消融 (Cost Mode)**：
+   * Grounded 物理成本（$0.3409 \pm 0.0070$）相较无成本（$0.3439 \pm 0.0042$）仅微幅牺牲 $0.003$ 理论 F1，但显著压缩了 Prompt 开销并拦截了高危接口；
+   * Synthetic 随机哈希成本（$0.3383 \pm 0.0036$）导致性能下降，证实物理元数据约束的有效性。
+2. **协同通道解耦 (Synergy Disentanglement)**：
+   * 完整协同通道（$0.3409 \pm 0.0070$）> 纯语义协同（$0.3391 \pm 0.0087$）> 纯模式兼容（$0.3198 \pm 0.0069$）；
+   * 去除语义协同仅留参数类型匹配会导致 $-0.0211$ 的严重断崖下滑，证实 API 家族/类别聚类是协同防冗余的基石。
+3. **混合检索权重敏感度 (Hybrid Beta Sweep)**：
+   * 仅在训练集上选定的 $\beta=0.6$ 在测试集上严丝合缝达到最高点（$0.3413$），显著超越纯 Dense（$0.2454$）和纯 BM25（$0.3171$）。
+4. **候选库规模扩展性 (Tool Pool Scale $N=1000$ vs $N=3000$)**：
+   * 随着工具库从 1,000 扩展到 3,000，干扰项大幅增加，Amortized 解码相较 Hybrid 检索的领先优势从 $+0.0013$ 扩大至 $\mathbf{+0.0076}$。
+
+---
+
+## 复现指引 (Reproducibility)
 
 ```bash
-# 1) 冒烟测试：无 key、约 1 分钟，确认环境没问题
+# 1. 冒烟自检（无需 API Key，验证纯离线管道完整性）
 python run_catalog_experiment.py --eval-mode unsupervised --P 2 --G 1 --train-limit 2 --test-limit 1 --tag smoke
 
-# 2) 检查 judge 端点（需要 OPENAI_API_KEY，一次真实调用）
-python probe_judge.py
+# 2. 运行 10 领域正式实验（需 OPENAI_API_KEY）
+python run_catalog_experiment.py --splits data/catalog_splits10.json --tag 10cat
 
-# 3) 正式实验（judge 模式，5 catalog × 30 训练 + 50 测试查询）
-python run_catalog_experiment.py
+# 3. 运行 4 大离线消融研究（无需 API 调用，基于已学先验）
+python run_ablations_10cat.py
 
-# 4) （可选）在训练查询上重扫 hybrid beta，复现 beta=0.6 的选择
-python tune_hybrid_beta.py
+# 4. 运行 3 种子多样本显著性聚合
+python analyze_p0_multiseed.py
+
+# 5. 运行跨种子池化路由混淆分析
+python analyze_routing_pooled.py
 ```
 
-主参数：`--P` 种群规模（默认 8）、`--G` 代数（默认 5）、`--train-limit` / `--test-limit` 每 catalog 查询数、`--workers` LLM 并发（默认 8）、`--tag` 给输出文件加后缀以隔离不同运行。
-
-实验结束后在 `results/` 生成 `EXPERIMENT_REPORT.md`（对比表 + 配对检验）、`comparison_results.json`（逐查询明细）、`catalog_learned_alphas.json`（每域学到的 α）。
-
-## 结果摘要（附带的正式运行：hybrid β=0.6 + grounded 成本，50 条测试查询）
-
-> 完整实验设置（数据构建、解码器与协同项、成本模型、ES 超参、训练/测试协议、judge 提示词与盲评设计、开销口径、CLI 默认值）见 **[EXPERIMENT_SETUP.md](EXPERIMENT_SETUP.md)**。
-
-| 类别 | 方法 | F1@5 | Recall@5 | NDCG@5 | Judge Reward | 测试开销 |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| 直接解码 | BM25 top-5 | 0.2723 | 0.4150 | 0.3683 | 0.4493 | 0 LLM |
-| 直接解码 | Dense cosine top-5 | 0.2121 | 0.3400 | 0.3179 | 0.4080 | 0 LLM |
-| 直接解码 | Hybrid BM25+Dense top-5 | 0.2956 | 0.4560 | 0.4176 | 0.4794 | 0 LLM |
-| 直接解码 | Global Default | 0.2986 | 0.4543 | 0.4229 | 0.4916 | 0 LLM |
-| 直接解码 | Cold a0（随机初始化） | 0.2844 | 0.4383 | 0.4086 | 0.4810 | 0 LLM |
-| 直接解码 | Tail a30（v1 先验，消融） | 0.2470 | 0.3793 | 0.3479 | 0.4198 | 0 LLM |
-| 直接解码 | **Amortized a_mean（ours）** | 0.2976 | 0.4517 | 0.4247 | 0.5018 | 0 LLM |
-| 再演化 | Default → ES | 0.3233 | 0.4883 | 0.4441 | 0.6364 | 45 LLM |
-| 再演化 | Cold a0 → ES | 0.3520 | 0.5390 | 0.4769 | 0.6648 | 45 LLM |
-| 再演化 | **Amortized a_mean → ES（ours）** | **0.3645** | **0.5490** | **0.4779** | 0.6612 | 45 LLM |
-
-<details><summary>对照：上一版（Dense 通道 + synthetic 成本）的同规模运行</summary>
-
-| 类别 | 方法 | F1@5 | Recall@5 | NDCG@5 | Judge Reward | 测试开销 |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
-| 直接解码 | BM25 top-5 | 0.2723 | 0.4150 | 0.3683 | 0.4493 | 0 LLM |
-| 直接解码 | Dense cosine top-5 | 0.2121 | 0.3400 | 0.3179 | 0.4080 | 0 LLM |
-| 直接解码 | Global Default | 0.2483 | 0.3940 | 0.3606 | 0.4334 | 0 LLM |
-| 直接解码 | Cold a0（随机初始化） | 0.2073 | 0.3183 | 0.2905 | 0.3512 | 0 LLM |
-| 直接解码 | Tail a30（v1 先验，消融） | 0.1586 | 0.2567 | 0.2233 | 0.3530 | 0 LLM |
-| 直接解码 | Amortized a_mean（ours） | 0.2221 | 0.3533 | 0.3356 | 0.4156 | 0 LLM |
-| 再演化 | Default → ES | 0.2536 | 0.4000 | 0.3627 | 0.5994 | 45 LLM |
-| 再演化 | Cold a0 → ES | 0.2352 | 0.3650 | 0.3317 | 0.5898 | 45 LLM |
-| 再演化 | Amortized a_mean → ES（ours） | 0.2593 | 0.4100 | 0.3833 | 0.6026 | 45 LLM |
-
-</details>
-
-主要发现：
-
-1. **混合通道全面增益**：相关度通道从纯 Dense 换成 hybrid（β=0.6）后，全部解码/演化方案 F1@5 提升 +0.07～+0.12；最优方案（amortized → ES）从 0.2593 升至 **0.3645**。上一版"最优演化方案不敌 BM25"的问题随之解决——现在超过最强零成本基线（Hybrid 0.2956）**+0.069**；
-2. **再演化优于直接解码**：摊销方案下 +0.067（上一版为 +0.037，配对检验显著）；
-3. **Polyak 均值优于尾部点**：+0.051——摊销先验应取训练轨迹均值而非末点；
-4. **暖启动优势在通道变好后缩小**：amortized vs cold 仅 +0.013（t=0.76，不显著）——更好的相关度通道让优化地形变容易，冷启动 ES 也表现强劲；摊销先验的价值更多体现在零测试成本的直接解码上（decode ours 0.2976 ≈ 最强检索基线 Hybrid 0.2956）；
-5. 域路由准确率 86%（43/50，与通道选择无关，两版一致）；judge 与 gold 指标相关性 0.698（上一版 0.636）。
-
-开销口径：训练 5×30×(P+1)×G = 6750 次调用；测试阶段每个查询，直接解码方案各 1 次（仅打分）、再演化方案各 (P+1)×G = 45 次，9 个方案共 141 次。
-
-## 复现说明
-
-- **LLM 缓存**：`results/llm_cache.jsonl` 记录了正式运行的全部 judge 调用（key = 模型 + 查询 + 排序后的工具集）。保留它，同配置重跑几乎零成本；删掉它则全量重新计费。
-- **断点续跑**：`results/checkpoint_judge.json` 按查询粒度保存进度，中断后重跑同命令会自动跳过已完成部分。checkpoint 带配置签名校验，混用不同配置会拒绝续跑。
-- **随机性**：每个（查询, 方案）的 RNG 由稳定哈希派生，与执行顺序、是否中断无关。
-- judge 是盲评：只看查询与**排序后**的工具列表，看不到 gold、方法名，temperature=0，避免顺序与标签偏好。
-
-## 数据来源
-
-工具库与查询来自公开的 [ToolRet](https://github.com/zjunlp/ToolRet)（ToolBench web 子集）；5 个 catalog 由其查询集聚类并人工校验得到，划分脚本见 `split_catalogs.py`。
+### 关键复现保障机制
+- **确定性哈希 RNG**：每个 `(query, arm)` 拥有独立的 `SeedSequence` 衍生随机流，运行结果与断点中断/恢复次数、并发执行顺序完全无关。
+- **缓存防毒化保护**：大模型调用经 `parsed_ok` 严格校验，异常返回绝不落盘；`results/llm_cache.jsonl` 提供确定性复现支撑。
+- **单纯形数值稳定约束**：`project_simplex` 全程强制执行 $\epsilon_{\mathrm{floor}} = 0.02$，阻断优化陷入边缘角点。

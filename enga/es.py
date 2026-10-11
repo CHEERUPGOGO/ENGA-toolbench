@@ -20,6 +20,24 @@ from .qd import Archive, gamma
 from scipy.stats import rankdata
 
 
+def project_simplex(v: np.ndarray, eps_floor: float = 0.02) -> np.ndarray:
+    """Euclidean projection onto the probability simplex {x >= 0, sum(x) = 1} (Duchi et al.).
+
+    When eps_floor > 0, enforces a strictly positive lower bound (x_i >= eps_floor)
+    to prevent dimension collapse and artificial truncation of small weights (e.g. cost).
+    """
+    v = np.asarray(v, dtype=np.float64)
+    u = np.sort(v)[::-1]
+    css = np.cumsum(u)
+    rho = np.nonzero(u * np.arange(1, len(v) + 1) > (css - 1))[0][-1]
+    theta = (css[rho] - 1.0) / (rho + 1.0)
+    res = np.maximum(v - theta, 0.0)
+    if eps_floor > 0 and len(v) * eps_floor < 1.0:
+        res = np.maximum(res, eps_floor)
+        res = res / res.sum()
+    return res
+
+
 def centered_ranks(rewards: np.ndarray) -> np.ndarray:
     """Rank-normalize rewards to [-0.5, 0.5] (standard OpenAI-ES trick with average ties)."""
     n = len(rewards)
@@ -77,7 +95,7 @@ def enaga_search(index: ToolIndex, q: Query, utility, cfg: Config, rng: np.rando
         if cfg.eval_mu:
             if budget is not None and budget.exhausted():
                 break
-            S_mu = decode(index, q, np.clip(mu, 0.0, None), cfg.b,
+            S_mu = decode(index, q, project_simplex(mu), cfg.b,
                           use_syn=use_syn, use_cost=use_cost)
             r_mu = utility(q, S_mu)
             n_expensive += 1
@@ -92,7 +110,7 @@ def enaga_search(index: ToolIndex, q: Query, utility, cfg: Config, rng: np.rando
         for i in range(P):
             if budget is not None and budget.exhausted():
                 break
-            alpha = np.clip(mu + sigma * eps[i], 0.0, None)
+            alpha = project_simplex(mu + sigma * eps[i])
             ops: list = []
             S = decode(index, q, alpha, cfg.b, use_syn=use_syn, use_cost=use_cost, n_lightweight=ops)
             n_lightweight += int(sum(ops))
@@ -113,11 +131,13 @@ def enaga_search(index: ToolIndex, q: Query, utility, cfg: Config, rng: np.rando
         monitor.log(g, mu, sigma, rewards, comps[best_i], float(rewards[best_i]))
 
         if use_es and len(rewards) >= 3:
-            # Eq. 15: mu <- mu + eta/(P*sigma) * sum_i r_hat_i * eps_i
-            # (the mu-evaluation enters with eps = 0, i.e. contributes no gradient)
-            r_hat = centered_ranks(rewards)
-            grad = (r_hat[:, None] * eps_arr).sum(axis=0)
-            mu = np.clip(mu + cfg.eta / (P * sigma) * grad, 0.0, None)
+            # Rank-based natural gradient update, projected back onto the simplex
+            # Rewards over perturbed candidates (eps != 0) drive the gradient
+            cand_rewards = rewards[1:] if cfg.eval_mu else rewards
+            cand_eps = eps_arr[1:] if cfg.eval_mu else eps_arr
+            r_hat = centered_ranks(cand_rewards)
+            grad = (r_hat[:, None] * cand_eps).sum(axis=0) / (P * sigma)
+            mu = project_simplex(mu + cfg.eta * grad)
         sigma *= cfg.sigma_decay
 
     if not use_qd:

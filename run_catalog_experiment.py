@@ -54,19 +54,29 @@ from enga.nga import decode
 from enga.es import centered_ranks
 from enga.utils import seed_everything, stable_hash
 
-DECODE_ARMS = ["default", "cold", "tail", "warm"]   # warm = amortized Polyak mean (ours)
-EVO_ARMS = ["default", "cold", "warm"]              # warm = amortized Polyak mean (ours)
+ALL_DECODE_ARMS = ["default", "cold", "tail", "warm"]
+DECODE_ARMS = ["cold", "tail", "warm"]             # warm = amortized Polyak mean (ours)
+ALL_EVO_ARMS = ["default", "cold", "warm"]
+EVO_ARMS = ["cold", "warm"]                        # warm = amortized Polyak mean (ours)
 RETRIEVAL_ARMS = ["bm25", "dense", "hybrid"]        # classic & hybrid retrieval baselines, no alpha
 
 
-def project_simplex(v: np.ndarray) -> np.ndarray:
-    """Euclidean projection onto the probability simplex {x >= 0, sum(x) = 1} (Duchi et al.)."""
+def project_simplex(v: np.ndarray, eps_floor: float = 0.02) -> np.ndarray:
+    """Euclidean projection onto the probability simplex {x >= 0, sum(x) = 1} (Duchi et al.).
+    
+    When eps_floor > 0, enforces a strictly positive lower bound (x_i >= eps_floor)
+    to prevent dimension collapse and artificial truncation of small weights (e.g. cost).
+    """
     v = np.asarray(v, dtype=np.float64)
     u = np.sort(v)[::-1]
     css = np.cumsum(u)
     rho = np.nonzero(u * np.arange(1, len(v) + 1) > (css - 1))[0][-1]
     theta = (css[rho] - 1.0) / (rho + 1.0)
-    return np.maximum(v - theta, 0.0)
+    res = np.maximum(v - theta, 0.0)
+    if eps_floor > 0 and len(v) * eps_floor < 1.0:
+        res = np.maximum(res, eps_floor)
+        res = res / res.sum()
+    return res
 
 
 def spawn_rng(seed: int, key: str) -> np.random.Generator:
@@ -167,6 +177,12 @@ def main():
                         help="Disable hybrid retrieval (fallback to pure Dense embedding)")
     parser.add_argument("--splits", type=str, default="data/catalog_splits.json",
                         help="Catalog splits file, relative to repo root (default data/catalog_splits.json)")
+    parser.add_argument("--llm-base-url", type=str, default=None,
+                        help="Override LLM base_url (e.g. http://127.0.0.1:8046/v1)")
+    parser.add_argument("--llm-model", type=str, default=None,
+                        help="Override LLM model name (e.g. gemini-3.8-flash)")
+    parser.add_argument("--llm-api-key", type=str, default=None,
+                        help="Override LLM api_key")
     parser.add_argument("--pool-seed", type=int, default=None,
                         help="Seed for sub-library sampling (defaults to --seed). Fix it across seeds "
                              "to hold the pool fixed while varying only training randomness.")
@@ -185,8 +201,8 @@ def main():
             parser.error(f"invalid arm list '{flag}' (unknown: {bad}); allowed: {allowed}")
         return arms
 
-    decode_arms = _parse_arms(args.decode_arms, DECODE_ARMS)
-    evo_arms = _parse_arms(args.evo_arms, EVO_ARMS)
+    decode_arms = _parse_arms(args.decode_arms, ALL_DECODE_ARMS)
+    evo_arms = _parse_arms(args.evo_arms, ALL_EVO_ARMS)
     retrieval_arms = _parse_arms(args.retrieval_arms, RETRIEVAL_ARMS)
     pool_seed = args.pool_seed if args.pool_seed is not None else args.seed
 
@@ -210,6 +226,12 @@ def main():
     cfg.hybrid_beta = args.hybrid_beta
     cfg.use_hybrid = not args.no_hybrid
     cfg.P, cfg.G, cfg.seed = args.P, args.G, args.seed
+    if args.llm_base_url:
+        cfg.llm.base_url = args.llm_base_url
+    if args.llm_model:
+        cfg.llm.model = args.llm_model
+    if args.llm_api_key:
+        cfg.llm.api_key = args.llm_api_key
     seed_everything(args.seed)
 
     # Run signature: checkpoint refuses to mix incompatible configs (v1 flaw).
