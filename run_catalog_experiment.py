@@ -28,6 +28,7 @@ Pipeline:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import threading
 import time
@@ -164,10 +165,33 @@ def main():
                         help="Cost calculation mode (grounded: ToolBench prompt/payload/risk; synthetic: hash)")
     parser.add_argument("--no-hybrid", action="store_true",
                         help="Disable hybrid retrieval (fallback to pure Dense embedding)")
+    parser.add_argument("--splits", type=str, default="data/catalog_splits.json",
+                        help="Catalog splits file, relative to repo root (default data/catalog_splits.json)")
+    parser.add_argument("--pool-seed", type=int, default=None,
+                        help="Seed for sub-library sampling (defaults to --seed). Fix it across seeds "
+                             "to hold the pool fixed while varying only training randomness.")
+    parser.add_argument("--decode-arms", type=str, default=",".join(DECODE_ARMS),
+                        help=f"Comma list of decode arms to evaluate (default all: {','.join(DECODE_ARMS)})")
+    parser.add_argument("--evo-arms", type=str, default=",".join(EVO_ARMS),
+                        help=f"Comma list of re-evolution arms to evaluate (default all: {','.join(EVO_ARMS)})")
+    parser.add_argument("--retrieval-arms", type=str, default=",".join(RETRIEVAL_ARMS),
+                        help=f"Comma list of retrieval baselines (default all: {','.join(RETRIEVAL_ARMS)})")
     args = parser.parse_args()
 
+    def _parse_arms(flag: str, allowed: list[str]) -> list[str]:
+        arms = [a.strip() for a in flag.split(",") if a.strip()]
+        bad = [a for a in arms if a not in allowed]
+        if bad or not arms:
+            parser.error(f"invalid arm list '{flag}' (unknown: {bad}); allowed: {allowed}")
+        return arms
+
+    decode_arms = _parse_arms(args.decode_arms, DECODE_ARMS)
+    evo_arms = _parse_arms(args.evo_arms, EVO_ARMS)
+    retrieval_arms = _parse_arms(args.retrieval_arms, RETRIEVAL_ARMS)
+    pool_seed = args.pool_seed if args.pool_seed is not None else args.seed
+
     root = Path(__file__).resolve().parent
-    splits_path = root / "data" / "catalog_splits.json"
+    splits_path = root / args.splits
     results_dir = root / "results"
     results_dir.mkdir(parents=True, exist_ok=True)
     suffix = f"_{args.tag}" if args.tag else ""
@@ -189,9 +213,14 @@ def main():
     seed_everything(args.seed)
 
     # Run signature: checkpoint refuses to mix incompatible configs (v1 flaw).
+    # splits_hash pins the exact catalog splits (5-cat vs 10-cat differ here even
+    # when all numeric hyperparameters match); arm lists pin the evaluated subset.
+    splits_hash = hashlib.sha1(splits_path.read_bytes()).hexdigest()[:12]
     signature = {
         "eval_mode": args.eval_mode, "model": cfg.llm.model, "P": args.P, "G": args.G,
         "train_limit": args.train_limit, "test_limit": args.test_limit, "seed": args.seed,
+        "pool_seed": pool_seed, "n_catalogs": len(catalogs), "splits_hash": splits_hash,
+        "decode_arms": decode_arms, "evo_arms": evo_arms, "retrieval_arms": retrieval_arms,
         "simplex": True, "relative_sigma": True, "b": cfg.b, "eta": cfg.eta,
         "sigma0": cfg.sigma0, "sigma_decay": cfg.sigma_decay, "judge_prompt": "judge2",
         "cost_mode": args.cost_mode, "hybrid_beta": args.hybrid_beta, "use_hybrid": not args.no_hybrid,
@@ -218,7 +247,7 @@ def main():
                                      gold_ids=[t["id"] for t in q_dict.get("tools", [])]))
 
     sub_tools, qs, ids = build_experiment_set(all_raw_tools, all_queries, len(all_queries),
-                                              n_tools=3000, seed=args.seed)
+                                              n_tools=3000, seed=pool_seed)
     index = ToolIndex(sub_tools, ids, cfg, query_texts=[q.text for q in qs])
     print(f"Index built: {index.n} tools available for selection.")
 
@@ -260,7 +289,7 @@ def main():
             return
         checkpoint = loaded
         checkpoint.setdefault("partial_catalogs", {})
-        plog(f"Resumed checkpoint: {len(checkpoint['trained_catalogs'])}/5 catalogs trained, "
+        plog(f"Resumed checkpoint: {len(checkpoint['trained_catalogs'])}/{len(catalogs)} catalogs trained, "
              f"{len(checkpoint['test_results'])} test queries finished.")
 
     catalog_alphas = checkpoint["trained_catalogs"]
@@ -366,21 +395,22 @@ def main():
                      "match_success": is_match}
 
         # --- Category A: direct decode (no test-time search; 1 judge call only for reward) ---
-        for arm in DECODE_ARMS:
+        for arm in decode_arms:
             S = decode(index, q_obj, arm_alphas[arm], cfg.b, use_syn=True, use_cost=True)
             rec[f"decode_{arm}"] = {"f1": set_f1(S, gold_ids), "recall": set_recall(S, gold_ids),
                                     "ndcg": set_ndcg(S, gold_ids), "reward": float(utility(q_obj, S)),
                                     "tools": S}
 
         # --- Category A2: classic & hybrid retrieval baselines (BM25 / dense cosine / hybrid; 0 search) ---
-        for arm, fn in (("bm25", method_bm25), ("dense", method_dense), ("hybrid", method_hybrid)):
-            S, _ = fn(index, q_obj, cfg, None, utility, budget)
+        retrieval_fns = {"bm25": method_bm25, "dense": method_dense, "hybrid": method_hybrid}
+        for arm in retrieval_arms:
+            S, _ = retrieval_fns[arm](index, q_obj, cfg, None, utility, budget)
             rec[f"decode_{arm}"] = {"f1": set_f1(S, gold_ids), "recall": set_recall(S, gold_ids),
                                     "ndcg": set_ndcg(S, gold_ids), "reward": float(utility(q_obj, S)),
                                     "tools": S}
 
-        # --- Category B: re-evolution (P*G+G judge calls per arm) ---
-        for arm in EVO_ARMS:
+        # --- Category B: re-evolution ((P+1)*G judge calls per arm) ---
+        for arm in evo_arms:
             rng_arm = spawn_rng(args.seed, f"test:{qid}:{arm}")
             _, r_best, S_best = run_query_evolution(
                 index, q_obj, utility, arm_alphas[arm], cfg, rng_arm, args.G, args.P, executor)
@@ -389,10 +419,10 @@ def main():
                                  "tools": S_best}
 
         ckpt_mutate(lambda: (test_results.append(rec), tested_qids.add(qid)))
-        plog(f"cat {true_cid} {qid:<24s} {'OK' if is_match else 'XX':<3s} | "
-             f"dW={rec['decode_warm']['f1']:.3f} dD={rec['decode_default']['f1']:.3f} dC={rec['decode_cold']['f1']:.3f} | "
-             f"eW={rec['evo_warm']['f1']:.3f} eD={rec['evo_default']['f1']:.3f} eC={rec['evo_cold']['f1']:.3f} | "
-             f"rewW={rec['evo_warm']['reward']:.3f} rewC={rec['evo_cold']['reward']:.3f}")
+        prog = " ".join(f"{k.replace('decode_', 'd').replace('evo_', 'e')}={rec[k]['f1']:.3f}"
+                        for k in ("decode_warm", "decode_default", "decode_cold",
+                                  "evo_warm", "evo_default", "evo_cold") if k in rec)
+        plog(f"cat {true_cid} {qid:<24s} {'OK' if is_match else 'XX':<3s} | {prog}")
 
     with ThreadPoolExecutor(max_workers=args.query_parallel) as q_pool:
         list(q_pool.map(eval_test_item, list(zip(test_items, q_embs))))
@@ -415,18 +445,19 @@ def main():
     print(f"{'Category':<8s} {'Method':<40s} {'F1@5':<8s} {'Recall@5':<9s} {'NDCG@5':<8s} {'J-Reward':<9s} Cost")
     print("-" * 100)
 
-    arm_labels = [
-        ("decode", "bm25",    "BM25 top-5 (lexical baseline)", "0 LLM"),
-        ("decode", "dense",   "Dense cosine top-5 (dense baseline)", "0 LLM"),
-        ("decode", "hybrid",  "Hybrid BM25+Dense top-5 (retrieval)", "0 LLM"),
-        ("decode", "default", "Global Default (norm. [0.80, 0.16, 0.04])", "0 LLM"),
-        ("decode", "cold",    "Cold a0 (random init)", "0 LLM"),
-        ("decode", "tail",    "Tail a30 (v1 prior, ablation)", "0 LLM"),
-        ("decode", "warm",    "Amortized a_mean (Ours, Polyak)", "0 LLM"),
-        ("evo",    "default", "Default -> ES", f"{n_evals_per_evo} LLM"),
-        ("evo",    "cold",    "Cold a0 -> ES (baseline)", f"{n_evals_per_evo} LLM"),
-        ("evo",    "warm",    "Amortized a_mean -> ES (Ours)", f"{n_evals_per_evo} LLM"),
-    ]
+    ARM_LABELS = {
+        "bm25":    "BM25 top-5 (lexical baseline)",
+        "dense":   "Dense cosine top-5 (dense baseline)",
+        "hybrid":  "Hybrid BM25+Dense top-5 (retrieval)",
+        "default": "Global Default (norm. [0.80, 0.16, 0.04])",
+        "cold":    "Cold a0 (random init)",
+        "tail":    "Tail a30 (v1 prior, ablation)",
+        "warm":    "Amortized a_mean (Ours, Polyak)",
+    }
+    arm_labels = ([("decode", a, ARM_LABELS[a], "0 LLM") for a in retrieval_arms]
+                  + [("decode", a, ARM_LABELS[a], "0 LLM") for a in decode_arms]
+                  + [("evo", a, f"{ARM_LABELS[a]} -> ES", f"{n_evals_per_evo} LLM") for a in evo_arms])
+    available = set(test_results[0].keys()) if test_results else set()
     aggregate = {}
     for prefix, arm, label, cost in arm_labels:
         s = arm_stats(test_results, prefix, arm)
@@ -434,17 +465,19 @@ def main():
         cat_label = "decode" if prefix == "decode" else "evo"
         print(f"{cat_label:<8s} {label:<40s} {s['f1']:<8.4f} {s['recall']:<9.4f} {s['ndcg']:<8.4f} {s['reward']:<9.4f} {cost}")
 
-    stats = {
-        "evo_warm_vs_cold": paired(test_results, "evo_warm", "evo_cold"),
-        "evo_warm_vs_default": paired(test_results, "evo_warm", "evo_default"),
-        "decode_warm_vs_default": paired(test_results, "decode_warm", "decode_default"),
-        "decode_warm_vs_tail": paired(test_results, "decode_warm", "decode_tail"),
-        "decode_warm_vs_bm25": paired(test_results, "decode_warm", "decode_bm25"),
-        "decode_warm_vs_hybrid": paired(test_results, "decode_warm", "decode_hybrid"),
-        "evo_warm_vs_decode_warm": paired(test_results, "evo_warm", "decode_warm"),
+    paired_specs = {
+        "evo_warm_vs_cold": ("evo_warm", "evo_cold"),
+        "evo_warm_vs_default": ("evo_warm", "evo_default"),
+        "decode_warm_vs_default": ("decode_warm", "decode_default"),
+        "decode_warm_vs_tail": ("decode_warm", "decode_tail"),
+        "decode_warm_vs_bm25": ("decode_warm", "decode_bm25"),
+        "decode_warm_vs_hybrid": ("decode_warm", "decode_hybrid"),
+        "evo_warm_vs_decode_warm": ("evo_warm", "decode_warm"),
     }
-    rews = [r[f"evo_{a}"]["reward"] for r in test_results for a in EVO_ARMS]
-    f1s_ = [r[f"evo_{a}"]["f1"] for r in test_results for a in EVO_ARMS]
+    stats = {name: paired(test_results, a, b) for name, (a, b) in paired_specs.items()
+             if a in available and b in available}
+    rews = [r[f"evo_{a}"]["reward"] for r in test_results for a in evo_arms]
+    f1s_ = [r[f"evo_{a}"]["f1"] for r in test_results for a in evo_arms]
     corr = float(np.corrcoef(rews, f1s_)[0, 1]) if len(set(rews)) > 1 else float("nan")
 
     print("-" * 100)
@@ -453,16 +486,17 @@ def main():
     print(f"corr(judge reward, gold F1) over evolution methods: {corr:.3f}")
     print("=" * 100)
 
-    print("\nPER-CATALOG F1@5 (decode_warm / evo_warm / evo_cold)")
+    print(f"\nPER-CATALOG F1@5 ({' / '.join(k for k in ('decode_warm', 'evo_warm', 'evo_cold') if k in available)})")
     for cat in catalogs:
         cid = str(cat["catalog_id"])
         rows = [r for r in test_results if r["true_catalog"] == cid]
         if not rows:
             continue
-        dw = np.mean([r["decode_warm"]["f1"] for r in rows])
-        ew = np.mean([r["evo_warm"]["f1"] for r in rows])
-        ec = np.mean([r["evo_cold"]["f1"] for r in rows])
-        print(f"  Catalog {cid} {cat['title_en'][:34]:<36s} (n={len(rows)}): {dw:.4f} / {ew:.4f} / {ec:.4f}")
+        cols = []
+        for k in ("decode_warm", "evo_warm", "evo_cold"):
+            if k in available:
+                cols.append(f"{np.mean([r[k]['f1'] for r in rows]):.4f}")
+        print(f"  Catalog {cid} {cat['title_en'][:34]:<36s} (n={len(rows)}): {' / '.join(cols)}")
 
     # Save JSON + Markdown report
     full_output = {"config": signature, "catalog_routing_accuracy": match_acc,
@@ -478,7 +512,7 @@ def main():
         f"- **评估模式**: `{args.eval_mode}` (`{cfg.llm.model if args.eval_mode == 'judge' else 'local'}`, 训练/测试零 gold 泄露)",
         f"- **演化超参数**: P={args.P}, G={args.G}, alpha 约束于单纯形 (sum=1), sigma=sigma0*||alpha||",
         f"- **摊销先验**: 训练轨迹 Polyak 均值 a_mean (v1 使用尾部 a30, 仅作消融)",
-        f"- **数据**: 5 Catalog, 每类训练 {args.train_limit} 条 / 测试 {args.test_limit} 条; 路由准确率 **{match_acc*100:.1f}%** ({correct_matches}/{total_test})",
+        f"- **数据**: {len(catalogs)} Catalog, 每类训练 {args.train_limit} 条 / 测试 {args.test_limit} 条; 路由准确率 **{match_acc*100:.1f}%** ({correct_matches}/{total_test})",
         f"- **judge-gold 相关性**: {corr:.3f}",
         "",
         "## 核心指标对比表",
@@ -490,16 +524,21 @@ def main():
         s = aggregate[f"{prefix}_{arm}"]
         md.append(f"| {'直接解码' if prefix == 'decode' else '再演化'} | {label} | {s['f1']:.4f} | "
                   f"{s['recall']:.4f} | {s['ndcg']:.4f} | {s['reward']:.4f} | {cost} |")
-    md += [
-        "",
-        "## 配对检验 (F1@5)",
-        f"- 再演化 amortized vs cold: diff={stats['evo_warm_vs_cold']['mean_diff']:+.4f} "
-        f"(W/T/L = {stats['evo_warm_vs_cold']['win']}/{stats['evo_warm_vs_cold']['tie']}/{stats['evo_warm_vs_cold']['lose']}, "
-        f"t={stats['evo_warm_vs_cold']['t']:+.2f})",
-        f"- 解码 amortized vs global default: diff={stats['decode_warm_vs_default']['mean_diff']:+.4f}",
-        f"- 解码 amortized (mean) vs tail: diff={stats['decode_warm_vs_tail']['mean_diff']:+.4f}",
-        f"- 再演化 vs 直接解码 (amortized): diff={stats['evo_warm_vs_decode_warm']['mean_diff']:+.4f}",
-    ]
+    md += ["", "## 配对检验 (F1@5)"]
+    md_labels = {
+        "evo_warm_vs_cold": "再演化 amortized vs cold",
+        "evo_warm_vs_default": "再演化 amortized vs default",
+        "decode_warm_vs_default": "解码 amortized vs global default",
+        "decode_warm_vs_tail": "解码 amortized (mean) vs tail",
+        "decode_warm_vs_bm25": "解码 amortized vs BM25",
+        "decode_warm_vs_hybrid": "解码 amortized vs Hybrid",
+        "evo_warm_vs_decode_warm": "再演化 vs 直接解码 (amortized)",
+    }
+    for name, p in stats.items():
+        line = f"- {md_labels.get(name, name)}: diff={p['mean_diff']:+.4f}"
+        if name == "evo_warm_vs_cold":
+            line += f" (W/T/L = {p['win']}/{p['tie']}/{p['lose']}, t={p['t']:+.2f})"
+        md.append(line)
     with open(results_dir / f"EXPERIMENT_REPORT{suffix}.md", "w", encoding="utf-8") as f:
         f.write("\n".join(md))
 

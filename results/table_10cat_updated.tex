@@ -1,0 +1,29 @@
+% 10-catalog multi-seed pooled benchmark (N=3000 pool, b=5, n=300 test queries across Seeds 42, 43, 44)
+\begin{table}[t]
+\centering\small
+\caption{Tool selection performance on the 10-catalog benchmark ($N{=}3000$ pool, $b{=}5$, $100$ test queries $\times\,3$ seeds, $n{=}300$ pooled evaluations, blind LLM judge). Retrieval and direct decoding require zero LLM calls for selection. 1-call LLM rerank invokes the LLM once per query on hybrid top-50 candidates. Re-evolution expends $(P{+}1)G{=}45$ judge calls per query. Standard deviations denote training variance across 3 seeds (retrieval and fixed defaults are deterministic, thus std=0). Bold indicates best in group; underlines indicate overall best.}
+\label{tab:main}
+\begin{tabular}{llccccc}
+\toprule
+Group & Method & F1@5 & Recall@5 & NDCG@5 & Judge rew. & LLM/q \\
+\midrule
+\multirow{3}{*}{Retrieval}
+ & BM25 top-5 & $0.3171\pm0.0000$ & $0.5000\pm0.0000$ & $0.4683\pm0.0000$ & $0.4941\pm0.0000$ & 0 \\
+ & Dense cosine top-5 & $0.2454\pm0.0000$ & $0.4008\pm0.0000$ & $0.3786\pm0.0000$ & $0.4190\pm0.0000$ & 0 \\
+ & Hybrid ($\beta{=}0.6$) top-5 & $\mathbf{0.3413\pm0.0000}$ & $\mathbf{0.5380\pm0.0000}$ & $\mathbf{0.4992\pm0.0000}$ & $\mathbf{0.5076\pm0.0000}$ & 0 \\
+\midrule
+1-Call LLM & Hybrid top-50 $\to$ LLM rerank & $0.3498$ & $0.5473$ & $0.5053$ & $0.5181$ & 1 \\
+\midrule
+\multirow{4}{*}{\shortstack[l]{Direct\\decode}}
+ & Cold $\alpha_0$ (random init) & $0.2826\pm0.0210$ & $0.4493\pm0.0313$ & $0.4251\pm0.0278$ & $0.4373\pm0.0236$ & 0 \\
+ & Tail $\mu_T$ (no averaging) & $0.3215\pm0.0122$ & $0.5069\pm0.0176$ & $0.4826\pm0.0132$ & $0.4768\pm0.0027$ & 0 \\
+ & Global default $[0.80,0.16,0.04]$ & $\mathbf{0.3438\pm0.0000}$ & $\mathbf{0.5413\pm0.0000}$ & $\mathbf{0.5014\pm0.0000}$ & $\mathbf{0.5072\pm0.0000}$ & 0 \\
+ & Amortized $\bar\alpha_z$ (\textbf{ours}) & $0.3409\pm0.0070$ & $0.5363\pm0.0109$ & $0.4932\pm0.0062$ & $0.4954\pm0.0077$ & 0 \\
+\midrule
+\multirow{3}{*}{\shortstack[l]{Re-\\evolution}}
+ & ES from cold $\alpha_0$ & $0.3492\pm0.0077$ & $0.5499\pm0.0135$ & $0.5071\pm0.0205$ & $0.6425\pm0.0036$ & 45 \\
+ & ES from global default & $\underline{\mathbf{0.3716}}$ & $\underline{\mathbf{0.5813}}$ & $\underline{\mathbf{0.5305}}$ & $\underline{\mathbf{0.6574}}$ & 45 \\
+ & ES from amortized $\bar\alpha_z$ (\textbf{ours}) & $\mathbf{0.3627\pm0.0059}$ & $\mathbf{0.5694\pm0.0069}$ & $\mathbf{0.5215\pm0.0021}$ & $0.6494\pm0.0076$ & 45 \\
+\bottomrule
+\end{tabular}
+\end{table}

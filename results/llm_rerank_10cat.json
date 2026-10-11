@@ -1,0 +1,1718 @@
+{
+  "config": {
+    "splits": "data/catalog_splits10.json",
+    "pool_seed": 42,
+    "top_k": 50,
+    "model": "deepseek-v4-flash",
+    "selection_prompt": "rerank1"
+  },
+  "aggregate": {
+    "f1": 0.34978643578643576,
+    "recall": 0.5473333333333333,
+    "ndcg": 0.5053201950142241,
+    "reward": 0.5180999999999999
+  },
+  "n_new_selection_calls": 100,
+  "per_query": [
+    {
+      "qid": "toolbench_query_653",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.25,
+      "tools": [
+        "toolbench_tool_11503",
+        "toolbench_tool_9523",
+        "toolbench_tool_10074",
+        "toolbench_tool_9498",
+        "toolACE_tool_5006"
+      ]
+    },
+    {
+      "qid": "toolbench_query_782",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.25,
+      "recall": 0.3333333333333333,
+      "ndcg": 0.46927872602275644,
+      "reward": 0.55,
+      "tools": [
+        "toolbench_tool_2867",
+        "toolbench_tool_9447",
+        "apigen_tool_3388",
+        "toolbench_tool_9487",
+        "toolbench_tool_8738"
+      ]
+    },
+    {
+      "qid": "toolbench_query_742",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.2,
+      "tools": [
+        "toolbench_tool_9487",
+        "toolbench_tool_11503",
+        "toolbench_tool_10074",
+        "toolbench_tool_9498",
+        "toolbench_tool_9523"
+      ]
+    },
+    {
+      "qid": "toolbench_query_748",
+      "gold_size": 4,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.4,
+      "tools": [
+        "toolbench_tool_11503",
+        "toolbench_tool_9541",
+        "toolbench_tool_9523",
+        "toolbench_tool_10074",
+        "apigen_tool_1157"
+      ]
+    },
+    {
+      "qid": "toolbench_query_468",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.25,
+      "recall": 0.3333333333333333,
+      "ndcg": 0.46927872602275644,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_5310",
+        "toolbench_tool_11503",
+        "toolbench_tool_8738",
+        "toolbench_tool_9523",
+        "toolbench_tool_8736"
+      ]
+    },
+    {
+      "qid": "toolbench_query_520",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.6934264036172708,
+      "reward": 0.55,
+      "tools": [
+        "toolbench_tool_11503",
+        "toolbench_tool_10075",
+        "toolbench_tool_10074",
+        "toolbench_tool_9523",
+        "toolbench_tool_9541"
+      ]
+    },
+    {
+      "qid": "toolbench_query_684",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_10074",
+        "toolbench_tool_11503",
+        "toolbench_tool_8738",
+        "toolbench_tool_9447",
+        "toolACE_tool_192"
+      ]
+    },
+    {
+      "qid": "toolbench_query_521",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.9197207891481876,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_10075",
+        "toolbench_tool_11503",
+        "toolbench_tool_10074",
+        "toolbench_tool_9523",
+        "toolbench_tool_8738"
+      ]
+    },
+    {
+      "qid": "toolbench_query_780",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.38685280723454163,
+      "reward": 0.5,
+      "tools": [
+        "toolACE_tool_5006",
+        "toolbench_tool_9488",
+        "toolbench_tool_6516",
+        "toolbench_tool_2916",
+        "toolbench_tool_11503"
+      ]
+    },
+    {
+      "qid": "toolbench_query_678",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.3,
+      "tools": [
+        "toolbench_tool_10074",
+        "toolbench_tool_8738",
+        "toolbench_tool_9487",
+        "toolbench_tool_11503",
+        "toolbench_tool_9523"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1080",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.25,
+      "recall": 0.3333333333333333,
+      "ndcg": 0.20210734650054757,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_2541",
+        "toolbench_tool_861",
+        "toolbench_tool_774",
+        "toolbench_tool_780",
+        "toolbench_tool_8982"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1011",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.6131471927654584,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_778",
+        "reversechain_tool_319",
+        "toolbench_tool_774",
+        "toolbench_tool_855",
+        "toolbench_tool_781"
+      ]
+    },
+    {
+      "qid": "toolbench_query_804",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.23719771276929622,
+      "reward": 0.5,
+      "tools": [
+        "toolACE_tool_8647",
+        "toolbench_tool_852",
+        "toolbench_tool_11562",
+        "toolbench_tool_10483",
+        "toolbench_tool_861"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1051",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.25,
+      "recall": 0.3333333333333333,
+      "ndcg": 0.18154179253735267,
+      "reward": 0.55,
+      "tools": [
+        "toolbench_tool_4522",
+        "toolACE_tool_8286",
+        "toolbench_tool_861",
+        "toolACE_tool_8647",
+        "toolbench_tool_11841"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1075",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5,
+      "recall": 0.6666666666666666,
+      "ndcg": 0.5307212739772434,
+      "reward": 0.8,
+      "tools": [
+        "toolbench_tool_7502",
+        "toolbench_tool_781",
+        "toolbench_tool_7499",
+        "apigen_tool_2380",
+        "toolbench_tool_7503"
+      ]
+    },
+    {
+      "qid": "toolbench_query_151",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_4725",
+        "toolbench_tool_4726",
+        "toolACE_tool_9148",
+        "reversechain_tool_25",
+        "toolbench_tool_8522"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1019",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.6131471927654584,
+      "reward": 0.4,
+      "tools": [
+        "toolbench_tool_4522",
+        "toolACE_tool_8286",
+        "reversechain_tool_319",
+        "reversechain_tool_25",
+        "toolbench_tool_3352"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1025",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.7,
+      "tools": [
+        "toolbench_tool_4522",
+        "toolbench_tool_6626",
+        "toolbench_tool_9658",
+        "toolbench_tool_11841",
+        "toolbench_tool_861"
+      ]
+    },
+    {
+      "qid": "toolbench_query_962",
+      "gold_size": 5,
+      "from_cache": false,
+      "fallback": false,
+      "f1": 1.0,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.7,
+      "tools": [
+        "toolbench_tool_791",
+        "toolbench_tool_792",
+        "toolbench_tool_793",
+        "toolbench_tool_797",
+        "toolbench_tool_798"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1012",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_778",
+        "toolbench_tool_13539",
+        "toolbench_tool_8982",
+        "toolbench_tool_11841",
+        "toolbench_tool_774"
+      ]
+    },
+    {
+      "qid": "toolbench_query_761",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5,
+      "recall": 0.6666666666666666,
+      "ndcg": 0.7653606369886217,
+      "reward": 0.6,
+      "tools": [
+        "toolbench_tool_7510",
+        "toolbench_tool_7511",
+        "toolbench_tool_7508",
+        "toolbench_tool_791",
+        "toolbench_tool_7507"
+      ]
+    },
+    {
+      "qid": "toolbench_query_787",
+      "gold_size": 5,
+      "from_cache": false,
+      "fallback": false,
+      "f1": 0.4000000000000001,
+      "recall": 0.4,
+      "ndcg": 0.3156484524795145,
+      "reward": 1.0,
+      "tools": [
+        "toolbench_tool_8988",
+        "toolbench_tool_260",
+        "toolbench_tool_9550",
+        "toolbench_tool_9473",
+        "toolACE_tool_876"
+      ]
+    },
+    {
+      "qid": "toolbench_query_965",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.6131471927654584,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_825",
+        "toolbench_tool_826",
+        "toolbench_tool_5760",
+        "toolACE_tool_15194",
+        "toolACE_tool_8840"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1035",
+      "gold_size": 4,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.6666666666666665,
+      "recall": 0.75,
+      "ndcg": 0.8048099750039491,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_9466",
+        "toolbench_tool_1045",
+        "toolACE_tool_5024",
+        "toolbench_tool_1047",
+        "toolbench_tool_12058"
+      ]
+    },
+    {
+      "qid": "toolbench_query_319",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.1,
+      "tools": [
+        "toolbench_tool_767",
+        "toolACE_tool_8647",
+        "toolbench_tool_861",
+        "webtools_tmdb_tool_49",
+        "toolbench_tool_11841"
+      ]
+    },
+    {
+      "qid": "toolbench_query_292",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.2,
+      "tools": [
+        "toolbench_tool_9004",
+        "toolbench_tool_658",
+        "toolACE_tool_15194",
+        "toolbench_tool_4913",
+        "toolbench_tool_8994"
+      ]
+    },
+    {
+      "qid": "toolbench_query_477",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.2,
+      "tools": [
+        "toolACE_tool_13490",
+        "toolbench_tool_3518",
+        "apigen_tool_2332",
+        "toolACE_tool_12664",
+        "toolbench_tool_3352"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1077",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.2640681225725909,
+      "reward": 0.7,
+      "tools": [
+        "toolbench_tool_861",
+        "toolbench_tool_8982",
+        "toolbench_tool_7510",
+        "toolbench_tool_780",
+        "toolbench_tool_7511"
+      ]
+    },
+    {
+      "qid": "toolbench_query_829",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.7499999999999999,
+      "recall": 1.0,
+      "ndcg": 0.9674679834891693,
+      "reward": 0.9,
+      "tools": [
+        "toolbench_tool_825",
+        "toolbench_tool_826",
+        "apigen_tool_858",
+        "toolbench_tool_827",
+        "toolbench_tool_9004"
+      ]
+    },
+    {
+      "qid": "toolbench_query_610",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5,
+      "recall": 0.6666666666666666,
+      "ndcg": 0.7653606369886217,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_764",
+        "toolbench_tool_765",
+        "apigen_tool_10",
+        "toolbench_tool_780",
+        "toolbench_tool_2541"
+      ]
+    },
+    {
+      "qid": "toolbench_query_710",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.9197207891481876,
+      "reward": 0.85,
+      "tools": [
+        "toolbench_tool_10483",
+        "toolACE_tool_15736",
+        "toolbench_tool_10479",
+        "toolbench_tool_3352",
+        "toolbench_tool_11562"
+      ]
+    },
+    {
+      "qid": "toolbench_query_232",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.2,
+      "tools": [
+        "toolACE_tool_5500",
+        "toolbench_tool_6592",
+        "toolbench_tool_6594",
+        "toolbench_tool_3241",
+        "toolbench_tool_3242"
+      ]
+    },
+    {
+      "qid": "toolbench_query_159",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.7499999999999999,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.85,
+      "tools": [
+        "toolbench_tool_5862",
+        "toolbench_tool_5860",
+        "toolbench_tool_5863",
+        "apigen_tool_1845",
+        "toolbench_tool_1641"
+      ]
+    },
+    {
+      "qid": "toolbench_query_419",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.2640681225725909,
+      "reward": 0.4,
+      "tools": [
+        "toolACE_tool_1497",
+        "toolACE_tool_5187",
+        "reversechain_tool_79",
+        "toolbench_tool_6438",
+        "apigen_tool_1117"
+      ]
+    },
+    {
+      "qid": "toolbench_query_980",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.2,
+      "tools": [
+        "toolACE_tool_13736",
+        "toolbench_tool_2265",
+        "toolbench_tool_6161",
+        "toolACE_tool_15449",
+        "toolbench_tool_2388"
+      ]
+    },
+    {
+      "qid": "toolbench_query_121",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.9,
+      "tools": [
+        "toolbench_tool_1287",
+        "toolbench_tool_1290",
+        "toolACE_tool_8373",
+        "toolACE_tool_7959",
+        "toolACE_tool_14689"
+      ]
+    },
+    {
+      "qid": "toolbench_query_441",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.2,
+      "tools": [
+        "toolbench_tool_3350",
+        "toolACE_tool_3550",
+        "toolbench_tool_3352",
+        "apigen_tool_2924",
+        "toolbench_tool_780"
+      ]
+    },
+    {
+      "qid": "toolbench_query_608",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.6131471927654584,
+      "reward": 0.45,
+      "tools": [
+        "toolbench_tool_10484",
+        "toolbench_tool_8152",
+        "toolbench_tool_865",
+        "toolbench_tool_4603",
+        "toolbench_tool_7190"
+      ]
+    },
+    {
+      "qid": "toolbench_query_17",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.7499999999999999,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_3303",
+        "toolbench_tool_3305",
+        "toolbench_tool_3302",
+        "toolACE_tool_12597",
+        "toolACE_tool_322"
+      ]
+    },
+    {
+      "qid": "toolbench_query_148",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.75,
+      "tools": [
+        "toolbench_tool_3260",
+        "toolbench_tool_3261",
+        "toolbench_tool_3259",
+        "toolbench_tool_3258",
+        "toolbench_tool_11566"
+      ]
+    },
+    {
+      "qid": "toolbench_query_753",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.3,
+      "tools": [
+        "toolbench_tool_3352",
+        "toolbench_tool_3350",
+        "toolbench_tool_11503",
+        "toolbench_tool_9523",
+        "toolbench_tool_8738"
+      ]
+    },
+    {
+      "qid": "toolbench_query_686",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.2640681225725909,
+      "reward": 0.4,
+      "tools": [
+        "toolbench_tool_11503",
+        "toolACE_tool_5006",
+        "toolbench_tool_10074",
+        "toolbench_tool_9498",
+        "toolbench_tool_9523"
+      ]
+    },
+    {
+      "qid": "toolbench_query_900",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": false,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_2912",
+        "toolbench_tool_2913",
+        "apigen_tool_1150",
+        "toolbench_tool_9123",
+        "toolbench_tool_2886"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1006",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.6934264036172708,
+      "reward": 0.73,
+      "tools": [
+        "toolbench_tool_7825",
+        "toolbench_tool_6549",
+        "toolbench_tool_9479",
+        "toolbench_tool_6548",
+        "toolACE_tool_3078"
+      ]
+    },
+    {
+      "qid": "toolbench_query_585",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": false,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.9,
+      "tools": [
+        "toolbench_tool_2713",
+        "toolbench_tool_10069",
+        "toolACE_tool_717",
+        "toolbench_tool_3486",
+        "toolbench_tool_8312"
+      ]
+    },
+    {
+      "qid": "toolbench_query_135",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.6131471927654584,
+      "reward": 0.15,
+      "tools": [
+        "toolbench_tool_448",
+        "toolbench_tool_3256",
+        "rotbench_tool_39",
+        "toolbench_tool_4816",
+        "toolbench_tool_1271"
+      ]
+    },
+    {
+      "qid": "toolbench_query_474",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.25,
+      "recall": 0.3333333333333333,
+      "ndcg": 0.18154179253735267,
+      "reward": 0.2,
+      "tools": [
+        "toolACE_tool_13071",
+        "toolACE_tool_12726",
+        "apigen_tool_111",
+        "toolACE_tool_4948",
+        "toolbench_tool_466"
+      ]
+    },
+    {
+      "qid": "toolbench_query_405",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.25,
+      "recall": 0.3333333333333333,
+      "ndcg": 0.23463936301137822,
+      "reward": 0.25,
+      "tools": [
+        "toolbench_tool_6062",
+        "toolbench_tool_3256",
+        "toolbench_tool_9126",
+        "toolbench_tool_9539",
+        "toolACE_tool_87"
+      ]
+    },
+    {
+      "qid": "toolbench_query_730",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.38685280723454163,
+      "reward": 0.3,
+      "tools": [
+        "toolbench_tool_5762",
+        "toolbench_tool_9518",
+        "toolbench_tool_11503",
+        "toolACE_tool_751",
+        "toolbench_tool_9523"
+      ]
+    },
+    {
+      "qid": "toolbench_query_506",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5,
+      "recall": 0.6666666666666666,
+      "ndcg": 0.5307212739772434,
+      "reward": 0.75,
+      "tools": [
+        "apigen_tool_2858",
+        "toolbench_tool_4141",
+        "toolbench_tool_4142",
+        "toolbench_tool_3288",
+        "apigen_tool_2440"
+      ]
+    },
+    {
+      "qid": "toolbench_query_892",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.5,
+      "tools": [
+        "toolACE_tool_13490",
+        "apigen_tool_2332",
+        "toolbench_tool_797",
+        "toolACE_tool_6633",
+        "toolbench_tool_1027"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1076",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.25,
+      "recall": 0.3333333333333333,
+      "ndcg": 0.20210734650054757,
+      "reward": 0.6,
+      "tools": [
+        "toolbench_tool_4725",
+        "toolbench_tool_2541",
+        "toolbench_tool_764",
+        "toolbench_tool_781",
+        "toolbench_tool_861"
+      ]
+    },
+    {
+      "qid": "toolbench_query_701",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.25,
+      "recall": 0.3333333333333333,
+      "ndcg": 0.46927872602275644,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_8979",
+        "toolbench_tool_11841",
+        "toolbench_tool_4518",
+        "toolbench_tool_12888",
+        "toolbench_tool_780"
+      ]
+    },
+    {
+      "qid": "toolbench_query_763",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.8503449055347546,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_8982",
+        "apigen_tool_2380",
+        "apigen_tool_50",
+        "toolACE_tool_4225",
+        "toolbench_tool_800"
+      ]
+    },
+    {
+      "qid": "toolbench_query_706",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5,
+      "recall": 0.6666666666666666,
+      "ndcg": 0.6713860725233041,
+      "reward": 0.85,
+      "tools": [
+        "toolbench_tool_8152",
+        "toolbench_tool_7507",
+        "apigen_tool_10",
+        "toolbench_tool_764",
+        "toolbench_tool_765"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1082",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.55,
+      "tools": [
+        "toolbench_tool_861",
+        "toolbench_tool_774",
+        "toolbench_tool_4522",
+        "toolbench_tool_11841",
+        "toolbench_tool_8982"
+      ]
+    },
+    {
+      "qid": "toolbench_query_1096",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.25,
+      "recall": 0.3333333333333333,
+      "ndcg": 0.18154179253735267,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_6626",
+        "toolbench_tool_861",
+        "toolbench_tool_3288",
+        "toolbench_tool_7505",
+        "toolbench_tool_783"
+      ]
+    },
+    {
+      "qid": "toolbench_query_31",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.75,
+      "tools": [
+        "toolbench_tool_5773",
+        "toolbench_tool_5774",
+        "apigen_tool_2606",
+        "reversechain_tool_25",
+        "toolbench_tool_7507"
+      ]
+    },
+    {
+      "qid": "toolbench_query_639",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.1,
+      "tools": [
+        "toolbench_tool_9004",
+        "toolbench_tool_9011",
+        "toolbench_tool_10440",
+        "toolbench_tool_3352",
+        "toolbench_tool_8994"
+      ]
+    },
+    {
+      "qid": "toolbench_query_10",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.55,
+      "tools": [
+        "toolbench_tool_1261",
+        "toolbench_tool_12239",
+        "apigen_tool_1768",
+        "toolACE_tool_14567",
+        "toolbench_tool_1228"
+      ]
+    },
+    {
+      "qid": "toolbench_query_486",
+      "gold_size": 4,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.4444444444444445,
+      "recall": 0.5,
+      "ndcg": 0.5585075862632192,
+      "reward": 0.35,
+      "tools": [
+        "toolbench_tool_9199",
+        "toolACE_tool_339",
+        "toolbench_tool_8217",
+        "toolbench_tool_2070",
+        "toolbench_tool_6283"
+      ]
+    },
+    {
+      "qid": "toolbench_query_865",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.7499999999999999,
+      "recall": 1.0,
+      "ndcg": 0.6182885020492784,
+      "reward": 0.5,
+      "tools": [
+        "toolACE_tool_3569",
+        "apigen_tool_1374",
+        "toolbench_tool_6983",
+        "toolbench_tool_6984",
+        "toolbench_tool_6987"
+      ]
+    },
+    {
+      "qid": "toolbench_query_333",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": false,
+      "f1": 0.7499999999999999,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 1.0,
+      "tools": [
+        "toolbench_tool_66",
+        "toolbench_tool_65",
+        "toolbench_tool_64",
+        "toolACE_tool_13889",
+        "toolbench_tool_9801"
+      ]
+    },
+    {
+      "qid": "toolbench_query_61",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_906",
+        "toolbench_tool_904",
+        "toolbench_tool_2274",
+        "toolACE_tool_12380",
+        "toolACE_tool_14985"
+      ]
+    },
+    {
+      "qid": "toolbench_query_911",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.7,
+      "tools": [
+        "toolbench_tool_2783",
+        "toolbench_tool_2778",
+        "toolACE_tool_15373",
+        "rotbench_tool_217",
+        "toolACE_tool_1358"
+      ]
+    },
+    {
+      "qid": "toolbench_query_306",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_2312",
+        "toolbench_tool_2311",
+        "toolbench_tool_7732",
+        "toolbench_tool_11107",
+        "toolbench_tool_6322"
+      ]
+    },
+    {
+      "qid": "toolbench_query_381",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.6,
+      "tools": [
+        "toolbench_tool_6382",
+        "toolbench_tool_6383",
+        "toolbench_tool_5399",
+        "toolbench_tool_4141",
+        "toolbench_tool_1271"
+      ]
+    },
+    {
+      "qid": "toolbench_query_505",
+      "gold_size": 4,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.4444444444444445,
+      "recall": 0.5,
+      "ndcg": 0.6366824387328317,
+      "reward": 0.6,
+      "tools": [
+        "toolbench_tool_4157",
+        "toolbench_tool_4158",
+        "toolbench_tool_7448",
+        "ultraTool_tool_1170",
+        "toolbench_tool_3288"
+      ]
+    },
+    {
+      "qid": "toolbench_query_809",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.0,
+      "tools": [
+        "toolbench_tool_7921",
+        "reversechain_tool_400",
+        "toolACE_tool_4090",
+        "ultraTool_tool_275",
+        "toolbench_tool_9053"
+      ]
+    },
+    {
+      "qid": "toolbench_query_479",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.9197207891481876,
+      "reward": 0.8,
+      "tools": [
+        "toolbench_tool_1116",
+        "toolLens_tool_272",
+        "toolbench_tool_9075",
+        "toolbench_tool_5401",
+        "toolbench_tool_7576"
+      ]
+    },
+    {
+      "qid": "toolbench_query_101",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.23719771276929622,
+      "reward": 0.4,
+      "tools": [
+        "toolbench_tool_111",
+        "toolbench_tool_8088",
+        "toolbench_tool_5425",
+        "toolbench_tool_5067",
+        "toolbench_tool_5527"
+      ]
+    },
+    {
+      "qid": "toolbench_query_412",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.6131471927654584,
+      "reward": 0.4,
+      "tools": [
+        "toolbench_tool_2502",
+        "toolbench_tool_2501",
+        "toolbench_tool_7850",
+        "toolACE_tool_8149",
+        "toolbench_tool_7448"
+      ]
+    },
+    {
+      "qid": "toolbench_query_697",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.6,
+      "tools": [
+        "toolACE_tool_701",
+        "toolACE_tool_9453",
+        "apigen_tool_313",
+        "ultraTool_tool_286",
+        "toolbench_tool_2108"
+      ]
+    },
+    {
+      "qid": "toolbench_query_407",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.03,
+      "tools": [
+        "toolbench_tool_3717",
+        "toolbench_tool_5553",
+        "toolbench_tool_8909",
+        "toolbench_tool_8355",
+        "toolLens_tool_84"
+      ]
+    },
+    {
+      "qid": "toolbench_query_44",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": false,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.5012658353418871,
+      "reward": 0.85,
+      "tools": [
+        "toolbench_tool_5067",
+        "toolbench_tool_5527",
+        "toolACE_tool_15211",
+        "toolbench_tool_110",
+        "toolbench_tool_111"
+      ]
+    },
+    {
+      "qid": "toolbench_query_448",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.5,
+      "tools": [
+        "toolACE_tool_11629",
+        "toolACE_tool_11717",
+        "reversechain_tool_330",
+        "toolbench_tool_2528",
+        "toolACE_tool_14960"
+      ]
+    },
+    {
+      "qid": "toolbench_query_334",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.7499999999999999,
+      "recall": 1.0,
+      "ndcg": 0.9060254355346823,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_5430",
+        "toolbench_tool_8088",
+        "toolbench_tool_5431",
+        "toolbench_tool_5425",
+        "apigen_tool_313"
+      ]
+    },
+    {
+      "qid": "toolbench_query_47",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.3065735963827292,
+      "reward": 0.7,
+      "tools": [
+        "ultraTool_tool_503",
+        "ultraTool_tool_487",
+        "toolbench_tool_2471",
+        "reversechain_tool_459",
+        "toolbench_tool_11410"
+      ]
+    },
+    {
+      "qid": "toolbench_query_561",
+      "gold_size": 6,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.1818181818181818,
+      "recall": 0.16666666666666666,
+      "ndcg": 0.3391602052736161,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_3151",
+        "toolbench_tool_3149",
+        "apigen_tool_1416",
+        "toolACE_tool_6009",
+        "toolACE_tool_2423"
+      ]
+    },
+    {
+      "qid": "toolbench_query_535",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.3,
+      "tools": [
+        "toolACE_tool_701",
+        "toolACE_tool_9453",
+        "toolbench_tool_1271",
+        "apigen_tool_1735",
+        "toolACE_tool_11548"
+      ]
+    },
+    {
+      "qid": "toolbench_query_627",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_5718",
+        "toolbench_tool_9009",
+        "apigen_tool_123",
+        "toolbench_tool_4038",
+        "apigen_tool_1330"
+      ]
+    },
+    {
+      "qid": "toolbench_query_189",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.6934264036172708,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_5030",
+        "toolbench_tool_5028",
+        "toolbench_tool_5029",
+        "toolACE_tool_5457",
+        "toolACE_tool_7774"
+      ]
+    },
+    {
+      "qid": "toolbench_query_370",
+      "gold_size": 4,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.22222222222222224,
+      "recall": 0.25,
+      "ndcg": 0.3903800499921017,
+      "reward": 0.6,
+      "tools": [
+        "toolbench_tool_587",
+        "toolACE_tool_10257",
+        "toolbench_tool_3812",
+        "toolbench_tool_4008",
+        "toolbench_tool_13487"
+      ]
+    },
+    {
+      "qid": "toolbench_query_447",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.25,
+      "recall": 0.3333333333333333,
+      "ndcg": 0.46927872602275644,
+      "reward": 0.4,
+      "tools": [
+        "toolbench_tool_3768",
+        "toolbench_tool_10350",
+        "toolACE_tool_7240",
+        "apigen_tool_2662",
+        "toolbench_tool_7348"
+      ]
+    },
+    {
+      "qid": "toolbench_query_442",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.3065735963827292,
+      "reward": 0.7,
+      "tools": [
+        "toolbench_tool_9476",
+        "toolbench_tool_1709",
+        "toolbench_tool_6664",
+        "toolACE_tool_12894",
+        "toolACE_tool_6261"
+      ]
+    },
+    {
+      "qid": "toolbench_query_192",
+      "gold_size": 1,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.33333333333333337,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.8,
+      "tools": [
+        "toolbench_tool_8967",
+        "toolACE_tool_4230",
+        "toolbench_tool_9211",
+        "toolACE_tool_5635",
+        "toolbench_tool_8547"
+      ]
+    },
+    {
+      "qid": "toolbench_query_844",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.3065735963827292,
+      "reward": 0.25,
+      "tools": [
+        "toolbench_tool_11503",
+        "toolbench_tool_9498",
+        "toolbench_tool_6500",
+        "toolbench_tool_9487",
+        "toolbench_tool_8738"
+      ]
+    },
+    {
+      "qid": "toolbench_query_824",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.9197207891481876,
+      "reward": 0.8,
+      "tools": [
+        "toolbench_tool_4182",
+        "toolbench_tool_4187",
+        "toolbench_tool_4183",
+        "toolbench_tool_6188",
+        "toolbench_tool_5070"
+      ]
+    },
+    {
+      "qid": "toolbench_query_42",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_5379",
+        "toolbench_tool_5382",
+        "toolbench_tool_2899",
+        "toolACE_tool_7991",
+        "toolbench_tool_2898"
+      ]
+    },
+    {
+      "qid": "toolbench_query_229",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": false,
+      "f1": 0.7499999999999999,
+      "recall": 1.0,
+      "ndcg": 0.6182885020492784,
+      "reward": 0.85,
+      "tools": [
+        "toolbench_tool_10843",
+        "toolbench_tool_8484",
+        "toolbench_tool_2371",
+        "toolbench_tool_2372",
+        "toolbench_tool_2373"
+      ]
+    },
+    {
+      "qid": "toolbench_query_591",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.85,
+      "tools": [
+        "toolbench_tool_4905",
+        "toolbench_tool_10149",
+        "toolACE_tool_16014",
+        "toolbench_tool_9405",
+        "toolbench_tool_1836"
+      ]
+    },
+    {
+      "qid": "toolbench_query_660",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.6131471927654584,
+      "reward": 0.2,
+      "tools": [
+        "toolbench_tool_8736",
+        "toolbench_tool_11503",
+        "toolbench_tool_8737",
+        "toolbench_tool_9521",
+        "toolbench_tool_9523"
+      ]
+    },
+    {
+      "qid": "toolbench_query_23",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.3065735963827292,
+      "reward": 0.5,
+      "tools": [
+        "toolACE_tool_12460",
+        "toolACE_tool_6109",
+        "toolbench_tool_4377",
+        "toolbench_tool_1271",
+        "toolbench_tool_2889"
+      ]
+    },
+    {
+      "qid": "toolbench_query_658",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.6131471927654584,
+      "reward": 0.35,
+      "tools": [
+        "toolbench_tool_9543",
+        "toolACE_tool_4924",
+        "toolbench_tool_9550",
+        "toolbench_tool_9504",
+        "toolbench_tool_9534"
+      ]
+    },
+    {
+      "qid": "toolbench_query_938",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.6131471927654584,
+      "reward": 0.55,
+      "tools": [
+        "toolbench_tool_2888",
+        "toolACE_tool_10891",
+        "toolbench_tool_7339",
+        "rotbench_tool_39",
+        "toolbench_tool_7107"
+      ]
+    },
+    {
+      "qid": "toolbench_query_715",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.8503449055347546,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_891",
+        "toolbench_tool_889",
+        "toolbench_tool_888",
+        "toolbench_tool_890",
+        "toolbench_tool_865"
+      ]
+    },
+    {
+      "qid": "toolbench_query_37",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.28571428571428575,
+      "recall": 0.5,
+      "ndcg": 0.6131471927654584,
+      "reward": 0.5,
+      "tools": [
+        "toolbench_tool_3065",
+        "toolbench_tool_5399",
+        "toolbench_tool_8570",
+        "toolbench_tool_5998",
+        "toolACE_tool_16020"
+      ]
+    },
+    {
+      "qid": "toolbench_query_769",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.0,
+      "recall": 0.0,
+      "ndcg": 0.0,
+      "reward": 0.25,
+      "tools": [
+        "toolbench_tool_6777",
+        "toolbench_tool_4141",
+        "toolACE_tool_16020",
+        "toolbench_tool_5399",
+        "toolbench_tool_4816"
+      ]
+    },
+    {
+      "qid": "toolbench_query_724",
+      "gold_size": 2,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.5714285714285715,
+      "recall": 1.0,
+      "ndcg": 0.6934264036172708,
+      "reward": 0.8,
+      "tools": [
+        "toolACE_tool_11465",
+        "toolbench_tool_9449",
+        "toolbench_tool_6479",
+        "toolACE_tool_4924",
+        "toolACE_tool_876"
+      ]
+    },
+    {
+      "qid": "toolbench_query_864",
+      "gold_size": 3,
+      "from_cache": false,
+      "fallback": true,
+      "f1": 0.7499999999999999,
+      "recall": 1.0,
+      "ndcg": 1.0,
+      "reward": 0.8,
+      "tools": [
+        "toolbench_tool_4179",
+        "toolbench_tool_4174",
+        "toolbench_tool_4176",
+        "toolACE_tool_11181",
+        "toolACE_tool_9948"
+      ]
+    }
+  ]
+}
